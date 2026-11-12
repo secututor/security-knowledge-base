@@ -21,14 +21,21 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 ├── SUMMARY.md                      # GitBook 목차 (필수, 신규 문서 추가 시 반드시 갱신)
 ├── README.md                       # 사이트 소개 페이지
 ├── gitbook-docs.yaml               # GitBook 사이트 설정 (수정 지양)
-├── security-fundamentals/          # [영역] 일반 보안 기초 (5G 무관: 암호, PKI, Zero Trust, 위협모델링 등)
-│   ├── README.md
-│   └── web-app-security/           #   [하위영역] 웹·애플리케이션 보안
-│       ├── README.md
-│       └── owasp/                  #     OWASP 프로젝트 기반 지식
-│           ├── README.md
-│           ├── top-10/             #       OWASP Top 10 (웹)
-│           └── api-security-top-10/ #      OWASP API Security Top 10
+├── security-fundamentals/          # [영역] 일반 보안 기초 (전체 KB의 공통 지식 계층)
+│   ├── README.md                   #   공통 지식 계층 로드맵·교차참조 지도
+│   ├── cryptography/               #   [하위영역] 암호학 (대칭/공개키·해시·서명·키교환·TLS)
+│   ├── pki-identity/               #   [하위영역] PKI·인증서·Authentication·OAuth·OIDC
+│   ├── access-control/             #   [하위영역] RBAC·ABAC·DAC·MAC·최소권한
+│   ├── threat-modeling/            #   [하위영역] STRIDE·Attack Tree·위험평가
+│   ├── security-architecture/      #   [하위영역] Zero Trust·심층방어·Secure by Design
+│   ├── secure-development/          #   [하위영역] SSDLC·Secure Coding·SAST/DAST/SCA
+│   ├── security-operations/        #   [하위영역] 로깅·SIEM·탐지·IR 공통 개념(특화는 각 영역)
+│   ├── web-app-security/           #   [하위영역] 웹·애플리케이션 보안
+│   │   └── owasp/                  #     OWASP 프로젝트 기반 지식
+│   │       ├── README.md
+│   │       ├── top-10/             #       OWASP Top 10 (웹)
+│   │       └── api-security-top-10/ #      OWASP API Security Top 10
+│   └── references/                 #   [하위영역] NIST SP·FIPS·OWASP 공통 표준 정의집 (경량)
 ├── 5g-security/                    # [영역] 5G 보안
 │   ├── README.md
 │   ├── fundamentals/               #   [하위영역] 5G 보안 개념/원리 (키 계층, SUCI, NAS/RRC 등)
