@@ -4,7 +4,7 @@ description: 5G 보안 지식베이스 문서를 규칙(steering) 기준으로 �
 ---
 # 문서 리뷰 (Doc Review)
 
-5G Security Knowledge Base 문서를 `.kiro/steering/`의 규칙 기준으로 검수한다.
+Security Knowledge Base 문서를 `.kiro/steering/`의 규칙 기준으로 검수한다.
 검토 대상(파일/카테고리/전체)은 아래에 지정된다:
 
 $ARGUMENTS

@@ -6,6 +6,12 @@
 
 > 이 영역은 특정 취약점 카탈로그(5G Security Risks)와 달리, 배경 지식·이론·방법론을 담습니다.
 
+## 하위 영역
+
+- **[Web & Application Security](web-app-security/README.md)** — 웹·API·소프트웨어 보안
+  - **[OWASP](web-app-security/owasp/README.md)** — OWASP Top 10, API Security Top 10 등
+
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_암호학 기초, PKI, Zero Trust 등 하위 영역에 속하지 않는 공통 개념 문서가 추가되는 대로
+이 목록과 `SUMMARY.md`를 갱신합니다._

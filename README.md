@@ -1,12 +1,14 @@
-# 5G Security Knowledge Base
+# Security Knowledge Base
 
-5G 네트워크 보안 지식을 체계적으로 정리한 지식베이스입니다.
+보안 지식을 체계적으로 정리한 지식베이스입니다.
+일반 보안 기초(암호·PKI·Zero Trust·OWASP 등)와 5G 네트워크 보안을 함께 다루며,
 3GPP/O-RAN 표준, 글로벌 보안 가이드라인(EU ENISA, US NIST·CISA·NSA), 연구 논문을
 한국어로 **연결·재구성**하여, 위협을 이해하고 대응하는 데 필요한 배경까지 함께 제공합니다.
 
 ## 구성
 
 - **[Security Fundamentals](security-fundamentals/README.md)** — 5G에 국한되지 않는 일반 보안 기초 (암호, PKI, Zero Trust, 위협 모델링 등)
+  - **[Web & Application Security](security-fundamentals/web-app-security/README.md)** — 웹·API 보안 (OWASP Top 10, API Security Top 10 등)
 - **[5G Security](5g-security/README.md)** — 5G 보안 영역
   - **[Fundamentals](5g-security/fundamentals/README.md)** — 5G 보안 개념/원리 (키 계층, SUCI, NAS/RRC 등)
   - **[Security Risks](5g-security/security-risks/README.md)** — 위협/취약점 카탈로그 (UE·인증·RAN·코어·SBA·슬라이싱·NFV·O-RAN·V2X 등)

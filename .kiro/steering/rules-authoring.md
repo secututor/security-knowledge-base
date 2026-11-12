@@ -3,7 +3,7 @@ inclusion: always
 ---
 # 문서 작성 규칙 (Authoring Rules)
 
-이 문서는 **5G Security Knowledge Base** GitBook 문서를 작성/확장할 때 반드시 지켜야 하는 규칙을 정의합니다.
+이 문서는 **Security Knowledge Base**(일반 보안 + 5G 보안) GitBook 문서를 작성/확장할 때 반드시 지켜야 하는 규칙을 정의합니다.
 AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합니다.
 
 > 이 리포지토리는 GitHub ↔ GitBook 동기화로 운영됩니다. 모든 문서는 GitHub과 GitBook 양쪽에서 올바르게 렌더링되어야 합니다.
@@ -22,7 +22,13 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 ├── README.md                       # 사이트 소개 페이지
 ├── gitbook-docs.yaml               # GitBook 사이트 설정 (수정 지양)
 ├── security-fundamentals/          # [영역] 일반 보안 기초 (5G 무관: 암호, PKI, Zero Trust, 위협모델링 등)
-│   └── README.md
+│   ├── README.md
+│   └── web-app-security/           #   [하위영역] 웹·애플리케이션 보안
+│       ├── README.md
+│       └── owasp/                  #     OWASP 프로젝트 기반 지식
+│           ├── README.md
+│           ├── top-10/             #       OWASP Top 10 (웹)
+│           └── api-security-top-10/ #      OWASP API Security Top 10
 ├── 5g-security/                    # [영역] 5G 보안
 │   ├── README.md
 │   ├── fundamentals/               #   [하위영역] 5G 보안 개념/원리 (키 계층, SUCI, NAS/RRC 등)
@@ -58,7 +64,7 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 |------|------|------|--------|
 | `issue` | 5G 위협/취약점/리스크 | `5g-security/security-risks/NN-*/` | §3.1 10항목 풀 템플릿 |
 | `concept` | 5G 보안 개념/원리 해설 | `5g-security/fundamentals/` | §3.2 개념 템플릿 |
-| `general` | 5G 무관 일반 보안 지식 | `security-fundamentals/` | §3.2 개념 템플릿 |
+| `general` | 5G 무관 일반 보안 지식 | `security-fundamentals/` (하위영역 포함) | §3.2 개념 템플릿 |
 | `reference` | 표준/기관/논문 정의 | `5g-security/references/*/` | §3.3 참조 템플릿 |
 
 ### 규칙
@@ -70,6 +76,9 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 - `references/` 하위 폴더는 번호 없이 의미 이름(`3gpp-standards` 등)을 쓴다.
 - `subject/`, `ai/`, `.kiro/`, `.gitbook/`은 **작업/설정용**이며 `SUMMARY.md` 목차에는 넣지 않는다.
 - 새 영역이 필요하면(예: `cloud-security/`) 최상위 형제로 추가하고 §4의 SUMMARY 묶음(`##`)도 함께 추가한다.
+- **영역은 하위영역을 가질 수 있다.** 예: `security-fundamentals/web-app-security/owasp/`.
+  하위영역 폴더에는 반드시 `README.md`(개요 + 하위 목록)를 두며, 이 README가 SUMMARY 계층의 부모 항목이 된다 (§4).
+  OWASP처럼 5G와 개념이 겹치는 주제는 해당 5G 문서(예: `06-sba-security/`)에서 교차 참조할 수 있다.
 
 ---
 

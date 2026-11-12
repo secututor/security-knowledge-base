@@ -3,7 +3,7 @@ inclusion: always
 ---
 # 다이어그램 규칙 (Diagram Rules)
 
-5G Security Knowledge Base 문서의 그림/다이어그램 작성 규칙입니다.
+Security Knowledge Base 문서의 그림/다이어그램 작성 규칙입니다.
 
 ## 기본 원칙
 

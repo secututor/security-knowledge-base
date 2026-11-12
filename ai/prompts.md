@@ -1,6 +1,6 @@
 # 프롬프트 템플릿 (Prompt Templates)
 
-5G Security Knowledge Base 문서를 생성/확장할 때 AI 에이전트에게 줄 수 있는 재사용 프롬프트 모음입니다.
+Security Knowledge Base 문서를 생성/확장할 때 AI 에이전트에게 줄 수 있는 재사용 프롬프트 모음입니다.
 모든 프롬프트는 `.kiro/steering/`의 `rules-authoring.md`, `rules-diagrams.md` 규칙 준수를 전제로 합니다.
 (이 규칙 파일들은 기본 에이전트 세션에 자동 로드되므로 별도로 읽지 않아도 적용됩니다.)
 

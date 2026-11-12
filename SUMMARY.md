@@ -5,6 +5,10 @@
 ## Security Fundamentals
 
 * [Security Fundamentals](security-fundamentals/README.md)
+  * [Web & Application Security](security-fundamentals/web-app-security/README.md)
+    * [OWASP](security-fundamentals/web-app-security/owasp/README.md)
+      * [OWASP Top 10](security-fundamentals/web-app-security/owasp/top-10/README.md)
+      * [OWASP API Security Top 10](security-fundamentals/web-app-security/owasp/api-security-top-10/README.md)
 
 ## 5G Security
 
