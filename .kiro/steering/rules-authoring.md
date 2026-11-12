@@ -52,15 +52,27 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 │       ├── nist-series/            #     US NIST & CISA 가이드라인 (US-N)
 │       └── research-papers/        #     참조 논문 (P-N)
 ├── cloud-security/                 # [영역] 클라우드 보안
-│   ├── README.md
-│   ├── cloud-native/               #   [하위영역] 컨테이너·K8s·오케스트레이션
+│   ├── README.md                   #   로드맵·기준 프레임워크 버전·작성 원칙 인덱스
+│   ├── fundamentals/               #   [하위영역] 공동책임모델·위협모델·자산/경계
+│   ├── cloud-native/               #   [하위영역] 컨테이너·K8s·서비스메시
 │   ├── iam/                        #   [하위영역] 자격 증명·권한·접근 제어
-│   └── data-protection/            #   [하위영역] 데이터 암호화·저장·전송 보호
+│   ├── data-protection/            #   [하위영역] 암호화·KMS·데이터 분류
+│   ├── network-security/           #   [하위영역] VPC·세그멘테이션·프라이빗 연결
+│   ├── posture-compliance/         #   [하위영역] CSPM·ISMS-P·CSAP·ISO 27017
+│   ├── assessment/                 #   [하위영역] 체크리스트·위험평가·보고서
+│   ├── cloud-security-operations/  #   [하위영역] Logging·Detection·IR (ATT&CK Cloud)
+│   └── references/                 #   [하위영역] CSA CCM·CIS·NIST·ATT&CK·ISO·ISMS-P·CSAP 정의집
 ├── ai-security/                    # [영역] AI 보안
-│   ├── README.md
-│   ├── llm-security/               #   [하위영역] LLM 보안 (OWASP LLM Top 10 연계)
+│   ├── README.md                   #   로드맵·기준 프레임워크 버전·작성 원칙 인덱스
+│   ├── fundamentals/               #   [하위영역] AI/ML/LLM 구조·라이프사이클·위협모델
+│   ├── llm-security/               #   [하위영역] LLM 보안 (OWASP LLM Top 10 2026)
+│   │   └── risks/                  #     위협 카탈로그 (문서 내부 Concept→Threat→Defense→Assessment→Reference)
 │   ├── ml-security/                #   [하위영역] ML 모델 보안 (포이즈닝·회피 등)
-│   └── ai-governance/              #   [하위영역] AI 위험 관리·거버넌스
+│   ├── ai-infrastructure-security/ #   [하위영역] AI 플랫폼·GPU·서빙·클라우드·공급망
+│   ├── ai-governance/              #   [하위영역] NIST AI RMF·ISO 42001·EU AI Act·위험평가
+│   ├── ai-security-assessment/     #   [하위영역] AISVS·Threat Modeling·Red Teaming·체크리스트
+│   ├── telecom-ai-security/        #   [하위영역] 5G/O-RAN AI 연계 (5g-security 교차참조)
+│   └── references/                 #   [하위영역] OWASP·MITRE ATLAS·NIST·ISO 정의집
 ├── subject/                        # 원본 마스터 데이터 (편집용, 사이트 목차엔 미포함)
 ├── ai/                             # 사람용 안내/프롬프트 (사이트 목차엔 미포함)
 ├── .gitbook/assets/                # 이미지/SVG (GitBook 표준 경로, 사이트 목차엔 미포함)
@@ -68,14 +80,23 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 ```
 
 ### 콘텐츠 타입 (중요)
-문서는 "타입"에 따라 배치 위치와 템플릿(§3)이 다르다.
+문서는 "타입"에 따라 템플릿(§3)이 다르다. 타입은 **영역(5G/AI/Cloud/일반 등)과 무관한 범용 정의**이며,
+모든 영역이 같은 타입·템플릿을 공유한다. 배치 위치는 각 영역 구조를 따른다.
 
-| 타입 | 성격 | 위치 | 템플릿 |
-|------|------|------|--------|
-| `issue` | 5G 위협/취약점/리스크 | `5g-security/security-risks/NN-*/` | §3.1 10항목 풀 템플릿 |
-| `concept` | 5G 보안 개념/원리 해설 | `5g-security/fundamentals/` | §3.2 개념 템플릿 |
-| `general` | 5G 무관 일반 보안 지식 | `security-fundamentals/` (하위영역 포함) | §3.2 개념 템플릿 |
-| `reference` | 표준/기관/논문 정의 | `5g-security/references/*/` | §3.3 참조 템플릿 |
+| 타입 | 성격 | 위치(예) | 템플릿 |
+|------|------|----------|--------|
+| `threat` | 위협/취약점/리스크 (공격 대상이 있는 것) | `5g-security/security-risks/NN-*/`, `ai-security/llm-security/risks/` 등 | §3.1 위협 템플릿 (범용) |
+| `concept` | 개념·원리·방법론 해설 | 각 영역의 `fundamentals/`, `security-fundamentals/*` 등 | §3.2 개념 템플릿 |
+| `assessment` | 점검·평가·체크리스트·테스트 방법론 | `ai-security/ai-security-assessment/` 등 | §3.4 점검 템플릿 |
+| `reference` | 표준/기관/프레임워크/논문 정의 | 각 영역의 `references/*` | §3.3 참조 템플릿 |
+
+> **참조 블록은 영역별 플러그형이다.** `threat` 템플릿의 "관련 표준/가이드라인/참조" 섹션은 영역이
+> 각자 채운다. 예: 5G = 3GPP/O-RAN · ENISA(EU) · NIST·CISA(US) · 논문 / AI = OWASP(LLM·ML·AISVS) ·
+> MITRE ATLAS · NIST AI RMF · ISO/IEC 42001. 공통 뼈대(개요→대상→취약점→시나리오→영향→대응→참조)는
+> 모든 영역이 동일하게 쓰고, 참조 목록만 영역이 교체한다.
+>
+> 하위 호환: 기존 5G `security-risks/`의 "10항목 풀 템플릿"은 `threat` 타입의 **5G 적용 예**다
+> (5G는 참조 블록이 3GPP/EU/US/논문 4종으로 구체화된 형태). 기존 문서는 그대로 유효하다.
 
 ### 규칙
 - **최상위는 영역**(`security-fundamentals/`, `5g-security/`)이다. 최상위에 번호 폴더를 두지 않는다.
@@ -131,13 +152,29 @@ NN-MM-{Issue_Name}.md
 ## 3. 문서 섹션 구조
 
 문서는 **콘텐츠 타입**(§1)에 따라 다른 템플릿을 쓴다.
-- `issue` → §3.1 10항목 풀 템플릿
-- `concept` / `general` → §3.2 개념 템플릿
+- `threat` → §3.1 위협 템플릿 (범용; 참조 블록은 영역별 교체)
+- `concept` → §3.2 개념 템플릿
 - `reference` → §3.3 참조 템플릿
+- `assessment` → §3.4 점검 템플릿
 
-### 3.1 이슈 문서 (`issue`) — 10항목 풀 템플릿
+### 3.1 위협 문서 (`threat`) — 위협 템플릿 (범용)
 
-모든 이슈 문서(`5g-security/security-risks/`)는 `subject/5G_Security.md`가 제안한 **10항목 풀 템플릿**을 따른다.
+위협 문서는 아래 **공통 뼈대**를 이 순서대로 포함한다. 영역에 상관없이 동일하다.
+
+공통 흐름: **개요 → 공격 대상 → 취약점 → 공격 시나리오 → 영향 → 대응 → 참조**
+
+마지막 "참조" 블록만 **영역별로 교체**한다(§1 플러그형):
+- **5G**: 3GPP/O-RAN 표준 · ENISA(EU) · NIST·CISA/NSA(US) · 논문 (= 아래 5G 적용 예의 §7~10)
+- **AI**: OWASP(LLM/ML Top 10, AISVS) · MITRE ATLAS · NIST AI RMF · ISO/IEC 42001
+- **그 외 영역**: 해당 영역 `references/`가 정의한 코드 체계
+
+> AI 위협 문서는 참조 블록 외에 **Concept → Threat → Defense → Assessment → Reference** 식으로
+> 대응·검증을 한 문서 안에 통합하는 변주를 쓸 수 있다(각 영역 README가 세부 지정). 공통 뼈대는 동일하다.
+
+#### 5G 적용 예 — 10항목 풀 템플릿
+
+5G `security-risks/` 문서는 위 공통 뼈대의 참조 블록을 3GPP/EU/US/논문 4종으로 구체화한
+**10항목 풀 템플릿**을 쓴다(`subject/5G_Security.md` 제안).
 아래 섹션을 **이 순서대로** 포함한다.
 
 원문 제안 흐름: **Threat → Target → Vulnerability → Attack Scenario → Impact → 3GPP → ENISA(EU) → NIST/CISA·NSA(US) → Paper → Korean Explanation**
@@ -196,10 +233,11 @@ NN-MM-{Issue_Name}.md
 ## 출처                 # 원문을 상당 부분 참고한 경우 (§6.5 참조)
 ```
 
-### 3.2 개념 문서 (`concept` / `general`) — 개념 템플릿
+### 3.2 개념 문서 (`concept`) — 개념 템플릿
 
-5G 보안 개념(`5g-security/fundamentals/`)과 일반 보안 지식(`security-fundamentals/`)은
-10항목 강제 없이 아래 자유형 템플릿을 기준으로 한다. 제목은 개념명(영문 유지 가능).
+보안 개념·원리·방법론 해설 문서(각 영역의 `fundamentals/`, `security-fundamentals/*`,
+`ai-security/fundamentals/` 등)는 10항목 강제 없이 아래 자유형 템플릿을 기준으로 한다.
+제목은 개념명(영문 유지 가능).
 
 ```markdown
 # {Concept Name}
@@ -220,16 +258,50 @@ NN-MM-{Issue_Name}.md
 ## 출처                 # (선택) 외부 자료를 참고한 경우 (§6)
 ```
 
-- `concept` 파일명은 이슈처럼 카테고리 순번을 쓸 수 있다(예: `01-01-5G_Key_Hierarchy.md`).
-  단, 여기서 `NN`은 fundamentals 내부의 자체 순번이다(카테고리 번호와 무관).
-- `general` 파일명은 의미 이름(kebab/underscore)을 쓴다(예: `pki-basics.md`, `zero-trust.md`). 공백 금지(§2).
+- `concept` 파일명은 순번을 쓸 수 있다(예: `01-01-5G_Key_Hierarchy.md`).
+  단, 여기서 `NN`은 해당 `fundamentals` 내부의 자체 순번이다(카테고리 번호와 무관).
+  순번이 불필요한 일반 개념은 의미 이름(kebab/underscore)을 쓴다(예: `pki-basics.md`, `zero-trust.md`). 공백 금지(§2).
 - references 링크 상대경로: fundamentals 문서 → `../references/{폴더}/README.md`.
 
 ### 3.3 참조 문서 (`reference`) — 참조 템플릿
 
-`5g-security/references/*/README.md`는 이슈 문서가 인용하는 표준·기관·논문의 **정의집**이다.
-표(코드 ↔ 정식 명칭 ↔ 관련 이슈 영역) 형식을 기본으로 하며, 참조 코드(TS/TR, EU-N, US-N, P-N)를
-`subject/`의 정의와 일치시킨다. 새 참조를 임의로 만들지 않는다(환각 금지, §5·§6).
+각 영역의 `references/*/README.md`는 위협·개념 문서가 인용하는 표준·기관·프레임워크·논문의 **정의집**이다.
+표(코드 ↔ 정식 명칭 ↔ 관련 영역) 형식을 기본으로 하며, 참조 코드를 해당 영역의 정의와 일치시킨다.
+- 5G: `subject/`의 정의(TS/TR, EU-N, US-N, P-N)와 일치.
+- AI: OWASP(LLM/ML Top 10, AISVS) · MITRE ATLAS · NIST AI RMF · ISO/IEC 42001 등.
+새 참조를 임의로 만들지 않는다(환각 금지, §5·§6). **버전·발표일은 공식 출처로 확인한 값만** 기재하고,
+확인 전에는 "최신판 기준"으로 유연하게 두고 확인 예정임을 표시한다.
+유료 표준(ISO 등)은 원문을 옮기지 말고 명칭·역할·공개 요약·공식 링크만 둔다(§6.3).
+
+### 3.4 점검 문서 (`assessment`) — 점검 템플릿
+
+보안 점검·평가·체크리스트·테스트 방법론 문서(예: `ai-security/ai-security-assessment/`)는
+"무엇을 어떻게 점검·검증하는가"에 초점을 둔다. 아래 자유형 템플릿을 기준으로 한다.
+
+```markdown
+# {Assessment Name}
+
+## 1. 목적 (Why)
+{무엇을 평가·점검하는가, 어떤 위협/통제와 연결되는가.}
+
+## 2. 기준 / 프레임워크 (Against What)
+{근거가 되는 표준·검증 기준. 예: OWASP AISVS 요구사항, NIST AI RMF, MITRE ATLAS TTP.}
+
+## 3. 점검 항목 / 체크리스트 (What to Check)
+{점검 항목을 표/리스트로. 각 항목에 통과 기준과 근거 참조 코드를 병기.}
+
+## 4. 방법 / 절차 (How)
+{테스트·평가 절차, 도구, 레드팀 시나리오 등. 재현 가능하게.}
+
+## 5. 결과 정리 / 보고 (Report)
+{발견사항 기록·위험등급·보고 양식 예시. 포트폴리오용 산출물 관점.}
+
+## 관련 문서            # (선택) 대응하는 위협/개념/참조 링크
+## 출처                 # (선택) 외부 기준을 참고한 경우 (§6)
+```
+
+- 점검 항목은 대응하는 위협 문서(`threat`)·참조(`reference`)와 **상호 링크**한다.
+- 외부 검증 기준(OWASP AISVS 등)을 그대로 복사하지 않고 재구성하며 출처를 명시한다(§6).
 
 ---
 
@@ -275,7 +347,7 @@ NN-MM-{Issue_Name}.md
 - 본문 설명은 **한국어**로 작성한다. (기존 문서 스타일 유지)
 - 기술 용어(SUPI, gNB, NAS, RRC, NRF 등)와 표준 명칭(TS 33.501 등)은 원문 그대로 사용.
 - 제목(`# NN-MM. Title`)의 이슈명은 영문 유지.
-- `concept`/`general` 문서 제목은 개념명(영문 유지 가능)으로 자유롭게 쓴다(§3.2).
+- `concept`/`assessment` 문서 제목은 개념·점검명(영문 유지 가능)으로 자유롭게 쓴다(§3.2·§3.4).
 - 문장은 간결하게. 과장 없이 사실 위주로.
 - 표준/논문을 인용할 때 없는 내용을 지어내지 않는다 (환각 금지). 근거가 없으면 명시하지 않는다.
 

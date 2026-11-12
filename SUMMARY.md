@@ -135,13 +135,25 @@
 ## Cloud Security
 
 * [Cloud Security](cloud-security/README.md)
+  * [Fundamentals](cloud-security/fundamentals/README.md)
   * [Cloud Native Security](cloud-security/cloud-native/README.md)
   * [Identity & Access Management](cloud-security/iam/README.md)
   * [Data Protection](cloud-security/data-protection/README.md)
+  * [Network Security](cloud-security/network-security/README.md)
+  * [Posture & Compliance](cloud-security/posture-compliance/README.md)
+  * [Assessment](cloud-security/assessment/README.md)
+  * [Cloud Security Operations](cloud-security/cloud-security-operations/README.md)
+  * [References](cloud-security/references/README.md)
 
 ## AI Security
 
 * [AI Security](ai-security/README.md)
+  * [Fundamentals](ai-security/fundamentals/README.md)
   * [LLM Security](ai-security/llm-security/README.md)
+    * [Risks](ai-security/llm-security/risks/README.md)
   * [ML Security](ai-security/ml-security/README.md)
-  * [AI Governance](ai-security/ai-governance/README.md)
+  * [AI Infrastructure Security](ai-security/ai-infrastructure-security/README.md)
+  * [AI Governance & Risk](ai-security/ai-governance/README.md)
+  * [AI Security Assessment](ai-security/ai-security-assessment/README.md)
+  * [Telecom AI Security](ai-security/telecom-ai-security/README.md)
+  * [References](ai-security/references/README.md)
