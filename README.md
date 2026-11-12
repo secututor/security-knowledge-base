@@ -13,6 +13,8 @@
   - **[Fundamentals](5g-security/fundamentals/README.md)** — 5G 보안 개념/원리 (키 계층, SUCI, NAS/RRC 등)
   - **[Security Risks](5g-security/security-risks/README.md)** — 위협/취약점 카탈로그 (UE·인증·RAN·코어·SBA·슬라이싱·NFV·O-RAN·V2X 등)
   - **[References](5g-security/references/README.md)** — 표준·기관 가이드라인·논문 정의 (3GPP/O-RAN, ENISA, NIST·CISA, Papers)
+- **[Cloud Security](cloud-security/README.md)** — 클라우드 보안 (클라우드 네이티브, IAM, 데이터 보호)
+- **[AI Security](ai-security/README.md)** — AI 보안 (LLM 보안, ML 보안, AI 거버넌스)
 
 ## 특징
 

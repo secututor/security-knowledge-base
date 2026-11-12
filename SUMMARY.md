@@ -131,3 +131,17 @@
     * [EU Framework (ENISA)](5g-security/references/enisa-framework/README.md)
     * [US Guidelines (NIST & CISA)](5g-security/references/nist-series/README.md)
     * [Research Papers](5g-security/references/research-papers/README.md)
+
+## Cloud Security
+
+* [Cloud Security](cloud-security/README.md)
+  * [Cloud Native Security](cloud-security/cloud-native/README.md)
+  * [Identity & Access Management](cloud-security/iam/README.md)
+  * [Data Protection](cloud-security/data-protection/README.md)
+
+## AI Security
+
+* [AI Security](ai-security/README.md)
+  * [LLM Security](ai-security/llm-security/README.md)
+  * [ML Security](ai-security/ml-security/README.md)
+  * [AI Governance](ai-security/ai-governance/README.md)

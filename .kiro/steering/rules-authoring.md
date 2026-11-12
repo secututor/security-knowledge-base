@@ -51,6 +51,16 @@ AI 에이전트와 사람 기여자 모두 이 규칙을 기준으로 작업합�
 │       ├── enisa-framework/        #     EU ENISA 프레임워크 (EU-N)
 │       ├── nist-series/            #     US NIST & CISA 가이드라인 (US-N)
 │       └── research-papers/        #     참조 논문 (P-N)
+├── cloud-security/                 # [영역] 클라우드 보안
+│   ├── README.md
+│   ├── cloud-native/               #   [하위영역] 컨테이너·K8s·오케스트레이션
+│   ├── iam/                        #   [하위영역] 자격 증명·권한·접근 제어
+│   └── data-protection/            #   [하위영역] 데이터 암호화·저장·전송 보호
+├── ai-security/                    # [영역] AI 보안
+│   ├── README.md
+│   ├── llm-security/               #   [하위영역] LLM 보안 (OWASP LLM Top 10 연계)
+│   ├── ml-security/                #   [하위영역] ML 모델 보안 (포이즈닝·회피 등)
+│   └── ai-governance/              #   [하위영역] AI 위험 관리·거버넌스
 ├── subject/                        # 원본 마스터 데이터 (편집용, 사이트 목차엔 미포함)
 ├── ai/                             # 사람용 안내/프롬프트 (사이트 목차엔 미포함)
 ├── .gitbook/assets/                # 이미지/SVG (GitBook 표준 경로, 사이트 목차엔 미포함)
