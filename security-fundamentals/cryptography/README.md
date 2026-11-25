@@ -1,5 +1,7 @@
 # Cryptography (암호학 기초)
 
+> 약어: NIST=미국 국립표준기술연구소, SP=NIST 특별 간행물, FIPS=미국 연방 정보처리 표준, RFC=인터넷 표준 문서, IETF=인터넷 표준화 기구, 3GPP=이동통신 표준화 기구
+
 보안의 토대가 되는 **암호학**을 구조 중심으로 정리하는 하위 영역입니다.
 알고리즘 나열이 아니라 "목적 → 수단 → 적용" 흐름으로 구성합니다.
 
@@ -72,15 +74,18 @@ flowchart LR
 
 | 표준 | 용도 | 상태 |
 |------|------|------|
-| FIPS(Federal Information Processing Standards) 197 (AES, Advanced Encryption Standard) | 대칭 블록 암호 | 현행 (2023 개정) |
+| FIPS 197 (AES, Advanced Encryption Standard) | 대칭 블록 암호 | 현행 (2023 개정) |
 | FIPS 180-4 (SHS, Secure Hash Standard) | SHA-2 계열 | 현행 |
 | FIPS 202 (SHA-3) | SHA-3 계열 | 현행 |
 | FIPS 186-5 (DSS, Digital Signature Standard) | 디지털 서명 | 현행 (2023) |
-| TLS 1.3 (IETF(Internet Engineering Task Force) RFC(Request for Comments)) | 전송 구간 보안 | 확인 예정 |
-| NIST(National Institute of Standards and Technology) SP(Special Publication) 800-57 (키 관리) 등 | 키 수명주기·강도 | 확인 예정 |
+| TLS 1.3 (RFC 9846, RFC 8446 대체) | 전송 구간 보안 | 현행 (Standards Track) |
+| RFC 10024 (TLS 1.3 PQ/T 하이브리드 키 합의) / RFC 9954 (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard (2026-08) / Informational |
+| RFC 5869 (HKDF, HMAC-based Key Derivation Function) | 키 파생 | Informational |
+| NIST SP 800-57 Part 1 Rev. 5 (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 (2020-05-04 Final) |
+| FIPS 140-3 | 암호 모듈 보안 요구사항·검증 | 현행 (2019-03-22 승인) |
 | FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA) | PQC(Post-Quantum Cryptography, 양자내성암호) 확정 표준 | 확정 (2024-08-13 발행) |
 | FIPS 206 (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 2025-03 선정 (둘 다 최종 표준 아님) |
-| 3GPP TS 33.501 Rel-18 V18.11.0 | 5G NEA/NIA, 5G KDF 입력(Annex A) | 현행 |
+| 3GPP TS 33.501 V19.7.0 (Release 19) | 5G NEA/NIA, 5G KDF 입력(Annex A), 키 계층(§6.2) | 현행 |
 | 3GPP TS 33.220 Annex B | 범용 KDF(HMAC-SHA-256) | 현행판 확인 예정 |
 
 > 표준별 정의는 [References](../references/README.md)에 정리되어 있다.
@@ -99,5 +104,8 @@ flowchart LR
 - [Symmetric Encryption](symmetric-encryption.md) — 02. 블록/스트림 암호, 운용 모드, AEAD, Nonce 관리
 - [Hashing & MAC](hashing-mac.md) — 03. 해시 성질, HMAC, KDF, 패스워드 저장
 - [Asymmetric Encryption](asymmetric-encryption.md) — 04. 공개키 원리, RSA·ECC, KEM, 양자 위협과 PQC 지형도
+- [Digital Signature](digital-signature.md) — 05. 서명·검증 원리, RSA·ECDSA·EdDSA, ML-DSA·SLH-DSA, 서명 실수와 대응
+- [Key Exchange](key-exchange.md) — 06. DH·ECDH·KEM·HKDF 구분, PFS, TLS 1.2/1.3 비교, 하이브리드(X25519MLKEM768), 5G SUCI ECIES
+- [Key Management](key-management.md) — 07. 키 생명주기, KEK/DEK·봉투 암호화, HSM·KMS, 침해 대응, Cloud·5G 사례, FIPS 140-3
 
 _나머지 문서는 로드맵 순서대로 추가될 예정이다._

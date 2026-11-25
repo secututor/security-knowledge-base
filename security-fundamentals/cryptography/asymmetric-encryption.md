@@ -1,5 +1,7 @@
 # Asymmetric Encryption (공개키 암호)
 
+> 약어: NIST=미국 국립표준기술연구소, SP=NIST 특별 간행물, FIPS=미국 연방 정보처리 표준, RFC=인터넷 표준 문서, 3GPP=이동통신 표준화 기구
+
 ## 1. 개요 (What)
 
 공개키 암호(Public-key cryptography, 비대칭키 암호)는 **서로 다른 두 키, 즉 공개키(Public key)와 개인키(Private key)를 한 쌍으로 쓰는 암호 방식**이다.
@@ -14,8 +16,8 @@ n명이 서로 대칭키로 통신하려면 n(n-1)/2개의 키가 필요하고, 
 | 기능 | 하는 일 | 다루는 문서 |
 |------|---------|-------------|
 | 공개키 암호화 / KEM | 공개키로 데이터나 공유 비밀을 보호해 개인키 소유자만 얻게 한다 | 이 문서 |
-| 디지털 서명 | 개인키로 서명하고 공개키로 누구나 검증한다 | `digital-signature.md`(작성 예정) |
-| 키 교환 | 두 당사자가 공개 값만 주고받아 공유 비밀을 만든다 | `key-exchange.md`(작성 예정) |
+| 디지털 서명 | 개인키로 서명하고 공개키로 누구나 검증한다 | [Digital Signature](digital-signature.md) |
+| 키 교환 | 두 당사자가 공개 값만 주고받아 공유 비밀을 만든다 | [Key Exchange](key-exchange.md) |
 
 ## 2. 배경 / 원리 (Why & How)
 
@@ -112,22 +114,22 @@ sequenceDiagram
 
 | 방식 | 용도 |
 |------|------|
-| ECDH(Elliptic Curve Diffie-Hellman) | 키 교환 → `key-exchange.md`(작성 예정) |
-| ECDSA(Elliptic Curve Digital Signature Algorithm), EdDSA(Edwards-curve Digital Signature Algorithm) | 서명 → `digital-signature.md`(작성 예정) |
+| ECDH(Elliptic Curve Diffie-Hellman) | 키 교환 → [Key Exchange](key-exchange.md) |
+| ECDSA(Elliptic Curve Digital Signature Algorithm), EdDSA(Edwards-curve Digital Signature Algorithm) | 서명 → [Digital Signature](digital-signature.md) |
 | ECIES(Elliptic Curve Integrated Encryption Scheme) | 암호화(ECDH + KDF + 대칭키 암호를 묶은 하이브리드 방식) |
 
 - 곡선 선택이 안전성에 영향을 준다. 표준화되고 널리 검증된 곡선(예: P-256, Curve25519)을 쓰며, 임의 곡선을 만들지 않는다.
 
 ### 3.3 키 길이와 보안 강도
 
-공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. 일반적으로 알려진 대응은 다음과 같다.
+공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. NIST SP 800-57 Part 1 Rev. 5 기준 대표 대응은 다음과 같다(전체 표 → §5.1).
 
 | 보안 강도 | RSA 모듈러스 | ECC 키 |
 |:--------:|:-----------:|:------:|
 | 약 128비트 | 약 3072비트 | 약 256비트 |
 
 - RSA는 강도를 올릴수록 키가 급격히 길어지고, ECC는 완만하게 늘어난다.
-- 권고 최소 길이와 사용 기한은 기관 표준(NIST(National Institute of Standards and Technology) SP(Special Publication) 800-57 등)을 따른다. 세부 수치는 키 관리 문서(`key-management.md`, 작성 예정)에서 다룬다.
+- 권고 최소 길이와 사용 기한은 기관 표준(NIST SP 800-57 등)을 따른다 → §5.1, [Key Management](key-management.md)
 
 ### 3.4 양자 컴퓨터의 영향
 
@@ -148,7 +150,7 @@ PQC(Post-Quantum Cryptography, 양자내성암호)는 양자 컴퓨터로도 풀
 
 | 표준 | 알고리즘 | 기능 | 기존 대응 | 상태 |
 |------|---------|------|-----------|------|
-| FIPS(Federal Information Processing Standards) 203 | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 (2024-08-13 발행) |
+| FIPS 203 | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 (2024-08-13 발행) |
 | FIPS 204 | ML-DSA(Module-Lattice-Based Digital Signature Algorithm) | 서명 | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
 | FIPS 205 | SLH-DSA(Stateless Hash-Based Digital Signature Algorithm) | 서명(해시 기반) | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
 | FIPS 206 | FN-DSA(FFT over NTRU-Lattice-Based Digital Signature Algorithm) | 서명 | — | 개발 중 (확정 표준 아님) |
@@ -156,7 +158,7 @@ PQC(Post-Quantum Cryptography, 양자내성암호)는 양자 컴퓨터로도 풀
 
 - ML-KEM은 CRYSTALS-Kyber, ML-DSA는 CRYSTALS-Dilithium, SLH-DSA는 SPHINCS+로 알려졌던 방식이다.
 - **ML-KEM = 키 설정**, **ML-DSA·SLH-DSA = 서명**이다. 기능이 다르므로 서로 대체하지 않는다.
-- 상세: ML-KEM과 하이브리드 키 교환 → `key-exchange.md`, ML-DSA·SLH-DSA → `digital-signature.md` (작성 예정).
+- 상세: ML-KEM과 하이브리드 키 교환 → [Key Exchange](key-exchange.md), ML-DSA·SLH-DSA → [Digital Signature](digital-signature.md).
 
 ```mermaid
 flowchart LR
@@ -175,14 +177,14 @@ flowchart LR
 ```
 
 텍스트 설명: 기존 키 설정 기능(RSA 키 전송, ECDH)은 ML-KEM으로, 기존 서명 기능(RSA·ECDSA)은 ML-DSA 또는 SLH-DSA로 교체된다.
-전환 초기에는 기존 방식과 PQC를 함께 쓰는 **하이브리드** 구성이 널리 논의된다(`key-exchange.md`에서 다룬다).
+전환 초기에는 기존 방식과 PQC를 함께 쓰는 **하이브리드** 구성이 널리 논의된다(→ [Key Exchange](key-exchange.md) §3.4).
 
 ### 3.6 다른 영역에서의 사용
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 단말은 홈 네트워크 공개키로 영구 식별자 SUPI(Subscription Permanent Identifier)를 SUCI로 은닉한다. ECIES 기반 보호 방식(Profile A·B)을 사용한다(3GPP(3rd Generation Partnership Project) TS 33.501 Annex C) → [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) |
-| Web | TLS 인증서의 서버 공개키(RSA·ECDSA)로 서버를 인증한다. TLS 1.3은 RSA 키 전송을 제거하고 (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) 키 교환만 쓴다 → `tls-overview.md`(작성 예정) |
+| 5G | 단말은 홈 네트워크 공개키로 영구 식별자 SUPI(Subscription Permanent Identifier)를 SUCI로 은닉한다. ECIES 기반 보호 방식(Profile A: Curve25519/X25519, Profile B: secp256r1)을 사용한다(3GPP TS 33.501 Annex C.3.4.1·C.3.4.2) → [Key Exchange](key-exchange.md) §3.5, [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) |
+| Web | TLS 인증서의 서버 공개키(RSA·ECDSA)로 서버를 인증한다. TLS 1.3(RFC 9846)은 정적 RSA 키 전송을 제거하고 (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) 키 교환을 쓴다. RSA는 서명 용도로 계속 쓰인다 → [Key Exchange](key-exchange.md) §3.2 |
 | PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Identity](../pki-identity/README.md) |
 | Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 비대칭 키 쌍을 생성·보관하고, 개인키를 외부로 내보내지 않은 채 서명·복호화 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) |
 
@@ -203,16 +205,33 @@ flowchart LR
 
 점검 시 확인할 것: 알고리즘·키 길이·패딩(또는 곡선), 공개키 진위 검증 방식, 개인키 보관 위치, 용도별 키 분리, 양자 전환 대상 식별 여부.
 
+## 5. 심화 (Advanced)
+
+> 보안 컨설턴트·점검자를 위한 규격 세부다. 본문만으로 개념 이해에는 충분하다.
+
+### 5.1 보안 강도 대응 (NIST SP 800-57 Part 1 Rev. 5 §5.6.1.1, Table 2)
+
+| 보안 강도 | 대칭키 알고리즘 | RSA 모듈러스 (IFC) | ECC 키 (ECC) |
+|:--------:|:--------------:|:------------------:|:------------:|
+| 112비트 | 3TDEA | 2048 | 224~255 |
+| 128비트 | AES-128 | 3072 | 256~383 |
+| 192비트 | AES-192 | 7680 | 384~511 |
+| 256비트 | AES-256 | 15360 | 512 이상 |
+
+- IFC(Integer Factorization Cryptography)는 RSA처럼 소인수분해에 기반한 방식, ECC는 타원곡선 기반 방식을 말한다.
+- 해시 함수의 보안 강도는 별도 표(§5.6.1.2, Table 3), 여러 알고리즘을 조합했을 때의 실질 강도는 §5.6.2, 강도별 사용 가능 기간은 §5.6.3(Table 4)을 따른다(→ [Key Management](key-management.md) §5.1).
+- 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 §3.4를 따른다.
+
 ## 관련 문서
 
 - 이전: [Symmetric Encryption](symmetric-encryption.md), [Hashing & MAC](hashing-mac.md)
-- 다음(예정): `digital-signature.md`, `key-exchange.md`
+- 다음: [Digital Signature](digital-signature.md), [Key Exchange](key-exchange.md)
 - 신뢰 모델: [PKI & Identity](../pki-identity/README.md)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처
 
 - PQC 표준: NIST, FIPS 203 / FIPS 204 / FIPS 205 (2024-08-13 발행), FIPS 206·HQC 진행 상황.
-- 5G SUCI 보호 방식: 3GPP, TS 33.501 Annex C (세부는 5G 영역 문서에서 다룬다).
-- 보안 강도 대응·권고 키 길이: NIST SP 800-57 계열.
+- 5G SUCI 보호 방식: 3GPP, TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1·C.3.4.2 (세부는 [Key Exchange](key-exchange.md) §5.3).
+- 보안 강도 대응: NIST SP 800-57 Part 1 Rev. 5 (2020-05-04), §5.6.1.1 Table 2. https://doi.org/10.6028/NIST.SP.800-57pt1r5
 - 그 외 내용은 공개키 암호의 일반 원리를 재구성한 해설이다.

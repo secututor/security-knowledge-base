@@ -1,5 +1,7 @@
 # Symmetric Encryption (대칭키 암호)
 
+> 약어: NIST=미국 국립표준기술연구소, FIPS=미국 연방 정보처리 표준, 3GPP=이동통신 표준화 기구
+
 ## 1. 개요 (What)
 
 대칭키 암호(Symmetric-key cryptography)는 **암호화와 복호화에 같은 키를 쓰는 암호 방식**이다.
@@ -8,7 +10,7 @@
 대칭키 암호는 연산이 빨라 **대량 데이터 보호의 실질적인 주력**이다. 디스크·DB(Database) 암호화,
 TLS(Transport Layer Security) 데이터 구간, VPN(Virtual Private Network), 이동통신 무선 구간 암호화가 모두 대칭키 암호로 데이터를 보호한다.
 반면 "키를 어떻게 안전하게 공유하는가(키 배포 문제)"는 대칭키 암호만으로 풀 수 없어,
-공개키 암호·키 교환과 함께 쓰인다(→ `key-exchange.md`, 작성 예정).
+공개키 암호·키 교환과 함께 쓰인다(→ [Key Exchange](key-exchange.md)).
 
 ## 2. 배경 / 원리 (Why & How)
 
@@ -34,7 +36,7 @@ sequenceDiagram
 | 블록 암호 (Block cipher) | 고정 길이 블록 단위로 변환한다. 블록보다 긴 데이터는 **운용 모드**로 처리한다 | AES(Advanced Encryption Standard) |
 | 스트림 암호 (Stream cipher) | 키와 Nonce(Number used once)로 키스트림을 만들어 평문과 XOR(배타적 논리합)한다 | ChaCha20 |
 
-- AES는 블록 크기 128비트, 키 길이 128/192/256비트를 쓰는 블록 암호로, FIPS(Federal Information Processing Standards) 197에 규정되어 있다.
+- AES는 블록 크기 128비트, 키 길이 128/192/256비트를 쓰는 블록 암호로, FIPS 197에 규정되어 있다.
 - 블록 암호도 CTR(Counter) 같은 운용 모드를 쓰면 스트림 암호처럼 동작한다.
 
 ### 2.3 운용 모드 (Mode of operation)
@@ -108,7 +110,7 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 무선·NAS(Non-Access Stratum) 구간 암호화 알고리즘(NEA, NR Encryption Algorithm; NR=New Radio) 중 128-NEA2가 AES-CTR 기반이다. 무결성 알고리즘(NIA, NR Integrity Algorithm)은 별도로 적용된다(3GPP(3rd Generation Partnership Project) TS 33.501 §5.11.1.1) |
+| 5G | 무선·NAS(Non-Access Stratum) 구간 암호화 알고리즘(NEA, NR(New Radio) Encryption Algorithm) 중 128-NEA2가 AES-CTR 기반이다. 무결성 알고리즘(NIA, NR Integrity Algorithm)은 별도로 적용된다(3GPP TS 33.501 §5.11.1.1) |
 | Cloud | 저장 데이터 암호화(봉투 암호화의 데이터 키) → [Data Protection](../../cloud-security/data-protection/README.md) |
 | Web | TLS 1.3 레코드 보호는 AEAD 암호만 사용한다 → `tls-overview.md`(작성 예정) |
 
@@ -137,6 +139,6 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 
 ## 출처
 
-- AES 규격: NIST(National Institute of Standards and Technology), FIPS 197 (2023 개정판).
-- 5G 128-NEA2 = AES-CTR: 3GPP, TS 33.501 Release 18, V18.11.0 §5.11.1.1 (세부는 5G 영역 문서에서 다룬다).
+- AES 규격: NIST, FIPS 197 (2023 개정판).
+- 5G 128-NEA2 = AES-CTR: 3GPP, TS 33.501 V19.7.0 (Release 19) §5.11.1.1 (세부는 5G 영역 문서에서 다룬다).
 - 그 외 내용은 대칭키 암호의 일반 원리를 재구성한 해설이다. 폐기 일정·권고 키 길이 등 구체 수치는 다루지 않았다.

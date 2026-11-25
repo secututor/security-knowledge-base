@@ -1,5 +1,7 @@
 # Hashing & MAC (해시·메시지 인증 코드)
 
+> 약어: NIST=미국 국립표준기술연구소, FIPS=미국 연방 정보처리 표준, 3GPP=이동통신 표준화 기구
+
 ## 1. 개요 (What)
 
 이 문서는 **"데이터가 바뀌지 않았는가, 누가 만들었는가"** 를 확인하는 세 가지 도구를 다룬다.
@@ -32,7 +34,7 @@
 |------|------------------|------|
 | MD5(Message Digest 5) | 사용 금지 | 실용적 충돌 공격 공개 |
 | SHA(Secure Hash Algorithm)-1 | 사용 금지(서명 용도) | 실용적 충돌 사례 공개 |
-| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | FIPS(Federal Information Processing Standards) 180-4 |
+| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | FIPS 180-4 |
 | SHA-3 (SHA3-256 등, SHAKE) | 현행 | FIPS 202. SHA-2와 다른 스펀지(Sponge) 구조 |
 
 > SHA-3는 SHA-2가 깨져서 만든 대체재가 아니라, **구조가 다른 예비 표준**이다. SHA-2는 현재도 현행이다.
@@ -76,7 +78,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 | 부인방지 | 불가 (양쪽 다 태그 생성 가능) | 가능 |
 | 속도 | 빠름 | 상대적으로 느림 |
 
-→ 서명은 `digital-signature.md`(작성 예정)에서 다룬다.
+→ 서명은 [Digital Signature](digital-signature.md)에서 다룬다.
 
 ### 3.2 KDF — 키 파생
 
@@ -107,7 +109,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 키 계층의 각 키는 상위 키에서 KDF로 파생된다. 범용 KDF는 HMAC-SHA-256 기반이며(3GPP(3rd Generation Partnership Project) TS 33.220 Annex B), 5G 키별 입력 파라미터와 FC(Function Code) 값은 TS 33.501 Annex A가 정의한다. 즉 모든 키가 "같은 연산"으로 나오는 것이 아니라 **키마다 입력 구성이 달라 서로 다른 키가 파생**된다. NAS(Non-Access Stratum)·RRC(Radio Resource Control) 메시지 무결성은 NIA(NR Integrity Algorithm; NR=New Radio) 알고리즘이 담당하며 128-NIA2는 AES-CMAC 기반이다(TS 33.501 §5.11.1.2) → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md) |
+| 5G | 키 계층의 각 키는 상위 키에서 KDF로 파생된다. 범용 KDF는 HMAC-SHA-256 기반이며(3GPP TS 33.220 Annex B), 5G 키별 입력 파라미터와 FC(Function Code) 값은 TS 33.501 Annex A가 정의한다. 즉 모든 키가 "같은 연산"으로 나오는 것이 아니라 **키마다 입력 구성이 달라 서로 다른 키가 파생**된다. NAS(Non-Access Stratum)·RRC(Radio Resource Control) 메시지 무결성은 NIA(NR(New Radio) Integrity Algorithm) 알고리즘이 담당하며 128-NIA2는 AES-CMAC 기반이다(TS 33.501 §5.11.1.2) → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md) |
 | Web | 세션 토큰·JWT(JSON Web Token)의 HMAC 서명(HS256 등), 패스워드 저장 → [Web & Application Security](../web-app-security/README.md) |
 | Cloud | 객체 무결성 검사(체크섬), API(Application Programming Interface) 요청 서명(HMAC 기반) → [Cloud Security](../../cloud-security/README.md) |
 | 공급망 | 배포 파일 해시 게시 — 해시만으로는 게시처가 변조되면 무의미하므로 서명과 함께 쓴다 |
@@ -130,12 +132,12 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 - 이전: [Cryptography Overview](cryptography-overview.md)
 - 함께 읽기: [Symmetric Encryption](symmetric-encryption.md)
-- 다음(예정): `digital-signature.md`
+- 다음: [Digital Signature](digital-signature.md)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처
 
-- SHA-2: NIST(National Institute of Standards and Technology), FIPS 180-4 / SHA-3: NIST, FIPS 202.
-- 5G 128-NIA2 = AES-CMAC: 3GPP, TS 33.501 Release 18, V18.11.0 §5.11.1.2 / 5G 키 파생 입력 구성: TS 33.501 Annex A /
+- SHA-2: NIST, FIPS 180-4 / SHA-3: NIST, FIPS 202.
+- 5G 128-NIA2 = AES-CMAC: 3GPP, TS 33.501 V19.7.0 (Release 19) §5.11.1.2 / 5G 키 파생 입력 구성: TS 33.501 Annex A /
   범용 KDF(HMAC-SHA-256): TS 33.220 Annex B (세부는 5G 영역 문서에서 다룬다).
 - 그 외 내용은 해시·MAC·KDF의 일반 원리를 재구성한 해설이다. 패스워드 해시 파라미터 등 구체 수치는 다루지 않았다.
