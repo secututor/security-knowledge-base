@@ -9,6 +9,7 @@
     * [Cryptography Overview](security-fundamentals/cryptography/cryptography-overview.md)
     * [Symmetric Encryption](security-fundamentals/cryptography/symmetric-encryption.md)
     * [Hashing & MAC](security-fundamentals/cryptography/hashing-mac.md)
+    * [Asymmetric Encryption](security-fundamentals/cryptography/asymmetric-encryption.md)
   * [PKI & Identity](security-fundamentals/pki-identity/README.md)
   * [Access Control](security-fundamentals/access-control/README.md)
   * [Threat Modeling](security-fundamentals/threat-modeling/README.md)

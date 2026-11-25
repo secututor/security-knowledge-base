@@ -132,7 +132,7 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 
 - 이전: [Cryptography Overview](cryptography-overview.md)
 - 함께 읽기: [Hashing & MAC](hashing-mac.md)
-- 다음(예정): `asymmetric-encryption.md`
+- 다음: [Asymmetric Encryption](asymmetric-encryption.md)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처
