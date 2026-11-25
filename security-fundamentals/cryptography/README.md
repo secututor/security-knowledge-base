@@ -22,7 +22,7 @@
 
 앞 문서가 뒤 문서의 선수 지식이 되도록 구성했다.
 
-> **표시 방식 테스트 중**: 같은 그림을 세 가지 방식으로 넣었다. GitBook·GitHub에서 크기와 확대 동작을 비교한 뒤 하나만 남긴다.
+> **표시 방식 테스트 중**: 같은 그림을 여러 방식으로 넣었다. GitBook·GitHub에서 크기를 비교한 뒤 하나만 남긴다.
 
 ### 방식 A — Mermaid (가로 배치, 기존)
 
@@ -39,6 +39,43 @@ flowchart LR
     E --> H["08 tls-overview"]
     F --> H
     G --> I["09 applications"]
+    H --> I
+```
+
+### 방식 A-1 — Mermaid 가로 (짧은 두 줄 라벨)
+
+```mermaid
+flowchart LR
+    A["01<br>개요"] --> B["02<br>대칭키"]
+    A --> C["03<br>해시·MAC"]
+    B --> D["04<br>공개키"]
+    C --> E["05<br>서명"]
+    D --> E
+    D --> F["06<br>키 교환"]
+    E --> G["07<br>키 관리"]
+    F --> G
+    E --> H["08<br>TLS"]
+    F --> H
+    G --> I["09<br>적용"]
+    H --> I
+```
+
+### 방식 A-2 — Mermaid 가로 (짧은 라벨 + 글자 확대·간격 축소)
+
+```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+flowchart LR
+    A["01<br>개요"] --> B["02<br>대칭키"]
+    A --> C["03<br>해시·MAC"]
+    B --> D["04<br>공개키"]
+    C --> E["05<br>서명"]
+    D --> E
+    D --> F["06<br>키 교환"]
+    E --> G["07<br>키 관리"]
+    F --> G
+    E --> H["08<br>TLS"]
+    F --> H
+    G --> I["09<br>적용"]
     H --> I
 ```
 
