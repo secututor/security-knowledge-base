@@ -15,8 +15,8 @@
 | 코드 | 하위 영역 | 다루는 내용 |
 |------|-----------|-------------|
 | 01 | **[Cryptography](cryptography/README.md)** | 대칭·비대칭 암호, 해시, 서명, 키교환, TLS |
-| 02 | **[PKI & Identity](pki-identity/README.md)** | PKI·인증서·CA, Authentication, OAuth, OIDC |
-| 03 | **[Access Control](access-control/README.md)** | RBAC·ABAC·DAC·MAC, Least Privilege |
+| 02 | **[PKI & Identity](pki-identity/README.md)** | PKI·인증서, 인증 방식(MFA·FIDO2·Passkey), OAuth·OIDC·JWT, SAML·Kerberos, 워크로드 신원, 인증 공격 |
+| 03 | **[Access Control](access-control/README.md)** | RBAC·ABAC·ReBAC·DAC·MAC, 정책 엔진(OPA·Cedar), Least Privilege, PAM |
 | 04 | **[Threat Modeling](threat-modeling/README.md)** | STRIDE, Attack Tree, Risk Assessment |
 | 05 | **[Security Architecture](security-architecture/README.md)** | Zero Trust, Defense in Depth, Secure by Design |
 | 06 | **[Secure Development](secure-development/README.md)** | SSDLC, Secure Coding, SAST/DAST/SCA |
