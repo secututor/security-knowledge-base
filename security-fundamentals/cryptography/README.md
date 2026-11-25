@@ -22,46 +22,6 @@
 
 앞 문서가 뒤 문서의 선수 지식이 되도록 구성했다.
 
-> **표시 방식 테스트 중**: 같은 그림을 여러 방식으로 넣었다. GitBook·GitHub에서 크기를 비교한 뒤 하나만 남긴다.
-
-### 방식 A — Mermaid (가로 배치, 기존)
-
-```mermaid
-flowchart LR
-    A["01 overview"] --> B["02 symmetric"]
-    A --> C["03 hashing-mac"]
-    B --> D["04 asymmetric"]
-    C --> E["05 digital-signature"]
-    D --> E
-    D --> F["06 key-exchange"]
-    E --> G["07 key-management"]
-    F --> G
-    E --> H["08 tls-overview"]
-    F --> H
-    G --> I["09 applications"]
-    H --> I
-```
-
-### 방식 A-1 — Mermaid 가로 (짧은 두 줄 라벨)
-
-```mermaid
-flowchart LR
-    A["01<br>개요"] --> B["02<br>대칭키"]
-    A --> C["03<br>해시·MAC"]
-    B --> D["04<br>공개키"]
-    C --> E["05<br>서명"]
-    D --> E
-    D --> F["06<br>키 교환"]
-    E --> G["07<br>키 관리"]
-    F --> G
-    E --> H["08<br>TLS"]
-    F --> H
-    G --> I["09<br>적용"]
-    H --> I
-```
-
-### 방식 A-2 — Mermaid 가로 (짧은 라벨 + 글자 확대·간격 축소)
-
 ```mermaid
 %%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
@@ -79,31 +39,8 @@ flowchart LR
     H --> I
 ```
 
-### 방식 B — Mermaid (세로 배치)
-
-```mermaid
-flowchart TD
-    A["01 overview"] --> B["02 symmetric"]
-    A --> C["03 hashing-mac"]
-    B --> D["04 asymmetric"]
-    C --> E["05 digital-signature"]
-    D --> E
-    D --> F["06 key-exchange"]
-    E --> G["07 key-management"]
-    F --> G
-    E --> H["08 tls-overview"]
-    F --> H
-    G --> I["09 in-practice"]
-    H --> I
-```
-
-### 방식 C — SVG
-
-![Cryptography 문서 의존 관계도](../../.gitbook/assets/security-fundamentals_cryptography_dependency_map.svg)
-
 텍스트 설명: overview에서 목적을 정의한 뒤, 대칭키와 해시를 먼저 다룬다. 공개키는 대칭키 한계에서 출발하고,
 서명은 공개키와 해시를 결합한다. 키 교환·서명·키 관리가 갖춰져야 TLS와 도메인 적용을 설명할 수 있다.
-(방식 C 그림에서 실선 상자는 작성 완료, 점선 상자는 작성 예정 문서다.)
 
 ---
 
