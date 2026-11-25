@@ -18,7 +18,7 @@ AI 보안 문서가 인용하는 표준·기관·프레임워크의 **정의집*
 | ISO-42001 | ISO/IEC 42001 | 2023 | released (유료) | https://www.iso.org/standard/81230.html |
 | EU-AI-ACT | EU AI Act | — | released | https://eur-lex.europa.eu/eli/reg/2024/1689/oj |
 
-> 확인일 2026-11-12 (공식 페이지 확인값). "확인 예정" 항목은 확정 후 버전을 채운다.
+> 공식 페이지 확인값. "확인 예정" 항목은 확정 후 버전을 채운다.
 
 ## 세부 정의 문서
 

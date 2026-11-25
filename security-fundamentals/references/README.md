@@ -32,5 +32,5 @@
 
 - NIST CSRC Publications: https://csrc.nist.gov/publications
 
-> **확인 출처/일자**: 위 NIST 문서의 개정 상태는 사용자가 공식 페이지(CSRC 등)에서 확인해 제공한 값
-> (확인일 2026-11-12). SP 800-218은 본문에서는 번호 중심으로 쓰되, v1.1 Final / v1.2 Draft를 구분한다.
+> **확인 출처**: 위 NIST 문서의 개정 상태는 사용자가 공식 페이지(CSRC 등)에서 확인해 제공한 값이다.
+> SP 800-218은 본문에서는 번호 중심으로 쓰되, v1.1 Final / v1.2 Draft를 구분한다.
