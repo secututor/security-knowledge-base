@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-label="5G 키 계층 구조: K에서 CK/IK, K_AUSF, K_SEAF, K_AMF를 거쳐 NAS/gNB/AS 키까지 파생되는 트리">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 10 520 545" role="img" aria-label="5G 키 계층 구조: K에서 CK/IK, K_AUSF, K_SEAF, K_AMF를 거쳐 NAS/gNB/AS 키까지 파생되는 트리">
   <title>5G Key Hierarchy</title>
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -8,8 +8,8 @@
       .box   { fill:#e8f0fe; stroke:#1a73e8; stroke-width:1.5; }
       .box2  { fill:#e6f4ea; stroke:#188038; stroke-width:1.5; }
       .box3  { fill:#fef7e0; stroke:#e37400; stroke-width:1.5; }
-      .lbl   { font-family:Segoe UI, Arial, sans-serif; font-size:14px; fill:#202124; text-anchor:middle; }
-      .sub   { font-family:Segoe UI, Arial, sans-serif; font-size:11px; fill:#5f6368; text-anchor:middle; }
+      .lbl   { font-family:Segoe UI, Arial, sans-serif; font-size:17px; fill:#202124; text-anchor:middle; }
+      .sub   { font-family:Segoe UI, Arial, sans-serif; font-size:13px; fill:#5f6368; text-anchor:middle; }
       .edge  { stroke:#5f6368; stroke-width:1.4; fill:none; marker-end:url(#arrow); }
     </style>
   </defs>
@@ -36,7 +36,7 @@
   <text class="lbl" x="380" y="369">K_AMF</text>
 
   <!-- Level 5: NAS keys (left), K_gNB (right) -->
-  <rect class="box2" x="150" y="424" width="120" height="40" rx="6"/>
+  <rect class="box2" x="135" y="424" width="150" height="40" rx="6"/>
   <text class="lbl" x="210" y="449">K_NASint / enc</text>
 
   <rect class="box3" x="490" y="424" width="110" height="40" rx="6"/>

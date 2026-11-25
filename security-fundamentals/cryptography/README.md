@@ -60,11 +60,9 @@ flowchart TD
     H --> I
 ```
 
-### 방식 C — SVG + 크게 보기
+### 방식 C — SVG
 
 ![Cryptography 문서 의존 관계도](../../.gitbook/assets/cryptography_doc_dependency.svg)
-
-[크게 보기 (SVG 원본 열기)](../../.gitbook/assets/cryptography_doc_dependency.svg)
 
 텍스트 설명: overview에서 목적을 정의한 뒤, 대칭키와 해시를 먼저 다룬다. 공개키는 대칭키 한계에서 출발하고,
 서명은 공개키와 해시를 결합한다. 키 교환·서명·키 관리가 갖춰져야 TLS와 도메인 적용을 설명할 수 있다.
