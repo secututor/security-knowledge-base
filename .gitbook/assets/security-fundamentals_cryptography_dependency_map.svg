@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="75 10 490 630" role="img" aria-label="Cryptography 문서 간 의존 관계도">
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="1260" viewBox="75 10 490 630" role="img" aria-label="Cryptography 문서 간 의존 관계도">
   <title>Cryptography 문서 간 의존 관계</title>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
@@ -7,10 +7,10 @@
     <style>
       .done { fill: #e8f0fe; stroke: #1a73e8; stroke-width: 2; }
       .todo { fill: #f3f4f6; stroke: #6b7280; stroke-width: 2; stroke-dasharray: 6 4; }
-      .t1 { font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #111827; text-anchor: middle; }
-      .t2 { font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif; font-size: 13px; fill: #374151; text-anchor: middle; }
+      .t1 { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 600; fill: #111827; text-anchor: middle; }
+      .t2 { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #374151; text-anchor: middle; }
       .edge { stroke: #6b7280; stroke-width: 2; fill: none; marker-end: url(#arrow); }
-      .lg { font-family: "Segoe UI", "Malgun Gothic", Arial, sans-serif; font-size: 13px; fill: #6b7280; }
+      .lg { font-family: Segoe UI, Arial, sans-serif; font-size: 13px; fill: #6b7280; }
     </style>
   </defs>
 

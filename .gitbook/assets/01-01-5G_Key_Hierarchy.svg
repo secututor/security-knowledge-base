@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 10 520 545" role="img" aria-label="5G 키 계층 구조: K에서 CK/IK, K_AUSF, K_SEAF, K_AMF를 거쳐 NAS/gNB/AS 키까지 파생되는 트리">
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="1090" viewBox="120 10 520 545" role="img" aria-label="5G 키 계층 구조: K에서 CK/IK, K_AUSF, K_SEAF, K_AMF를 거쳐 NAS/gNB/AS 키까지 파생되는 트리">
   <title>5G Key Hierarchy</title>
   <defs>
     <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
