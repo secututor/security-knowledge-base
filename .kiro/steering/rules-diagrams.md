@@ -107,7 +107,7 @@ Mermaid로 표현이 어려운 경우에만 사용한다.
 .gitbook/assets/{설명적-파일명}.svg
 ```
 ```markdown
-![5G 키 계층 구조](../../.gitbook/assets/01-01-5G_Key_Hierarchy.svg)
+![그림 설명](../../.gitbook/assets/{문서파일명}_{설명}.svg)
 ```
 - 위치: `.gitbook/assets/` (GitBook 웹 에디터 업로드 기본 경로와 동일 → 직접 작성본과 업로드본 통합 관리)
 - 참조 경로는 문서 위치 기준 상대경로. 문서가 깊을수록 `../`를 더 붙인다.

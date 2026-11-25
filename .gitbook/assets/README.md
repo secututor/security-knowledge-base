@@ -12,7 +12,7 @@ GitHub 동기화 환경에서 직접 작성한 SVG와 웹 업로드본이 한 �
 - SVG는 `viewBox` 명시, 텍스트는 `<text>` 요소로(이미지로 굽지 않음), 대비 확보.
 - 문서에서 참조 시 상대경로 사용. 예(`5g-security/fundamentals/` 문서 기준):
   ```markdown
-  ![5G 키 계층 구조](../../.gitbook/assets/01-01-5G_Key_Hierarchy.svg)
+  ![그림 설명](../../.gitbook/assets/{문서파일명}_{설명}.svg)
   ```
 - 외부 문서의 그림/로고를 그대로 복사해 넣지 않는다 (§6.4 저작권 규칙).
 

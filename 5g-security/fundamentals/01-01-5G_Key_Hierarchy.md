@@ -3,8 +3,6 @@
 5G-AKA 인증 이후 UE와 네트워크가 공유하는 키가 어떻게 파생되는지를 나타낸 키 계층 구조다.
 루트 키 `K`(USIM과 홈망이 공유)에서 시작해 단계적으로 하위 키가 유도되며, 각 키는 서로 다른 보호 범위(NAS, AS 등)를 담당한다.
 
-같은 구조를 (1) Mermaid, (2) SVG 두 가지 그림으로 보여준다.
-
 ## 파생 흐름
 
 ```
@@ -12,26 +10,22 @@ K → CK/IK → K_AUSF → K_SEAF → K_AMF ┬→ K_NASint / K_NASenc
                                     └→ K_gNB → K_RRCint / K_RRCenc / K_UPint / K_UPenc
 ```
 
-## 방식 1: Mermaid (기본 권장)
-
-텍스트 기반이라 수정·버전관리가 쉽다. 대부분의 계층/흐름은 이걸로 충분하다.
+## 키 계층 그림
 
 ```mermaid
-flowchart TD
-    K["K (USIM/홈망 공유 키)"] --> CKIK["CK / IK"]
+%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+flowchart LR
+    K["K<br>루트 키"] --> CKIK["CK / IK"]
     CKIK --> KAUSF["K_AUSF"]
     KAUSF --> KSEAF["K_SEAF"]
     KSEAF --> KAMF["K_AMF"]
-    KAMF --> NAS["K_NASint / K_NASenc"]
+    KAMF --> NAS["K_NASint<br>K_NASenc"]
     KAMF --> KGNB["K_gNB"]
-    KGNB --> AS["K_RRCint / K_RRCenc / K_UPint / K_UPenc"]
+    KGNB --> AS["K_RRCint / enc<br>K_UPint / enc"]
 ```
 
-## 방식 2: SVG (정교한 정형 그림)
-
-Mermaid로 세밀한 배치가 어려운 그림은 SVG로 그린다.
-
-![5G 키 계층 구조](../../.gitbook/assets/01-01-5G_Key_Hierarchy.svg)
+텍스트 설명: 루트 키 K에서 CK/IK, K_AUSF, K_SEAF, K_AMF 순으로 파생된다. K_AMF에서 NAS 보호 키와 기지국용 K_gNB가 나뉘고,
+K_gNB에서 다시 RRC·사용자 평면 보호 키가 파생된다.
 
 ## 설명
 
