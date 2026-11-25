@@ -66,7 +66,12 @@
   - Fundamentals: NIST SP 800-207(2020), 800-63-**4**(2025), 800-218(v1.1 Final/v1.2 Draft),
     FIPS 197(2023)/180-4/186-5(2023)/202, FIPS 203/204/205(2024-08-13), FIPS 206 개발 중, HQC 2025-03 선정
   - 5G: TS 33.501 **V19.7.0 (Release 19)로 전체 통일** (128-NEA2=AES-CTR §5.11.1.1, 128-NIA2=AES-CMAC §5.11.1.2, KDF 입력 Annex A,
-    SBA 토큰 §13.4.1.0, SUCI Annex C.3.4.1/C.3.4.2, 키 계층 §6.2), TS 33.220 Annex B(범용 KDF, 현행판 확인 예정)
+    SBA 토큰 §13.4.1.0, SUCI Annex C.3.4.1/C.3.4.2, 키 계층 §6.2), TS 33.220 V19.1.0 (Release 19) Annex B(범용 KDF)
+  - 원문 대조 대기: TS 33.501 V19.7.0의 §13.4.1.0 / Annex C.3.4.x / §5.11.1.x / Annex A (Rel-18 기준으로만 대조됨,
+    Rel-20 V20.3.0과 혼용 금지), TS 33.220 V19.1.0 Annex B. 공개 문서에는 "원문 조항 대조 확인 예정"으로 표시 중.
+  - PKI 표준 상태(외부 검증값): CTAP 2.3 PS(2026-02-26)·2.3.1 WD, SPIFFE 사양군(단일 버전 없음), DID 1.0 Rec / 1.1 CR Snapshot,
+    VC DM 2.0 Rec(2025-05-15), RFC 8725 유효 + rfc8725bis-10 I-D.
+  - 재확인 필요: VC JOSE/COSE Rec 발행일(외부 리뷰 2026-10-13 vs 2025-05 Rec 가능성), IETF SD-JWT·SD-JWT VC 지위(RFC 발행 여부).
   - "확인 예정": OWASP ML Top 10, MITRE ATLAS, ATT&CK Cloud, ISO 27018, ISMS-P 고시.
 
 ## 4. 환경·작업 규칙 (중요)
