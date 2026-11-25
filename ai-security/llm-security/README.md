@@ -18,4 +18,4 @@ Unbounded Consumption + 심화(RAG/Agent/MCP Security).
 
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_아직 문서가 준비 중입니다._

@@ -3,8 +3,7 @@
 5G-AKA 인증 이후 UE와 네트워크가 공유하는 키가 어떻게 파생되는지를 나타낸 키 계층 구조다.
 루트 키 `K`(USIM과 홈망이 공유)에서 시작해 단계적으로 하위 키가 유도되며, 각 키는 서로 다른 보호 범위(NAS, AS 등)를 담당한다.
 
-이 문서는 **다이어그램 표현 방식 데모**를 겸한다. 같은 구조를 (1) Mermaid, (2) SVG 두 방식으로 보여준다.
-(작성 규칙: `.kiro/steering/rules-diagrams.md`)
+같은 구조를 (1) Mermaid, (2) SVG 두 가지 그림으로 보여준다.
 
 ## 파생 흐름
 
@@ -30,7 +29,7 @@ flowchart TD
 
 ## 방식 2: SVG (정교한 정형 그림)
 
-Mermaid로 세밀한 배치가 어려울 때 사용한다. `.gitbook/assets/`에 두고 상대경로로 참조한다.
+Mermaid로 세밀한 배치가 어려운 그림은 SVG로 그린다.
 
 ![5G 키 계층 구조](../../.gitbook/assets/01-01-5G_Key_Hierarchy.svg)
 

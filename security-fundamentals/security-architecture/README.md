@@ -7,8 +7,8 @@
 - Defense in Depth(심층 방어)
 - Secure by Design, 최소 공격 표면
 
-> 콘텐츠 타입: `concept`. Cloud(Zero Trust 적용), 5G(SBA 신뢰 모델), AI 인프라 설계와 교차 참조한다.
+> Cloud(Zero Trust 적용), 5G(SBA 신뢰 모델), AI 인프라 설계와도 연결된다.
 
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_아직 문서가 준비 중입니다._

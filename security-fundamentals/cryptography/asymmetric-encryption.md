@@ -127,7 +127,7 @@ sequenceDiagram
 | 약 128비트 | 약 3072비트 | 약 256비트 |
 
 - RSA는 강도를 올릴수록 키가 급격히 길어지고, ECC는 완만하게 늘어난다.
-- 권고 최소 길이와 사용 기한은 기관 표준(NIST(National Institute of Standards and Technology) SP(Special Publication) 800-57 등)을 따른다. 세부 수치는 `key-management.md` 작성 시 공식 출처로 확인해 기재한다.
+- 권고 최소 길이와 사용 기한은 기관 표준(NIST(National Institute of Standards and Technology) SP(Special Publication) 800-57 등)을 따른다. 세부 수치는 키 관리 문서(`key-management.md`, 작성 예정)에서 다룬다.
 
 ### 3.4 양자 컴퓨터의 영향
 
@@ -212,7 +212,7 @@ flowchart LR
 
 ## 출처
 
-- PQC 표준: NIST, FIPS 203 / FIPS 204 / FIPS 205 (2024-08-13 발행), FIPS 206·HQC 진행 상황 (사용자 확인값).
+- PQC 표준: NIST, FIPS 203 / FIPS 204 / FIPS 205 (2024-08-13 발행), FIPS 206·HQC 진행 상황.
 - 5G SUCI 보호 방식: 3GPP, TS 33.501 Annex C (세부는 5G 영역 문서에서 다룬다).
-- 보안 강도 대응·권고 키 길이: NIST SP 800-57 계열 (확인 예정).
+- 보안 강도 대응·권고 키 길이: NIST SP 800-57 계열.
 - 그 외 내용은 공개키 암호의 일반 원리를 재구성한 해설이다.

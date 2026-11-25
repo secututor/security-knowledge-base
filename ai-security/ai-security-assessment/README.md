@@ -9,9 +9,8 @@ AI 시스템을 실제로 **점검·평가·검증**하는 방법을 다루는 �
 - AI Security Checklist
 - AI Security Assessment Report (보고서 양식)
 
-> 콘텐츠 타입: `assessment` (rules-authoring §3.4 점검 템플릿). 각 점검 항목은 대응하는
-> 위협 문서·참조와 상호 링크한다.
+> 각 점검 항목은 대응하는 위협 문서·참조와 링크로 연결된다.
 
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_아직 문서가 준비 중입니다._

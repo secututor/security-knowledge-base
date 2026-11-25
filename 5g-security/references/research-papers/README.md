@@ -39,5 +39,4 @@
 - Google Scholar: `https://scholar.google.com` — 검색어 예: `"False Base Station" "5G"`, 논문 제목 직접 검색
 - 논문마다 DOI/게재지가 다르므로, 확정된 서지정보(저자, 게재지, 연도, DOI)는 실제 원문 확인 후 각 이슈 문서 또는 이 표에 보강한다.
 
-> 주의: 위 서지정보는 마스터 데이터(`subject/5G_Security.md`) 기준이다.
-> 저자·DOI 등 상세 서지는 원문 확인 전까지 임의로 채우지 않는다 (환각 금지).
+> 저자·DOI(Digital Object Identifier) 등 상세 서지정보는 원문 확인 후 추가될 예정이다.

@@ -88,5 +88,4 @@
   - 팁: `33 series`(Security) 폴더에서 33.501, 33.809 등 핵심 보안 규격 확인
 - O-RAN Alliance 규격: O-RAN Alliance 공식 사이트의 Specifications
 
-> 표준 번호/제목은 마스터 데이터(`subject/5G_Security.md`, `subject/subject-list.md`) 기준이다.
 > 버전(Release)은 시점에 따라 다르므로, 정확한 버전이 필요하면 3GPP 검색으로 최신 버전을 확인한다.

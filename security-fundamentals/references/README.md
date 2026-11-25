@@ -3,9 +3,8 @@
 일반 보안 기초 문서가 인용하는 공통 표준의 **정의집**입니다.
 도메인별 references(5G/AI/Cloud)와 달리 경량이며, 공통으로 쓰이는 NIST SP·FIPS·OWASP를 둡니다.
 
-> 운영 원칙: 문서번호 + 공식 DOI 링크를 기본으로 기록한다. Revision/Version은 **공식 페이지에서
-> 확인된 경우에만** 추가하고, Final과 Draft를 구분한다. 개정 여부가 불명확하면 버전을 생략한다.
-> 새 참조를 임의로 만들지 않는다(환각 금지, rules-authoring §3.3·§6).
+> 각 문서는 문서번호와 공식 DOI(Digital Object Identifier) 링크로 표기한다. Revision/Version은 공식 페이지에서
+> 확인된 경우에만 적고, Final과 Draft를 구분한다.
 
 ## NIST Special Publications
 
@@ -26,11 +25,10 @@
 
 ## OWASP
 
-- 웹·API·개발 보안 → `../web-app-security/owasp/README.md` 참조.
+- 웹·API·개발 보안 → [OWASP](../web-app-security/owasp/README.md) 참조.
 
 ## Official Publication Catalogs
 
 - NIST CSRC Publications: https://csrc.nist.gov/publications
 
-> **확인 출처**: 위 NIST 문서의 개정 상태는 사용자가 공식 페이지(CSRC 등)에서 확인해 제공한 값이다.
-> SP 800-218은 본문에서는 번호 중심으로 쓰되, v1.1 Final / v1.2 Draft를 구분한다.
+> 각 상태는 공식 페이지(CSRC 등)에서 확인할 수 있다. SP 800-218은 v1.1 Final과 v1.2 Draft를 구분한다.

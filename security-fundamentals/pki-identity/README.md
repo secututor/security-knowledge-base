@@ -8,10 +8,10 @@
 - OIDC — OAuth 2.0 기반 **인증 계층**
 - 연합 신원(Federation), SSO, MFA
 
-> **구분 주의**: Authentication(인증) ≠ Authorization(인가, → `../access-control/`).
-> OAuth(권한 위임) ≠ OIDC(인증 계층). 콘텐츠 타입: `concept`.
-> Cloud IAM, 5G 인증(5G-AKA)과 교차 참조한다.
+> **구분 주의**: Authentication(인증) ≠ Authorization(인가, → [Access Control](../access-control/README.md)).
+> OAuth(권한 위임) ≠ OIDC(인증 계층).
+> Cloud IAM, 5G 인증(5G-AKA)과도 연결된다.
 
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_아직 문서가 준비 중입니다._

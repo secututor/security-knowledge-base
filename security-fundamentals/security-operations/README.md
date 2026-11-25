@@ -9,9 +9,9 @@
 - Incident Response 기초 (NIST IR 생명주기)
 - Blue Team / SOC 개념
 
-> **중복 경계**: 클라우드 특화 운영은 `cloud-security/cloud-security-operations/`에 둔다.
-> 이 영역은 그 공통 기반(개념)만 제공하고 각 도메인이 참조한다. 콘텐츠 타입: `concept`.
+> 클라우드 특화 운영은 [Cloud Security Operations](../../cloud-security/cloud-security-operations/README.md)에서 다룬다.
+> 이 영역은 도메인에 공통인 기본 개념을 다룬다.
 
 ## 문서 목록
 
-_아직 문서가 준비 중입니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_아직 문서가 준비 중입니다._

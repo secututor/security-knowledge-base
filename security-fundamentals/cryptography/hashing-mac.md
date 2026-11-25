@@ -32,8 +32,8 @@
 |------|------------------|------|
 | MD5(Message Digest 5) | 사용 금지 | 실용적 충돌 공격 공개 |
 | SHA(Secure Hash Algorithm)-1 | 사용 금지(서명 용도) | 실용적 충돌 사례 공개 |
-| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | FIPS(Federal Information Processing Standards) 180-4 (사용자 확인값) |
-| SHA-3 (SHA3-256 등, SHAKE) | 현행 | FIPS 202 (사용자 확인값). SHA-2와 다른 스펀지(Sponge) 구조 |
+| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | FIPS(Federal Information Processing Standards) 180-4 |
+| SHA-3 (SHA3-256 등, SHAKE) | 현행 | FIPS 202. SHA-2와 다른 스펀지(Sponge) 구조 |
 
 > SHA-3는 SHA-2가 깨져서 만든 대체재가 아니라, **구조가 다른 예비 표준**이다. SHA-2는 현재도 현행이다.
 
@@ -101,7 +101,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 | **느린 패스워드 해시 + 고유 Salt** (Argon2, scrypt, PBKDF2 등) | 권장 방향. 작업 계수(work factor)로 공격 비용을 높인다 |
 
 - Salt는 사용자마다 다른 랜덤 값이며 비밀이 아니다. 같은 패스워드라도 해시값을 다르게 만든다.
-- 구체 파라미터(반복 횟수, 메모리 크기 등) 권고치는 공식 출처 확인 후 기재한다.
+- 구체 파라미터(반복 횟수, 메모리 크기 등)는 사용하는 표준·라이브러리의 현행 권고를 따른다.
 
 ### 3.4 다른 영역에서의 사용
 
@@ -135,7 +135,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 ## 출처
 
-- SHA-2: NIST(National Institute of Standards and Technology), FIPS 180-4 / SHA-3: NIST, FIPS 202 (사용자 확인값).
+- SHA-2: NIST(National Institute of Standards and Technology), FIPS 180-4 / SHA-3: NIST, FIPS 202.
 - 5G 128-NIA2 = AES-CMAC: 3GPP, TS 33.501 Release 18, V18.11.0 §5.11.1.2 / 5G 키 파생 입력 구성: TS 33.501 Annex A /
-  범용 KDF(HMAC-SHA-256): TS 33.220 Annex B (사용자 확인값. TS 33.220 인용 릴리스는 5G 영역 문서 작성 시 현행판으로 재확인).
-- 그 외 내용은 해시·MAC·KDF의 일반 원리를 재구성한 해설이다. 패스워드 해시 파라미터 등 수치는 공식 출처 확인 후 보완한다.
+  범용 KDF(HMAC-SHA-256): TS 33.220 Annex B (세부는 5G 영역 문서에서 다룬다).
+- 그 외 내용은 해시·MAC·KDF의 일반 원리를 재구성한 해설이다. 패스워드 해시 파라미터 등 구체 수치는 다루지 않았다.

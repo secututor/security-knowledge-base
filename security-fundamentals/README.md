@@ -3,10 +3,10 @@
 5G·AI·Cloud에 국한되지 않는 **일반 보안 지식**을 다루는 영역입니다.
 암호학, PKI·신원, 접근통제, 위협 모델링, 보안 아키텍처 등 **모든 보안 도메인의 공통 이론**을 정리합니다.
 
-> 이 영역은 특정 취약점 카탈로그가 아니라 **전체 Security Knowledge Base의 공통 지식 계층**입니다.
-> 공통 개념의 **원본은 이곳에 두고**, 5G·AI·Cloud 등 각 도메인 문서는 여기를 **교차 참조**합니다.
-> (예: 5G SUCI/키 계층 → `cryptography`, Cloud IAM → `access-control`·`pki-identity`,
-> AI 앱 보안 → `web-app-security`)
+> 이 영역은 특정 취약점 카탈로그가 아니라 **전체 Security Knowledge Base의 공통 지식**입니다.
+> 5G·AI·Cloud 등 각 영역 문서는 여기서 설명한 개념을 링크로 활용합니다.
+> (예: 5G SUCI/키 계층 → [Cryptography](cryptography/README.md), Cloud IAM → [Access Control](access-control/README.md)·[PKI & Identity](pki-identity/README.md),
+> AI 앱 보안 → [Web & Application Security](web-app-security/README.md))
 
 ---
 
@@ -28,33 +28,23 @@
 > PKI(인증서 기반 신뢰·공개키 관리) / Access Control(자원 접근 통제 모델)은 서로 다른 개념이다.
 > OAuth 2.0은 **권한 위임** 프레임워크, OIDC는 OAuth 2.0 기반 **인증 계층**이다.
 
-### Security Operations 중복 경계 (중요)
-- `security-fundamentals/security-operations/` = **벤더·도메인 중립의 공통 개념만**
+### Security Operations 범위
+- [Security Operations](security-operations/README.md) = **벤더·도메인 중립의 공통 개념**
   (로깅이란 무엇인가, SIEM 개념, 탐지·IR 기초 사이클 등)
-- `cloud-security/cloud-security-operations/` = **클라우드 특화** (CloudTrail, ATT&CK Cloud 매핑 등)
-- 5G 모니터링·AI 탐지 등 도메인 특화 운영은 각 영역에 두고, 공통 개념은 이곳을 참조한다.
+- [Cloud Security Operations](../cloud-security/cloud-security-operations/README.md) = **클라우드 특화** (CloudTrail, ATT&CK Cloud 매핑 등)
+- 5G 모니터링·AI 탐지 등 도메인 특화 운영은 각 영역에서 다룬다.
 
 ---
 
-## 2. 문서 구성 원칙
+## 2. 문서 구성
 
-- 모든 문서는 `concept` 타입(rules-authoring §3.2 개념 템플릿) 중심이다.
-- 각 문서는 "이 개념이 5G/AI/Cloud/Web 어디서 쓰이는가"를 **역링크**해 공통 계층 역할을 드러낸다.
-- 파일명은 **의미 기반**(kebab-case, 공백 금지). 예: `symmetric-encryption.md`.
-
-### Cryptography 서술 순서 (구조 중심)
-알고리즘 나열이 아니라 아래 흐름으로 구성한다.
-1. 암호학의 목적 (기밀성·무결성·인증·부인방지)
-2. 대칭키 / 공개키 암호
-3. Hash / MAC / Digital Signature
-4. Key Exchange (DH / ECDH)
-5. PKI와 인증서
-6. TLS Handshake
-7. 실제 적용 (5G · Cloud · AI · Web)
+- 각 문서는 개념이 **왜 필요한지**, **어떻게 동작하는지**, **5G·AI·Cloud·Web 어디서 쓰이는지**를 함께 설명한다.
+- 각 문서에서 그 개념을 활용하는 다른 영역 문서로 링크한다.
+- 하위 영역별 세부 구성은 각 페이지를 참고한다. 예: [Cryptography](cryptography/README.md)
 
 ---
 
-## 3. 콘텐츠 로드맵 (작성 순서)
+## 3. 콘텐츠 로드맵
 
 1. Cryptography
 2. PKI & Identity
@@ -67,4 +57,4 @@
 
 ## 문서 목록
 
-_각 하위 영역 README에서 세부 문서를 관리합니다. 추가되는 대로 이 목록과 `SUMMARY.md`를 갱신합니다._
+_세부 문서는 각 하위 영역 페이지에서 확인할 수 있습니다._
