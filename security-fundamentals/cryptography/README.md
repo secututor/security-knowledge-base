@@ -23,6 +23,10 @@
 
 앞 문서가 뒤 문서의 선수 지식이 되도록 작성 순서를 잡는다.
 
+> **표시 방식 테스트 중**: 같은 그림을 세 가지 방식으로 넣었다. GitBook·GitHub에서 크기와 확대 동작을 비교한 뒤 하나만 남긴다.
+
+### 방식 A — Mermaid (가로 배치, 기존)
+
 ```mermaid
 flowchart LR
     A["01 overview"] --> B["02 symmetric"]
@@ -39,8 +43,33 @@ flowchart LR
     H --> I
 ```
 
+### 방식 B — Mermaid (세로 배치)
+
+```mermaid
+flowchart TD
+    A["01 overview"] --> B["02 symmetric"]
+    A --> C["03 hashing-mac"]
+    B --> D["04 asymmetric"]
+    C --> E["05 digital-signature"]
+    D --> E
+    D --> F["06 key-exchange"]
+    E --> G["07 key-management"]
+    F --> G
+    E --> H["08 tls-overview"]
+    F --> H
+    G --> I["09 in-practice"]
+    H --> I
+```
+
+### 방식 C — SVG + 크게 보기
+
+![Cryptography 문서 간 의존 관계도: 01 개요에서 02 대칭키·03 해시로, 04 공개키를 거쳐 05 서명·06 키 교환, 07 키 관리·08 TLS, 09 적용으로 이어진다](../../.gitbook/assets/cryptography_doc_dependency.svg)
+
+[크게 보기 (SVG 원본 열기)](../../.gitbook/assets/cryptography_doc_dependency.svg)
+
 텍스트 설명: overview에서 목적을 정의한 뒤, 대칭키와 해시를 먼저 다룬다. 공개키는 대칭키 한계에서 출발하고,
 서명은 공개키와 해시를 결합한다. 키 교환·서명·키 관리가 갖춰져야 TLS와 도메인 적용을 설명할 수 있다.
+(방식 C 그림에서 실선 상자는 작성 완료, 점선 상자는 작성 예정 문서다.)
 
 ---
 
@@ -112,5 +141,6 @@ flowchart LR
 - [Cryptography Overview](cryptography-overview.md) — 01. 암호학의 목적·용어·안전성 개념
 - [Symmetric Encryption](symmetric-encryption.md) — 02. 블록/스트림 암호, 운용 모드, AEAD, Nonce 관리
 - [Hashing & MAC](hashing-mac.md) — 03. 해시 성질, HMAC, KDF, 패스워드 저장
+- [Asymmetric Encryption](asymmetric-encryption.md) — 04. 공개키 원리, RSA·ECC, KEM, 양자 위협과 PQC 지형도
 
 _나머지 문서는 로드맵 순서대로 추가하며, 이 목록과 `SUMMARY.md`를 함께 갱신합니다._
