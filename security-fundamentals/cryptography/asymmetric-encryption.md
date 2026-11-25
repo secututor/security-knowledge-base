@@ -218,6 +218,8 @@ flowchart LR
 | 192비트 | AES-192 | 7680 | 384~511 |
 | 256비트 | AES-256 | 15360 | 512 이상 |
 
+- 읽는 법: 약 128비트 보안 강도는 RSA 3072비트 또는 ECC 256비트 이상의 키 크기에 대응한다.
+- ECC 값은 키 크기 범위이며, 실제 강도는 곡선과 파라미터에 따라 달라진다. 특정 곡선을 예로 들 때는 해당 곡선 규격을 따로 확인한다.
 - IFC(Integer Factorization Cryptography)는 RSA처럼 소인수분해에 기반한 방식, ECC는 타원곡선 기반 방식을 말한다.
 - 해시 함수의 보안 강도는 별도 표(§5.6.1.2, Table 3), 여러 알고리즘을 조합했을 때의 실질 강도는 §5.6.2, 강도별 사용 가능 기간은 §5.6.3(Table 4)을 따른다(→ [Key Management](key-management.md) §5.1).
 - 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 §3.4를 따른다.
@@ -232,6 +234,6 @@ flowchart LR
 ## 출처
 
 - PQC 표준: NIST, FIPS 203 / FIPS 204 / FIPS 205 (2024-08-13 발행), FIPS 206·HQC 진행 상황.
-- 5G SUCI 보호 방식: 3GPP, TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1·C.3.4.2 (세부는 [Key Exchange](key-exchange.md) §5.3).
+- 5G SUCI 보호 방식: 3GPP, TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1·C.3.4.2 (세부는 [Key Exchange](key-exchange.md) §5.3). V19.7.0 원문 조항 대조는 확인 예정.
 - 보안 강도 대응: NIST SP 800-57 Part 1 Rev. 5 (2020-05-04), §5.6.1.1 Table 2. https://doi.org/10.6028/NIST.SP.800-57pt1r5
 - 그 외 내용은 공개키 암호의 일반 원리를 재구성한 해설이다.

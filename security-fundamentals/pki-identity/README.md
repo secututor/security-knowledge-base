@@ -1,5 +1,7 @@
 # PKI & Identity (PKI·신원·인증)
 
+> 약어: NIST=National Institute of Standards and Technology, SP=Special Publication, RFC=Request for Comments, IETF=Internet Engineering Task Force, W3C=World Wide Web Consortium, OASIS=Organization for the Advancement of Structured Information Standards
+
 공개키 기반구조(PKI, Public Key Infrastructure)와 **디지털 신원·인증**을 다루는 하위 영역입니다.
 사용자 인증, 토큰, 연합 인증, 서비스 간 인증, 인증 공격까지 현대 인증 체계를 하나의 흐름으로 정리합니다.
 
@@ -96,26 +98,28 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 
 | 영역 | 표준 | 상태 |
 |------|------|------|
-| 디지털 신원 전반 | NIST(National Institute of Standards and Technology) SP(Special Publication) 800-63-4 (63A·63B·63C 포함) | 현행 (2025 Final) |
-| OAuth 2.0 | RFC(Request for Comments) 6749, RFC 6750(Bearer Token) | 현행 |
+| 디지털 신원 전반 | NIST SP 800-63-4 (63A·63B·63C 포함) | 현행 (2025 Final) |
+| OAuth 2.0 | RFC 6749, RFC 6750(Bearer Token) | 현행 |
 | PKCE | RFC 7636 | 현행 |
 | OAuth 보안 모범 사례 | RFC 9700 | 현행 |
 | OAuth 2.1 | draft-ietf-oauth-v2-1-17 | **Draft (확정 표준 아님)** |
 | 토큰 폐기 / 검사 | RFC 7009 / RFC 7662 | 현행 |
 | mTLS 클라이언트 인증·인증서 바인딩 토큰 | RFC 8705 | 현행 |
 | DPoP | RFC 9449 | 현행 |
-| JWT / JWT 보안 모범 사례 | RFC 7519 / RFC 8725 (후속 개정 상태 확인 예정) | 현행 |
+| JWT / JWT 보안 모범 사례 | RFC 7519 / RFC 8725 (BCP) | 현행. 후속 개정 draft-ietf-oauth-rfc8725bis-10은 **Internet-Draft (RFC 미확정)** 이며, RFC 8725는 아직 대체되지 않았다 |
 | JWS / JWE / JWK | RFC 7515 / RFC 7516 / RFC 7517 | 현행 |
 | JWT Access Token 프로파일 | RFC 9068 | 현행 |
 | OIDC | OpenID Connect Core 1.0 | 현행 |
-| SAML | OASIS(Organization for the Advancement of Structured Information Standards) SAML 2.0 | 현행 |
-| WebAuthn | W3C(World Wide Web Consortium) WebAuthn Level 3 | W3C Recommendation (2026-08) |
-| FIDO2 CTAP(Client to Authenticator Protocol) | FIDO Alliance CTAP 2.x | 확인 예정 |
+| SAML | OASIS SAML 2.0 | 현행 |
+| WebAuthn | W3C WebAuthn Level 3 | W3C Recommendation (2026-08) |
+| FIDO2 CTAP(Client to Authenticator Protocol) | FIDO Alliance CTAP 2.3 | Proposed Standard (2026-02-26). CTAP 2.3.1은 Working Draft (2026-05-29)로 기준에서 제외 |
 | TOTP / HOTP | RFC 6238 / RFC 4226 | 현행 |
 | X.509 인증서 프로파일 / OCSP | RFC 5280 / RFC 6960 | 현행 |
 | Kerberos / LDAP / SCIM | RFC 4120 / RFC 4511 / RFC 7643·7644 | 현행 |
-| SPIFFE | CNCF(Cloud Native Computing Foundation) SPIFFE 사양 | 확인 예정 |
-| DID / VC / SD-JWT VC | W3C DID Core, W3C VC Data Model, IETF SD-JWT·SD-JWT VC | 확인 예정 |
+| SPIFFE | CNCF(Cloud Native Computing Foundation) SPIFFE 사양군: SPIFFE ID, SVID(SPIFFE Verifiable Identity Document), X.509-SVID, JWT-SVID, Workload API, Trust Domain and Bundle, Federation | 단일 버전 번호 없음. 핵심 문서는 공식 저장소에 Stable 표시, 개별 사양의 안정성 표시는 확인 예정 |
+| DID | W3C DID 1.0 / DID 1.1 | DID 1.0: W3C Recommendation (2022-07-19) / DID 1.1: Candidate Recommendation Snapshot (2026-03-05, 최종 표준 아님) |
+| VC | W3C VC Data Model 2.0 / Securing Verifiable Credentials using JOSE(JSON Object Signing and Encryption) and COSE(CBOR(Concise Binary Object Representation) Object Signing and Encryption) | VC Data Model 2.0: W3C Recommendation (2025-05-15) / JOSE·COSE 보안 규격: W3C Recommendation (발행일 확인 예정) |
+| SD-JWT / SD-JWT VC | IETF SD-JWT, IETF SD-JWT VC (서로 다른 사양) | 각 사양의 현재 지위 확인 예정 |
 
 > 표준별 정의는 [References](../references/README.md)에 정리한다.
 > Token Binding(RFC 8471~8473)은 주요 브라우저에서 지원이 중단된 방식으로, 06 문서에서 역사적 배경으로만 다룬다. 현재의 토큰 바인딩은 DPoP와 RFC 8705가 담당한다.

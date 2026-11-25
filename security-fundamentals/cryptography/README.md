@@ -85,8 +85,8 @@ flowchart LR
 | FIPS 140-3 | 암호 모듈 보안 요구사항·검증 | 현행 (2019-03-22 승인) |
 | FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA) | PQC(Post-Quantum Cryptography, 양자내성암호) 확정 표준 | 확정 (2024-08-13 발행) |
 | FIPS 206 (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 2025-03 선정 (둘 다 최종 표준 아님) |
-| 3GPP TS 33.501 V19.7.0 (Release 19) | 5G NEA/NIA, 5G KDF 입력(Annex A), 키 계층(§6.2) | 현행 |
-| 3GPP TS 33.220 Annex B | 범용 KDF(HMAC-SHA-256) | 현행판 확인 예정 |
+| 3GPP TS 33.501 V19.7.0 (Release 19) | 5G NEA/NIA, 5G KDF 입력(Annex A), 키 계층(§6.2) | Release 19 최종판, 이 지식베이스의 기준판 (Release 20 판과 조항을 혼용하지 않음). 인용 조항의 원문 대조는 확인 예정 |
+| 3GPP TS 33.220 V19.1.0 (Release 19) Annex B | 범용 KDF(HMAC-SHA-256) | Release 19 발행본. Annex B 원문 대조는 확인 예정 |
 
 > 표준별 정의는 [References](../references/README.md)에 정리되어 있다.
 

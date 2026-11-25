@@ -300,6 +300,6 @@ X25519 단독 key_share는 32바이트다.
 | 하이브리드 설계 프레임워크 | RFC 9954 "Hybrid Key Exchange in TLS 1.3" | Informational | §3.3 공유 비밀 연결 구조 (일반 설계) |
 | HKDF | RFC 5869 | Informational | Extract-then-Expand 구조 |
 | ML-KEM | NIST FIPS 203 (2024-08-13 발행) | Final | §8, Table 3 (p.39) 키·암호문 크기. https://doi.org/10.6028/NIST.FIPS.203 |
-| 5G SUCI ECIES | 3GPP TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1 (Profile A), C.3.4.2 (Profile B) | — | 곡선, AES-128-CTR, HMAC-SHA-256, 64비트 MAC 태그 |
+| 5G SUCI ECIES | 3GPP TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1 (Profile A), C.3.4.2 (Profile B) | — | 곡선, AES-128-CTR, HMAC-SHA-256, 64비트 MAC 태그. V19.7.0 원문 조항 대조 확인 예정 |
 
 - 그 외 내용은 키 교환의 일반 원리를 재구성한 해설이다.

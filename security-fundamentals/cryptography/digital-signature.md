@@ -203,6 +203,7 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 | Release / 버전 | Release 19 / V19.7.0 (ETSI TS 133 501 V19.7.0) |
 | 조항 | §13.4.1.0 General (§13.4.1 OAuth 2.0 based authorization of NF service access) |
 | 공식 배포처 | ETSI |
+| 원문 대조 | V19.7.0 원문 조항 대조 확인 예정 |
 
 ## 관련 문서
 
