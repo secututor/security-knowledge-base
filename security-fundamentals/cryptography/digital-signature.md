@@ -64,14 +64,14 @@ RSA(Rivest-Shamir-Adleman)에서는 서명 연산이 수학적으로 복호화�
 | ECDSA | 타원곡선 | 짧은 키·서명 (JWT ES256, TLS 인증서) | **서명마다 쓰는 임시값이 재사용·예측되면 개인키가 노출**된다 |
 | EdDSA (Ed25519, Ed448) | 타원곡선 | 임시값을 결정적으로 만들어 구현이 단순하고 빠름 | 검증된 라이브러리 사용 |
 
-- 미국 연방 서명 표준(*FIPS 186-5*)은 RSA·ECDSA·EdDSA를 승인하며, 예전 방식인 **DSA(Digital Signature Algorithm)는 새 서명을 만드는 용도에서 제외**했다. 기존 DSA 서명의 검증에만 쓴다. → [5.1 *FIPS 186-5*의 승인 범위](#51-fips-186-5의-승인-범위)
+- 미국 연방 서명 표준(*FIPS 186-5*)은 RSA·ECDSA·EdDSA를 승인하며, 예전 방식인 **DSA(Digital Signature Algorithm)는 새 서명을 만드는 용도에서 제외**했다. 기존 DSA 서명의 검증에만 쓴다. → [5.1 *FIPS 186-5*의 승인 범위](digital-signature.md#51-fips-186-5의-승인-범위)
 
 ### 3.2 ECDSA의 임시값 문제
 
 ECDSA는 서명할 때마다 일회용 비밀 값(임시값 k)을 새로 만든다. 이 값이 두 서명에서 같거나 일부라도 예측 가능하면, **공개된 서명 두 개로 개인키를 계산**할 수 있다.
 난수 생성기 결함으로 실제 개인키가 유출된 사례가 있다.
 
-- 대응 1: **결정적 ECDSA** — 임시값을 난수 생성기 대신 개인키와 메시지로부터 정해진 절차로 만든다. 같은 메시지에는 같은 값, 다른 메시지에는 예측할 수 없는 다른 값이 나온다. 검증 방법은 기존과 같다. → [5.2 결정적 ECDSA](#52-결정적-ecdsa--rfc-6979와-fips-186-5의-관계)
+- 대응 1: **결정적 ECDSA** — 임시값을 난수 생성기 대신 개인키와 메시지로부터 정해진 절차로 만든다. 같은 메시지에는 같은 값, 다른 메시지에는 예측할 수 없는 다른 값이 나온다. 검증 방법은 기존과 같다. → [5.2 결정적 ECDSA](digital-signature.md#52-결정적-ecdsa--rfc-6979와-fips-186-5의-관계)
 - 대응 2: 처음부터 결정적 임시값을 쓰도록 설계된 **EdDSA**
 
 > 해설: 대칭키의 Nonce 재사용(→ [Symmetric Encryption 3.2 IV / Nonce 관리](symmetric-encryption.md#32-iv--nonce-관리))과 같은 교훈이다.
@@ -89,7 +89,7 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 - 모두 "서명" 기능이다. 키 설정용인 ML-KEM과 혼동하지 않는다.
 - SLH-DSA는 격자 같은 새로운 수학 가정에 기대지 않아, 격자 방식에 예상치 못한 약점이 발견될 때를 대비하는 성격이 있다.
-- **크기가 커지는 것이 전환의 현실적인 부담**이다. 인증서 체인, TLS(Transport Layer Security) 핸드셰이크, 저전력 기기, 토큰 크기를 함께 검토해야 한다. 파라미터별 정확한 크기 → [5.3 PQC 서명 파라미터와 크기](#53-pqc-서명-파라미터와-크기-바이트)
+- **크기가 커지는 것이 전환의 현실적인 부담**이다. 인증서 체인, TLS(Transport Layer Security) 핸드셰이크, 저전력 기기, 토큰 크기를 함께 검토해야 한다. 파라미터별 정확한 크기 → [5.3 PQC 서명 파라미터와 크기](digital-signature.md#53-pqc-서명-파라미터와-크기-바이트)
 
 ### 3.4 서명의 신뢰는 공개키의 신뢰에서 나온다
 
@@ -113,7 +113,7 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 | Web·API | JWT의 서명(RS256=RSA, ES256=ECDSA, EdDSA). HS256은 서명이 아니라 HMAC(Hash-based MAC)이다 → [Hashing & MAC](hashing-mac.md) |
 | 인증 | FIDO2/WebAuthn(Web Authentication)·Passkey는 서버가 보낸 Challenge에 기기의 개인키로 서명해 로그인한다 |
 | 소프트웨어 공급망 | 코드 서명, 업데이트 패키지·컨테이너 이미지 서명으로 배포물의 출처와 무결성을 확인한다 |
-| 5G | 5G 코어의 NF(Network Function)들은 서로 TLS 인증서로 신뢰를 확인하고, 서비스 이용 권한은 서명(또는 MAC)된 JWT 형식 토큰으로 주고받는다 → [5.4 5G SBA Access Token](#54-5g-sba-access-token), [OAuth Token Abuse](../../5g-security/security-risks/06-sba-security/06-06-OAuth_Token_Abuse.md) (작성 예정) |
+| 5G | 5G 코어의 NF(Network Function)들은 서로 TLS 인증서로 신뢰를 확인하고, 서비스 이용 권한은 서명(또는 MAC)된 JWT 형식 토큰으로 주고받는다 → [5.4 5G SBA Access Token](digital-signature.md#54-5g-sba-access-token), [OAuth Token Abuse](../../5g-security/security-risks/06-sba-security/06-06-OAuth_Token_Abuse.md) (작성 예정) |
 | Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 서명 키를 보관하고, 개인키를 반출하지 않은 채 서명 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
 
 ## 4. 보안 관점 (Security Relevance)
@@ -220,6 +220,6 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 | *NIST FIPS 206* (FN-DSA) | 개발 중 | — | — |
 | *IETF RFC 6979* | Informational | 결정적 임시값 생성 절차 | https://www.rfc-editor.org/rfc/rfc6979 |
 | *IETF RFC 7515* (JWS) | Standards Track | — | https://www.rfc-editor.org/rfc/rfc7515 |
-| *3GPP TS 33.501* | V19.7.0, Release 19 | SBA Access Token | 위 [5.4](#54-5g-sba-access-token) 표 참조 |
+| *3GPP TS 33.501* | V19.7.0, Release 19 | SBA Access Token | 위 [5.4](digital-signature.md#54-5g-sba-access-token) 표 참조 |
 
 - 그 외 내용은 디지털 서명의 일반 원리를 재구성한 해설이다.

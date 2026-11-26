@@ -24,6 +24,7 @@ n명이 서로 대칭키로 통신하려면 n(n-1)/2개의 키가 필요하고, 
 ### 2.1 공개키와 개인키
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant A as 송신자
     participant B as 수신자 (키 쌍 소유)
@@ -49,7 +50,7 @@ sequenceDiagram
 | DH(Diffie-Hellman) | 이산로그 문제 | 거듭제곱을 계산한다 | 결과로부터 지수를 찾는다 |
 
 - 수식 세부는 이 문서의 범위 밖이다. "공개키에서 개인키를 계산하는 것이 현실적으로 불가능하다"는 성질이 핵심이다.
-- 이 성질은 **고전 컴퓨터 기준**이다. 양자 컴퓨터는 이 가정을 깬다(→ [3.4 양자 컴퓨터의 영향](#34-양자-컴퓨터의-영향)).
+- 이 성질은 **고전 컴퓨터 기준**이다. 양자 컴퓨터는 이 가정을 깬다(→ [3.4 양자 컴퓨터의 영향](asymmetric-encryption.md#34-양자-컴퓨터의-영향)).
 
 ### 2.3 하이브리드 암호 — 실제로는 공개키로 데이터를 직접 암호화하지 않는다
 
@@ -57,6 +58,7 @@ sequenceDiagram
 그래서 실제 시스템은 **공개키로 대칭키(또는 공유 비밀)만 보호하고, 데이터는 대칭키로 암호화**한다.
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     PK["수신자 공개키"] --> W["공유 비밀 / 대칭키 보호"]
     W --> K["대칭키 (세션 키)"]
@@ -76,6 +78,7 @@ TLS(Transport Layer Security), 5G SUCI(Subscription Concealed Identifier), 이�
 | 이후 처리 | — | 공유 비밀을 KDF(Key Derivation Function)에 넣어 대칭키를 만든다 |
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant A as 송신자
     participant B as 수신자
@@ -122,14 +125,14 @@ sequenceDiagram
 
 ### 3.3 키 길이와 보안 강도
 
-공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. *NIST SP 800-57 Part 1 Rev. 5* 기준 대표 대응은 다음과 같다(전체 표 → [5.1 보안 강도 대응표](#51-보안-강도-대응표)).
+공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. *NIST SP 800-57 Part 1 Rev. 5* 기준 대표 대응은 다음과 같다(전체 표 → [5.1 보안 강도 대응표](asymmetric-encryption.md#51-보안-강도-대응표)).
 
 | 보안 강도 | RSA 모듈러스 | ECC 키 |
 |:--------:|:-----------:|:------:|
 | 약 128비트 | 약 3072비트 | 약 256비트 |
 
 - RSA는 강도를 올릴수록 키가 급격히 길어지고, ECC는 완만하게 늘어난다.
-- 권고 최소 길이와 사용 기한은 기관 표준(*NIST SP 800-57* 등)을 따른다 → [5.1 보안 강도 대응표](#51-보안-강도-대응표), [Key Management](key-management.md)
+- 권고 최소 길이와 사용 기한은 기관 표준(*NIST SP 800-57* 등)을 따른다 → [5.1 보안 강도 대응표](asymmetric-encryption.md#51-보안-강도-대응표), [Key Management](key-management.md)
 
 ### 3.4 양자 컴퓨터의 영향
 
@@ -161,6 +164,7 @@ PQC(Post-Quantum Cryptography, 양자내성암호)는 양자 컴퓨터로도 풀
 - 상세: ML-KEM과 하이브리드 키 교환 → [Key Exchange](key-exchange.md), ML-DSA·SLH-DSA → [Digital Signature](digital-signature.md).
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     subgraph CLASSIC["기존 공개키"]
         R1["RSA 키 전송 / ECDH"]
@@ -188,7 +192,7 @@ flowchart LR
 | PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정) |
 | Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 비대칭 키 쌍을 생성·보관하고, 개인키를 외부로 내보내지 않은 채 서명·복호화 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
 
-> 해설: 5G SUCI는 이 문서의 하이브리드 구조([2.3 하이브리드 암호](#23-하이브리드-암호--실제로는-공개키로-데이터를-직접-암호화하지-않는다))를 그대로 보여 주는 사례다. 단말이 매번 새 임시 키로 홈 네트워크 공개키와 ECDH를 수행하고,
+> 해설: 5G SUCI는 이 문서의 하이브리드 구조([2.3 하이브리드 암호](asymmetric-encryption.md#23-하이브리드-암호--실제로는-공개키로-데이터를-직접-암호화하지-않는다))를 그대로 보여 주는 사례다. 단말이 매번 새 임시 키로 홈 네트워크 공개키와 ECDH를 수행하고,
 > 그 결과로 대칭키를 파생해 SUPI를 암호화한다. 같은 단말이라도 SUCI 값이 매번 달라지는 이유가 여기에 있다.
 
 ## 4. 보안 관점 (Security Relevance)
@@ -224,7 +228,7 @@ flowchart LR
 - ECC 값은 키 크기 범위이며, 실제 강도는 곡선과 파라미터에 따라 달라진다. 특정 곡선을 예로 들 때는 해당 곡선 규격을 따로 확인한다.
 - IFC(Integer Factorization Cryptography)는 RSA처럼 소인수분해에 기반한 방식, ECC는 타원곡선 기반 방식을 말한다.
 - 같은 권고는 해시 함수의 보안 강도, 여러 알고리즘을 조합했을 때의 실질 강도, 강도별 사용 가능 기간도 따로 정한다(→ [Key Management 5.1 *SP 800-57* 문서 구성과 지위](key-management.md#51-sp-800-57-문서-구성과-지위)).
-- 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 [3.4 양자 컴퓨터의 영향](#34-양자-컴퓨터의-영향)을 참고한다.
+- 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 [3.4 양자 컴퓨터의 영향](asymmetric-encryption.md#34-양자-컴퓨터의-영향)을 참고한다.
 
 ## 관련 문서
 

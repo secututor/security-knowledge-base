@@ -118,12 +118,12 @@ PFS(Perfect Forward Secrecy, 전방 비밀성)는 **장기 개인키가 나중�
 | (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) | 선택 사항 | **기본** (PSK와 결합 가능) |
 | PFS | 설정에 따라 없을 수 있음 | (EC)DHE 사용 시 항상 보장 |
 | 키 파생 | PRF(Pseudo-Random Function) | HKDF 기반 키 스케줄 |
-| 양자내성 하이브리드 | — | 하이브리드 그룹 정의됨 ([3.4](#34-양자내성-하이브리드-키-교환)) |
+| 양자내성 하이브리드 | — | 하이브리드 그룹 정의됨 ([3.4](key-exchange.md#34-양자내성-하이브리드-키-교환)) |
 
 - 정적 RSA 키 전송에서는 서버 RSA 개인키가 유출되면 **그 키로 저장해 둔 과거 트래픽을 모두 복호화**할 수 있었다. TLS 1.3이 이를 제거한 핵심 이유가 PFS다.
 - **RSA 자체가 TLS 1.3에서 사라진 것은 아니다.** RSA는 인증서 서명·핸드셰이크 서명으로 계속 쓰인다. 제거된 것은 "RSA로 키를 전송하는 방식"이다.
 - PSK만 쓰고 (EC)DHE를 결합하지 않는 모드는 PFS를 제공하지 않는다.
-- 같은 서버가 이전 TLS 버전의 정적 RSA를 함께 켜 두면 그 경로로 공격받을 수 있다 → [5.4 정적 RSA에 대한 공격](#54-정적-rsa에-대한-공격)
+- 같은 서버가 이전 TLS 버전의 정적 RSA를 함께 켜 두면 그 경로로 공격받을 수 있다 → [5.4 정적 RSA에 대한 공격](key-exchange.md#54-정적-rsa에-대한-공격)
 
 ### 3.3 TLS 1.3 핸드셰이크에서의 키 교환
 
@@ -168,7 +168,7 @@ flowchart LR
 - 하이브리드는 **어느 한쪽이 깨져도 다른 쪽이 안전하면 세션 키가 안전**하도록 위험을 분산한다.
 
 대표 조합은 **X25519MLKEM768**(X25519 + ML-KEM-768)이다. 첫 메시지가 수십 바이트에서 1KB 남짓으로 커지므로, 오래된 네트워크 장비·미들박스와의 호환성을 점검해야 한다.
-정의된 그룹 목록, 결합 순서, 정확한 크기 → [5.1 TLS 1.3 하이브리드 그룹과 결합 순서](#51-tls-13-하이브리드-그룹과-결합-순서), [5.2 크기](#52-크기-바이트)
+정의된 그룹 목록, 결합 순서, 정확한 크기 → [5.1 TLS 1.3 하이브리드 그룹과 결합 순서](key-exchange.md#51-tls-13-하이브리드-그룹과-결합-순서), [5.2 크기](key-exchange.md#52-크기-바이트)
 
 ### 3.5 5G SUCI의 ECIES — 실제 적용 사례
 
@@ -204,7 +204,7 @@ sequenceDiagram
 
 > 해설: SUCI는 한 방향 메시지(단말 → 홈 네트워크)라 상대 측이 매번 임시 키를 만들 수 없다. 그래서 TLS의 PFS와 같은 성질을 갖지 못하고,
 > 홈 네트워크 개인키 보호가 SUCI 전체 보안의 핵심이 된다. 또한 ECDH 기반이므로 장기적으로는 양자내성 전환 대상이다.
-> 프로파일별 알고리즘과 보안 강도 → [5.3 5G SUCI ECIES 프로파일](#53-5g-suci-ecies-프로파일), 5G 위협 관점 → [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md)
+> 프로파일별 알고리즘과 보안 강도 → [5.3 5G SUCI ECIES 프로파일](key-exchange.md#53-5g-suci-ecies-프로파일), 5G 위협 관점 → [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md)
 
 ## 4. 보안 관점 (Security Relevance)
 

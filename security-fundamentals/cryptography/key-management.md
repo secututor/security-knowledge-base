@@ -14,8 +14,8 @@ AES(Advanced Encryption Standard)나 ML-KEM이 아무리 강해도, 키가 소�
 
 | 질문 | 기준 | 이 문서의 절 |
 |------|------|--------------|
-| 키를 **어떻게 관리해야** 하는가 | *NIST SP 800-57* (키 관리 권고) | [2. 배경 / 원리](#2-배경--원리-why--how), [3.1~3.4](#31-키-계층과-kekdek) |
-| 키를 다루는 **장치·소프트웨어(암호 모듈)는 믿을 만한가** | *FIPS 140-3* (암호 모듈 보안 요구사항·검증) | [3.5 암호 모듈 검증](#35-암호-모듈-검증--fips-인증이-뜻하는-것), [5.2 *FIPS 140-3* 문서 체계](#52-fips-140-3-문서-체계) |
+| 키를 **어떻게 관리해야** 하는가 | *NIST SP 800-57* (키 관리 권고) | [2. 배경 / 원리](key-management.md#2-배경--원리-why--how), [3.1~3.4](key-management.md#31-키-계층과-kekdek) |
+| 키를 다루는 **장치·소프트웨어(암호 모듈)는 믿을 만한가** | *FIPS 140-3* (암호 모듈 보안 요구사항·검증) | [3.5 암호 모듈 검증](key-management.md#35-암호-모듈-검증--fips-인증이-뜻하는-것), [5.2 *FIPS 140-3* 문서 체계](key-management.md#52-fips-140-3-문서-체계) |
 
 둘은 같은 개념이 아니다. 좋은 키 관리 절차도 검증되지 않은 모듈 위에서는 약해지고, 검증된 HSM을 써도 키 관리 절차가 없으면 사고가 난다.
 
@@ -100,7 +100,7 @@ flowchart LR
 | 정체 | 키를 생성·보관·연산하는 **전용 하드웨어** | 키를 정책·권한·감사와 함께 관리하는 **서비스** |
 | 키 반출 | 일반적으로 개인키·KEK를 평문으로 내보내지 않는다 | 키는 내부에 두고 API(Application Programming Interface)로 연산만 제공 |
 | 관계 | KMS가 내부적으로 HSM을 쓰는 경우가 많다 | 클라우드 KMS, 온프레미스 키 관리 시스템 |
-| 신뢰 판단 | 암호 모듈 검증(*FIPS 140-3*) 여부 ([3.5 암호 모듈 검증](#35-암호-모듈-검증--fips-인증이-뜻하는-것)) | 사용하는 암호 모듈의 검증 여부, 접근 정책, 감사 로그 |
+| 신뢰 판단 | 암호 모듈 검증(*FIPS 140-3*) 여부 ([3.5 암호 모듈 검증](key-management.md#35-암호-모듈-검증--fips-인증이-뜻하는-것)) | 사용하는 암호 모듈의 검증 여부, 접근 정책, 감사 로그 |
 
 ### 3.3 키 침해 대응 (Key Compromise)
 
@@ -155,7 +155,7 @@ flowchart LR
 | 교체 | 재인증으로 상위 키를 새로 만들고, 핸드오버 시 기지국 키를 새로 파생 |
 | 파기 | 세션·연결 종료 시 하위 키 폐기 |
 
-규격 기준은 [5.3 5G 키 계층 기준](#53-5g-키-계층-기준), 5G 키 계층 상세는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다.
+규격 기준은 [5.3 5G 키 계층 기준](key-management.md#53-5g-키-계층-기준), 5G 키 계층 상세는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다.
 
 ### 3.5 암호 모듈 검증 — "FIPS 인증"이 뜻하는 것
 
@@ -168,9 +168,9 @@ HSM·암호 라이브러리처럼 키를 실제로 다루는 장치·소프트�
 - 인증서에 적힌 **모듈 버전·운영 환경**이 실제 배포 환경과 같아야 한다.
 - 검증된 모듈이라도 **승인 모드(approved mode)로 운영**해야 검증 범위 안에 있다.
 
-- 실무에서는 *FIPS 140-2* 검증 모듈이 2026-09-22부터 **Historical 목록**으로 옮겨졌다는 점도 알아 둔다(→ [5.2 *FIPS 140-3* 문서 체계](#52-fips-140-3-문서-체계)).
+- 실무에서는 *FIPS 140-2* 검증 모듈이 2026-09-22부터 **Historical 목록**으로 옮겨졌다는 점도 알아 둔다(→ [5.2 *FIPS 140-3* 문서 체계](key-management.md#52-fips-140-3-문서-체계)).
 
-*FIPS 140-3*과 관련 문서(*ISO/IEC 19790·24759*, *SP 800-140*, IG)의 관계, *FIPS 140-2*와의 관계 → [5.2 *FIPS 140-3* 문서 체계](#52-fips-140-3-문서-체계)
+*FIPS 140-3*과 관련 문서(*ISO/IEC 19790·24759*, *SP 800-140*, IG)의 관계, *FIPS 140-2*와의 관계 → [5.2 *FIPS 140-3* 문서 체계](key-management.md#52-fips-140-3-문서-체계)
 
 ## 4. 보안 관점 (Security Relevance)
 
@@ -272,7 +272,7 @@ IG는 이 전체를 실제 검증에서 어떻게 해석할지 설명하는 지�
 | *NIST SP 800-57 Part 3 Rev. 1* "Application-Specific Key Management Guidance" | 2015-01-22 | 최종본 (NIST 검토 중) | 응용별 키 관리 | https://doi.org/10.6028/NIST.SP.800-57pt3r1 |
 | *FIPS 140-3* "Security Requirements for Cryptographic Modules" | 2019-03-22 승인 | 최종 표준 | 암호 모듈 보안 요구사항·검증 | https://doi.org/10.6028/NIST.FIPS.140-3 |
 | *ISO/IEC 19790:2012* / *ISO/IEC 24759:2017* | 2012 / 2017 | 국제 표준 (유료) | *FIPS 140-3*이 참조하는 요구사항·시험 요구사항 | https://www.iso.org/ |
-| *NIST SP 800-140*, *140A~140F* | 문서별 판·발행일은 [5.2](#52-fips-140-3-문서-체계) 표 | Final | *ISO/IEC 19790·24759* 요구사항 보완·수정 | NIST CMVP Publications 목록 |
+| *NIST SP 800-140*, *140A~140F* | 문서별 판·발행일은 [5.2](key-management.md#52-fips-140-3-문서-체계) 표 | Final | *ISO/IEC 19790·24759* 요구사항 보완·수정 | NIST CMVP Publications 목록 |
 | NIST CMVP, *FIPS 140-3* Implementation Guidance | Updated 2026-11-20 | 수시 개정 지침 | 검증 시 해석·적용 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
 | NIST CMVP, *FIPS 140-2* 전환 안내 | 2026-09-21 신규 사용 마지막 날, 2026-09-22 Historical 이동 | 공식 공지 | *FIPS 140-2* 모듈 상태 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
 | *3GPP TS 33.501* | V19.7.0, Release 19 (2026-08) | — | 5G 키 계층·파생·분배·수명 | ETSI 배포본 (*ETSI TS 133 501 V19.7.0*) |
