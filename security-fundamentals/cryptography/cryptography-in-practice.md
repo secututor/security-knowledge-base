@@ -29,11 +29,13 @@
 시스템의 데이터는 크게 세 가지 상태에 있다. 상태마다 쓰는 암호 기능이 다르다.
 
 ```mermaid
-%%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "transparent", "textColor": "#8a8a8a", "transitionLabelColor": "#8a8a8a", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 60, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
 flowchart LR
-    T["전송 중<br>In transit"] -->|"TLS·mTLS<br>5G NEA/NIA"| P1["보호"]
-    R["저장 중<br>At rest"] -->|"봉투 암호화<br>KMS·HSM"| P1
-    I["신원·출처<br>Identity"] -->|"서명·인증서<br>토큰"| P1
+    T["전송 중<br>In transit"] --- T1(["TLS·mTLS<br>5G NEA/NIA"]) --> P1["보호"]
+    R["저장 중<br>At rest"] --- R1(["봉투 암호화<br>KMS·HSM"]) --> P1
+    I["신원·출처<br>Identity"] --- I1(["서명·인증서<br>토큰"]) --> P1
+    classDef aux fill:transparent,stroke:#8a8a8a,stroke-dasharray:3 3,color:#8a8a8a,font-size:15px
+    class T1,R1,I1 aux
 ```
 
 텍스트 설명: 전송 중인 데이터는 TLS와 같은 통신 보호 프로토콜(이동통신 무선 구간은 NEA/NIA)이 지킨다. 저장된 데이터는 봉투 암호화와 KMS(Key Management Service)·HSM(Hardware Security Module)이 지킨다.
