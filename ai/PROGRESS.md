@@ -68,7 +68,12 @@
   - 5G: TS 33.501 **V19.7.0 (Release 19)로 전체 통일** (128-NEA2=AES-CTR §5.11.1.1, 128-NIA2=AES-CMAC §5.11.1.2, KDF 입력 Annex A,
     SBA 토큰 §13.4.1.0, SUCI Annex C.3.4.1/C.3.4.2, 키 계층 §6.2), TS 33.220 V19.1.0 (Release 19) Annex B(범용 KDF)
   - 원문 대조 대기: TS 33.501 V19.7.0의 §13.4.1.0 / Annex C.3.4.x / §5.11.1.x / Annex A (Rel-18 기준으로만 대조됨,
-    Rel-20 V20.3.0과 혼용 금지), TS 33.220 V19.1.0 Annex B. 공개 문서에는 "원문 조항 대조 확인 예정"으로 표시 중.
+    Rel-20 V20.3.0과 혼용 금지), TS 33.220 V19.1.0 Annex B. 공개 문서에서는 조항 번호를 모두 제거했으므로(규칙 §6.1.1),
+    조항 위치는 이 메모에만 남긴다.
+  - 공개 문서에서 제거한 기타 조항 위치(검증 근거): SP 800-57 Pt1 Rev5 §5.2, §5.3~5.3.6 Table 1, §5.6.1.1 Table 2, §5.6.1.2 Table 3,
+    §5.6.2, §5.6.3 Table 4, §7 Figure 3 / FIPS 186-5 §6.3.2, App. A.3.3 / RFC 6979 §3.2 / FIPS 204·205 Table 2 / FIPS 203 §8 Table 3 /
+    RFC 10024 §4.1~4.3 / RFC 9954 §3.3 / RFC 9846 App. F.10 / TS 33.501 §6.2.1~6.2.3.3, §6.12, Annex C.2·C.3 / TS 23.003 §2.2, §28.3.
+  - 문서 간 참조는 GitHub 헤딩 앵커로 연결함. GitBook 앵커 규칙이 다르면 링크가 페이지 상단으로만 이동할 수 있음 → GitBook 확인 필요.
   - PKI 표준 상태(외부 검증값): CTAP 2.3 PS(2026-02-26)·2.3.1 WD, SPIFFE 사양군(단일 버전 없음), DID 1.0 Rec / 1.1 CR Snapshot,
     VC DM 2.0 Rec(2025-05-15), RFC 8725 유효 + rfc8725bis-10 I-D.
   - 재확인 필요: VC JOSE/COSE Rec 발행일(외부 리뷰 2026-10-13 vs 2025-05 Rec 가능성), IETF SD-JWT·SD-JWT VC 지위(RFC 발행 여부).
