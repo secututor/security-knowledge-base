@@ -57,10 +57,13 @@ GitBook Mermaid 지원 범위를 고려해 아래 핵심 타입 위주로 사용
 ### 가독성 규칙 (GitBook 표시 크기)
 GitBook은 다이어그램 전체를 본문 폭에 맞춰 축소하므로, 그림이 넓을수록 글자가 작아진다.
 - 라벨은 **짧게, 필요하면 `<br>`로 두 줄**로 쓴다. 예: `A["01<br>개요"]` (긴 한 줄 라벨 지양)
-- 노드가 많은 `flowchart`는 첫 줄에 글자 확대·간격 축소 설정을 둔다. (GitBook 렌더링 확인됨)
+- **모든 Mermaid 그림**은 첫 줄에 아래 설정을 둔다. 글자 확대·간격 축소(GitBook 렌더링 확인됨)와 함께,
+  선·화살표·메시지 글자를 중간 밝기 회색(`#8a8a8a`)으로 지정해 라이트·다크 배경 모두에서 보이게 한다.
   ```
-  %%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+  %%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
   ```
+  - `lineColor`: flowchart·stateDiagram 선 / `signalColor`·`signalTextColor`: sequenceDiagram 화살표와 메시지 글자 / `actorLineColor`: 참가자 세로선
+  - 노드 안 글자는 노드 배경 위에 있으므로 따로 지정하지 않는다. 색만으로 의미를 구분하지 않는다(§3).
 - 한 그림에 노드가 너무 많으면 두 개의 그림으로 나눈다.
 
 ### SVG 사용 보류

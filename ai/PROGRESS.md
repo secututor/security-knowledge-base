@@ -74,6 +74,14 @@
     §5.6.2, §5.6.3 Table 4, §7 Figure 3 / FIPS 186-5 §6.3.2, App. A.3.3 / RFC 6979 §3.2 / FIPS 204·205 Table 2 / FIPS 203 §8 Table 3 /
     RFC 10024 §4.1~4.3 / RFC 9954 §3.3 / RFC 9846 App. F.10 / TS 33.501 §6.2.1~6.2.3.3, §6.12, Annex C.2·C.3 / TS 23.003 §2.2, §28.3.
   - 문서 간 참조는 GitHub 헤딩 앵커로 연결함. GitBook 앵커 규칙이 다르면 링크가 페이지 상단으로만 이동할 수 있음 → GitBook 확인 필요.
+  - **[보류 작업] GitBook 같은 페이지 앵커 일괄 수정** (사용자 지시: 나중에 한 번에 처리)
+    - 확인됨: 같은 페이지 링크는 GitBook 오른쪽 목차 앵커 형식만 동작. `asymmetric-encryption.md` 53행 `[3.4 …](#id-3.4)`로 시험 → 이동 성공 (커밋 ad9b9fb).
+    - 동작 안 함: `#34-양자-컴퓨터의-영향`, `asymmetric-encryption.md#34-…` (GitHub 슬러그 형식, 같은 페이지일 때).
+    - 다른 페이지 링크(`key-exchange.md#34-…`)는 GitBook에서 이동함. 단, 해당 절까지 내려가는지는 미확인.
+    - 남은 일: 같은 페이지 링크 23개(asymmetric 4, digital-signature 5, key-exchange 5, key-management 9)를 `#id-…`로 변경.
+      헤딩별 실제 값은 GitBook 목차에서 복사해 확인할 것(한글은 빠지는 것으로 보이나 영문 섞인 헤딩 형식 미확인). 추측 금지.
+    - `#id-…`는 GitHub에서 동작하지 않음 → GitBook 우선 여부 사용자 결정 필요. 결정 후 rules-authoring §5 앵커 규칙 수정.
+    - Mermaid 선 색(#8a8a8a) 시험 적용은 asymmetric-encryption 그림 4개만. 라이트/다크 확인 후 전체·rules-diagrams 반영.
   - PKI 표준 상태(외부 검증값): CTAP 2.3 PS(2026-02-26)·2.3.1 WD, SPIFFE 사양군(단일 버전 없음), DID 1.0 Rec / 1.1 CR Snapshot,
     VC DM 2.0 Rec(2025-05-15), RFC 8725 유효 + rfc8725bis-10 I-D.
   - 재확인 필요: VC JOSE/COSE Rec 발행일(외부 리뷰 2026-10-13 vs 2025-05 Rec 가능성), IETF SD-JWT·SD-JWT VC 지위(RFC 발행 여부).
