@@ -25,7 +25,7 @@
 앞 문서가 뒤 문서의 선수 지식이 되도록 구성했다.
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     A["01<br>개요"] --> B["02<br>대칭키"]
     A --> C["03<br>해시·MAC"]

@@ -103,6 +103,7 @@ SUPI 노출을 유발하는 핵심 메커니즘은 크게 세 가지다.
 ## 4. 공격 시나리오 (Attack Scenario)
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant Attacker as 공격자
     participant UE as UE (단말)

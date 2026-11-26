@@ -28,6 +28,7 @@ UE는 셀 선택 시 신호가 강한 셀을 선호하는 특성이 있으므로
 ## 4. 공격 시나리오 (Attack Scenario)
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant UE as UE (단말)
     participant FBS as False Base Station

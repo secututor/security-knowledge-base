@@ -28,7 +28,7 @@
 | Kerberos | 네트워크 인증 | 티켓 기반 인증 (기업 디렉터리 환경) |
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     U["사용자"] -->|"Password·MFA<br>FIDO2·Passkey"| IDP["IdP<br>인증 제공자"]
     IDP -->|"OIDC·SAML"| APP["서비스<br>애플리케이션"]
@@ -65,7 +65,7 @@ API 뒤의 서비스 간 통신은 mTLS나 SPIFFE(Secure Production Identity Fra
 ### 문서 간 의존 관계
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     A["01<br>기초"] --> B["02<br>인증 방식"]
     A --> D["04<br>PKI"]

@@ -42,6 +42,7 @@
 ### 2.3 MAC — 키가 있는 무결성
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant A as 송신자
     participant B as 수신자

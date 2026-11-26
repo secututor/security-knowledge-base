@@ -17,6 +17,7 @@ TLS(Transport Layer Security) 데이터 구간, VPN(Virtual Private Network), �
 ### 2.1 기본 동작
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 sequenceDiagram
     participant A as 송신자
     participant B as 수신자
@@ -51,6 +52,7 @@ sequenceDiagram
 | GCM(Galois/Counter Mode) | CTR 암호화 + 인증 태그 | AEAD(Authenticated Encryption with Associated Data) 모드. **Nonce 재사용 시 기밀성과 무결성 모두 붕괴** |
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     M["평문"] --> Q{"무결성도 필요한가"}
     Q -->|"예 (대부분의 경우)"| AEAD["AEAD 모드 사용 (GCM, ChaCha20-Poly1305 등)"]

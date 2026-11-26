@@ -30,6 +30,7 @@
 | 적대자 (Adversary) | 시스템을 깨려는 공격자. 능력 가정이 안전성 판단의 기준이 된다 |
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     P["평문"] -->|"암호화 (키 K1)"| C["암호문"]
     C -->|"복호화 (키 K2)"| P2["평문"]
@@ -51,6 +52,7 @@ flowchart LR
 ### 2.3 암호 기능 분류
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart TD
     CR["암호 기능"] --> SYM["대칭키 암호"]
     CR --> ASY["공개키 암호"]

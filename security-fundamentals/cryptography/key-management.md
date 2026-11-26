@@ -24,6 +24,7 @@ AES(Advanced Encryption Standard)나 ML-KEM이 아무리 강해도, 키가 소�
 ### 2.1 키 생명주기
 
 ```mermaid
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 stateDiagram-v2
     [*] --> 생성
     생성 --> 분배
@@ -77,7 +78,7 @@ stateDiagram-v2
 #### 봉투 암호화 (Envelope Encryption)
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     D["데이터"] -->|"DEK로<br>암호화"| ED["암호화된 데이터"]
     DEK["DEK"] -->|"KEK로<br>래핑"| WD["래핑된 DEK"]
@@ -134,7 +135,7 @@ flowchart LR
 5G는 표준이 키 생명주기의 상당 부분을 **절차로 고정**해 둔 사례다.
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     K["K<br>USIM·홈망"] --> A["5G AKA<br>인증"]
     A --> KA["K_AUSF<br>K_SEAF"]
@@ -231,7 +232,7 @@ HSM·암호 라이브러리처럼 키를 실제로 다루는 장치·소프트�
 | *SP 800-140F* | Rev. 표기 없음 | 2020-03-20 |
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
 flowchart LR
     F["FIPS 140-3"] --> I1["ISO/IEC 19790<br>요구사항"]
     F --> I2["ISO/IEC 24759<br>시험"]
