@@ -44,6 +44,13 @@
 | *RFC 10015* | TLS 1.2의 오래된 DH·RSA 키 교환 폐기 (제목 확인 예정) | 2026-07 | https://www.rfc-editor.org/rfc/rfc10015 |
 | *RFC 6066* | Transport Layer Security (TLS) Extensions: Extension Definitions | Proposed Standard (*RFC 9846* 등이 일부 갱신) | https://www.rfc-editor.org/rfc/rfc6066 |
 | *RFC 6797* | HTTP Strict Transport Security (HSTS) | Proposed Standard | https://www.rfc-editor.org/rfc/rfc6797 |
+| *RFC 5280* | Internet X.509 Public Key Infrastructure Certificate and CRL Profile | Standards Track | https://www.rfc-editor.org/rfc/rfc5280 |
+| *RFC 6960* | Online Certificate Status Protocol (OCSP) | Standards Track | https://www.rfc-editor.org/rfc/rfc6960 |
+| *RFC 9525* | Service Identity in TLS | 지위 확인 예정 | https://www.rfc-editor.org/rfc/rfc9525 |
+| *RFC 2986* | PKCS #10: Certification Request Syntax Specification Version 1.7 | Informational | https://www.rfc-editor.org/rfc/rfc2986 |
+| *RFC 8555* | Automatic Certificate Management Environment (ACME) | Proposed Standard | https://www.rfc-editor.org/rfc/rfc8555 |
+| *RFC 6962* | Certificate Transparency | Experimental, *RFC 9162*에 의해 Obsoleted | https://www.rfc-editor.org/rfc/rfc6962 |
+| *RFC 9162* | Certificate Transparency Version 2.0 | Experimental | https://www.rfc-editor.org/rfc/rfc9162 |
 | *RFC 10024* | Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 | Proposed Standard (2026-08) | https://www.rfc-editor.org/rfc/rfc10024 |
 | *RFC 9954* | Hybrid Key Exchange in TLS 1.3 (일반 설계 프레임워크) | Informational | https://www.rfc-editor.org/rfc/rfc9954 |
 | *RFC 5869* | HMAC-based Extract-and-Expand Key Derivation Function (HKDF) | Informational | https://www.rfc-editor.org/rfc/rfc5869 |

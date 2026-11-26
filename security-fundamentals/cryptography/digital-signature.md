@@ -97,7 +97,7 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 - 공격자가 자신의 공개키를 상대방 것인 척 건네면, 공격자가 서명한 위조 데이터도 검증을 통과한다.
 - 그래서 공개키를 주체 신원과 묶어 주는 **인증서와 CA(Certificate Authority)** 가 필요하다. 인증서 자체도 CA의 디지털 서명이다.
-  → [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
+  → [PKI & Certificates](../pki-identity/pki-certificates.md)
 
 ### 3.5 시간과 키 폐기
 
@@ -109,7 +109,7 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 | 영역 | 사용처 |
 |------|--------|
-| PKI | X.509 인증서는 CA가 주체 공개키에 서명한 데이터다 → [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정) |
+| PKI | X.509 인증서는 CA가 주체 공개키에 서명한 데이터다 → [PKI & Certificates](../pki-identity/pki-certificates.md) |
 | Web·API | JWT의 서명(RS256=RSA, ES256=ECDSA, EdDSA). HS256은 서명이 아니라 HMAC(Hash-based MAC)이다 → [Hashing & MAC](hashing-mac.md) |
 | 인증 | FIDO2/WebAuthn(Web Authentication)·Passkey는 서버가 보낸 Challenge에 기기의 개인키로 서명해 로그인한다 |
 | 소프트웨어 공급망 | 코드 서명, 업데이트 패키지·컨테이너 이미지 서명으로 배포물의 출처와 무결성을 확인한다 |
@@ -207,7 +207,8 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 - 이전: [Hashing & MAC](hashing-mac.md), [Asymmetric Encryption](asymmetric-encryption.md)
 - 다음: [Key Exchange](key-exchange.md)
-- 신뢰 모델·인증서·JWT·FIDO2: [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
+- 인증서·신뢰 모델: [PKI & Certificates](../pki-identity/pki-certificates.md)
+- JWT·FIDO2: [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처

@@ -189,7 +189,7 @@ flowchart LR
 |------|--------|
 | 5G | 단말은 홈 네트워크 공개키로 영구 식별자 SUPI(Subscription Permanent Identifier)를 SUCI로 은닉한다. ECIES 기반 보호 방식(Profile A: Curve25519/X25519, Profile B: secp256r1)을 사용한다(*3GPP TS 33.501*) → [Key Exchange 3.5 5G SUCI의 ECIES](key-exchange.md#35-5g-suci의-ecies--실제-적용-사례), [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) |
 | Web | TLS 인증서의 서버 공개키(RSA·ECDSA)로 서버를 인증한다. TLS 1.3(*RFC 9846*)은 정적 RSA 키 전송을 제거하고 (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) 키 교환을 쓴다. RSA는 서명 용도로 계속 쓰인다 → [Key Exchange 3.2 TLS 1.2와 TLS 1.3의 키 교환 비교](key-exchange.md#32-tls-12와-tls-13의-키-교환-비교) |
-| PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정) |
+| PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Certificates](../pki-identity/pki-certificates.md) |
 | Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 비대칭 키 쌍을 생성·보관하고, 개인키를 외부로 내보내지 않은 채 서명·복호화 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
 
 > 해설: 5G SUCI는 이 문서의 하이브리드 구조([2.3 하이브리드 암호](asymmetric-encryption.md#23-하이브리드-암호--실제로는-공개키로-데이터를-직접-암호화하지-않는다))를 그대로 보여 주는 사례다. 단말이 매번 새 임시 키로 홈 네트워크 공개키와 ECDH를 수행하고,
@@ -234,7 +234,7 @@ flowchart LR
 
 - 이전: [Symmetric Encryption](symmetric-encryption.md), [Hashing & MAC](hashing-mac.md)
 - 다음: [Digital Signature](digital-signature.md), [Key Exchange](key-exchange.md)
-- 신뢰 모델: [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
+- 신뢰 모델: [PKI & Certificates](../pki-identity/pki-certificates.md)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처

@@ -138,7 +138,7 @@ flowchart LR
 
 - 서버는 **중간 CA 인증서까지 함께 보내야** 한다. 빠지면 일부 클라이언트에서만 연결이 실패하는 문제가 생긴다.
 - 폐기 확인은 OCSP(Online Certificate Status Protocol)나 CRL(Certificate Revocation List)로 한다. 서버가 OCSP 응답을 핸드셰이크에 붙여 주는 방식(OCSP stapling)을 쓰면 클라이언트 부담이 줄어든다.
-- 인증서·CA·신뢰 체인의 구조 자체는 [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)에서 다룬다.
+- 인증서·CA·신뢰 체인의 구조와 각 검증 단계의 원리는 [PKI & Certificates](../pki-identity/pki-certificates.md)에서 다룬다.
 
 > 해설: 실제 사고에서 자주 보이는 것은 암호 해독이 아니라 **검증을 끈 코드**다. 개발 중 `verify=False`, `InsecureSkipVerify: true`, "모든 인증서 신뢰" 설정을 넣고 그대로 배포하는 경우다.
 > 이 한 줄이 TLS 전체를 무력화한다.
@@ -262,7 +262,7 @@ TLS 1.2의 SHA-1·DSA(Digital Signature Algorithm)·정적 키 교환·RSA 키 �
 
 - 이전: [Key Exchange](key-exchange.md), [Digital Signature](digital-signature.md), [Key Management](key-management.md)
 - 다음: [Cryptography in Practice](cryptography-in-practice.md)
-- 인증서·신뢰 체인: [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
+- 인증서·신뢰 체인: [PKI & Certificates](../pki-identity/pki-certificates.md)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처
