@@ -59,13 +59,14 @@ GitBook은 다이어그램 전체를 본문 폭에 맞춰 축소하므로, 그�
 - 라벨은 **짧게, 필요하면 `<br>`로 두 줄**로 쓴다. 예: `A["01<br>개요"]` (긴 한 줄 라벨 지양)
 - **모든 Mermaid 그림**은 첫 줄에 아래 공통 설정을 한 줄로 둔다. (GitBook 라이트·다크 모드에서 확인)
   ```
-  %%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
+  %%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "transparent", "textColor": "#8a8a8a", "transitionLabelColor": "#8a8a8a", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
   ```
   - `"theme": "base"`를 반드시 둔다. Mermaid는 base 테마에서만 `themeVariables` 색 지정이 온전히 적용된다.
     지정하지 않으면 GitBook 기본 테마가 적용되어 라이트 모드는 검은 노드, 다크 모드는 배경에 묻힌 노드가 된다.
   - 노드·참가자는 **밝은 바탕 + 진한 글자**로 고정한다(두 모드 공통). 선·화살표·메시지 글자는 중간 회색 `#8a8a8a`.
   - **화살표에 라벨(`-->|"…"|`)이 있는 flowchart는 `rankSpacing`을 60**으로 늘린다. 30이면 화살표가 짧아 라벨 상자가 끼어 보인다.
   - 박스 크기는 `padding`(flowchart), `width`·`height`·`boxMargin`(sequence)으로 줄였다. 글자는 18px.
+  - 화살표 라벨은 상자 없이 글자만 보이도록 `edgeLabelBackground`를 `transparent`로, 라벨 글자는 `textColor` 회색으로 둔다.
   - 노드별 색(`style`·`classDef`)은 쓰지 않는다. 필요하면 위 팔레트 안에서 쓰고, 색만으로 의미를 구분하지 않는다(§3).
 - 한 그림에 노드가 너무 많으면 두 개의 그림으로 나눈다.
 
