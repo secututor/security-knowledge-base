@@ -17,7 +17,7 @@ TLS(Transport Layer Security) 데이터 구간, VPN(Virtual Private Network), �
 ### 2.1 기본 동작
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
 sequenceDiagram
     participant A as 송신자
     participant B as 수신자
@@ -52,7 +52,7 @@ sequenceDiagram
 | GCM(Galois/Counter Mode) | CTR 암호화 + 인증 태그 | AEAD(Authenticated Encryption with Associated Data) 모드. **Nonce 재사용 시 기밀성과 무결성 모두 붕괴** |
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "20px", "lineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "actorLineColor": "#8a8a8a"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30}}}%%
+%%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 60, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
 flowchart LR
     M["평문"] --> Q{"무결성도 필요한가"}
     Q -->|"예 (대부분의 경우)"| AEAD["AEAD 모드 사용 (GCM, ChaCha20-Poly1305 등)"]
