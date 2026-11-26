@@ -2,7 +2,7 @@
 
 ## 1. 개요 (What)
 
-암호학(Cryptography)은 **적대자가 있는 환경에서 정보를 안전하게 다루기 위한 수학적 기법**의 모음이다.
+암호학(Cryptography)은 **공격자가 있는 환경에서 정보를 안전하게 다루기 위한 수학적 기법**의 모음이다.
 단순히 "데이터를 숨기는 기술"이 아니라, 아래 네 가지 보안 목적을 **수학적으로 뒷받침하는 도구**로 이해하는 것이 정확하다.
 
 | 목적 | 의미 | 대표 수단 |
@@ -27,18 +27,18 @@
 | 암호문 (Ciphertext) | 암호화 결과 |
 | 키 (Key) | 암호화/복호화(또는 서명/검증)를 좌우하는 비밀 또는 공개 값 |
 | 알고리즘 (Algorithm) | 키와 데이터를 입력받아 변환을 수행하는 절차 |
-| 적대자 (Adversary) | 시스템을 깨려는 공격자. 능력 가정이 안전성 판단의 기준이 된다 |
+| 공격자 (Adversary) | 시스템을 깨려는 주체. 능력 가정이 안전성 판단의 기준이 된다 |
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 60, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
 flowchart LR
     P["평문"] -->|"암호화 (키 K1)"| C["암호문"]
     C -->|"복호화 (키 K2)"| P2["평문"]
-    ADV["적대자"] -.->|"암호문 관찰·변조 시도"| C
+    ADV["공격자"] -.->|"암호문 관찰·변조 시도"| C
 ```
 
 텍스트 설명: 송신자가 키로 평문을 암호문으로 바꾸고, 수신자가 대응하는 키로 복원한다.
-적대자는 통신 경로에서 암호문을 관찰하거나 변조하려 한다. 대칭키 암호에서는 K1과 K2가 같고,
+공격자는 통신 경로에서 암호문을 관찰하거나 변조하려 한다. 대칭키 암호에서는 K1과 K2가 같고,
 공개키 암호에서는 서로 다른 한 쌍이다.
 
 ### 2.2 Kerckhoffs의 원칙
@@ -72,8 +72,8 @@ flowchart TD
   현대 암호 대부분이 여기에 속한다.
 - **보안 강도(Security strength)**: 공격에 필요한 작업량을 비트로 표현한 값(예: 128비트 강도).
   키 길이와 알고리즘 구조에 따라 정해지며, 알고리즘별로 같은 키 길이가 같은 강도를 뜻하지 않는다.
-- **공격자 능력 가정**: 암호문만 관찰(ciphertext-only), 평문-암호문 쌍 보유(known-plaintext),
-  원하는 평문을 암호화시킴(chosen-plaintext) 등. 강한 공격자 모델에서도 안전해야 좋은 설계다.
+- **공격자 능력 가정**: ciphertext-only(암호문만 관찰), known-plaintext(평문-암호문 쌍 보유),
+  chosen-plaintext(원하는 평문을 암호화시킴) 등. 강한 공격자 모델에서도 안전해야 좋은 설계다.
 
 ## 3. 상세 (Details)
 

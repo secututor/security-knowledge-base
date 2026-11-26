@@ -55,7 +55,7 @@ flowchart LR
 | 03 | `hashing-mac.md` | 해시 성질(충돌·역상 저항), SHA(Secure Hash Algorithm)-2/SHA-3, MAC·HMAC(Hash-based MAC), KDF(Key Derivation Function), 패스워드 해시와의 구분 | 01 | 5G 키 파생(KDF), 패스워드 저장 |
 | 04 | `asymmetric-encryption.md` | 공개키 개념, RSA(Rivest-Shamir-Adleman)·ECC(Elliptic Curve Cryptography) 원리 수준, 공개키 암호화 vs KEM(Key Encapsulation Mechanism) 구분, 키 크기와 보안 강도, 양자 위협과 PQC 지형도(*FIPS 203*~205 개요) | 02 | `../pki-identity/` |
 | 05 | `digital-signature.md` | 서명의 목적(무결성·인증·부인방지), RSA/ECDSA(Elliptic Curve Digital Signature Algorithm)/EdDSA(Edwards-curve Digital Signature Algorithm) 개념, 해시-서명 결합, PQC 서명(ML-DSA(Module-Lattice-Based Digital Signature Algorithm)·SLH-DSA(Stateless Hash-Based Digital Signature Algorithm)) 상세 | 03, 04 | 코드 서명, 인증서, JWT(JSON Web Token) |
-| 06 | `key-exchange.md` | DH/ECDH, 전방 비밀성(PFS, Perfect Forward Secrecy), 중간자 공격과 인증된 키 교환, ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) 상세와 하이브리드 키 교환 | 04 | 5G SUCI(ECIES, Elliptic Curve Integrated Encryption Scheme), TLS |
+| 06 | `key-exchange.md` | DH/ECDH, PFS(Perfect Forward Secrecy), 중간자 공격과 인증된 키 교환, ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) 상세와 하이브리드 키 교환 | 04 | 5G SUCI(ECIES, Elliptic Curve Integrated Encryption Scheme), TLS |
 | 07 | `key-management.md` | 키 수명주기(생성·저장·회전·폐기), 키 계층, HSM(Hardware Security Module)/KMS, 키 래핑 | 05, 06 | 5G 키 계층, Cloud `data-protection` KMS |
 | 08 | `tls-overview.md` | TLS 1.2 vs 1.3 핸드셰이크, 암호 스위트, 인증서 검증, 흔한 설정 오류 | 05, 06 | Web, 5G SBA(Service Based Architecture)(HTTP/2(Hypertext Transfer Protocol 2)·TLS), `../web-app-security/` |
 | 09 | `cryptography-in-practice.md` | 도메인별 적용 지도(5G·Cloud·AI·Web) — 개념 → 실제 사용처 링크 허브 | 07, 08 | 5G / Cloud / AI 각 영역 |

@@ -61,18 +61,18 @@ RSA(Rivest-Shamir-Adleman)에서는 서명 연산이 수학적으로 복호화�
 |----------|------|------|--------|
 | RSA (PKCS #1 v1.5) | 소인수분해 | 가장 오래되고 널리 쓰임 (인증서, JWT RS256) | 구현 시 패딩 검증을 엄격히 해야 한다 |
 | RSA-PSS(Probabilistic Signature Scheme) | 소인수분해 | 확률적 패딩, 안전성 근거가 더 강함 | 신규 설계에서 권장 |
-| ECDSA | 타원곡선 | 짧은 키·서명 (JWT ES256, TLS 인증서) | **서명마다 쓰는 임시값이 재사용·예측되면 개인키가 노출**된다 |
-| EdDSA (Ed25519, Ed448) | 타원곡선 | 임시값을 결정적으로 만들어 구현이 단순하고 빠름 | 검증된 라이브러리 사용 |
+| ECDSA | 타원곡선 | 짧은 키·서명 (JWT ES256, TLS 인증서) | **서명마다 쓰는 Nonce가 재사용·예측되면 개인키가 노출**된다 |
+| EdDSA (Ed25519, Ed448) | 타원곡선 | Nonce를 정해진 절차로 만들어 구현이 단순하고 빠름 | 검증된 라이브러리 사용 |
 
 - 미국 연방 서명 표준(*FIPS 186-5*)은 RSA·ECDSA·EdDSA를 승인하며, 예전 방식인 **DSA(Digital Signature Algorithm)는 새 서명을 만드는 용도에서 제외**했다. 기존 DSA 서명의 검증에만 쓴다. → [5.1 *FIPS 186-5*의 승인 범위](digital-signature.md#51-fips-186-5의-승인-범위)
 
-### 3.2 ECDSA의 임시값 문제
+### 3.2 ECDSA의 Nonce 문제
 
-ECDSA는 서명할 때마다 일회용 비밀 값(임시값 k)을 새로 만든다. 이 값이 두 서명에서 같거나 일부라도 예측 가능하면, **공개된 서명 두 개로 개인키를 계산**할 수 있다.
+ECDSA는 서명할 때마다 일회용 비밀 값(Nonce k)을 새로 만든다. 이 값이 두 서명에서 같거나 일부라도 예측 가능하면, **공개된 서명 두 개로 개인키를 계산**할 수 있다.
 난수 생성기 결함으로 실제 개인키가 유출된 사례가 있다.
 
-- 대응 1: **결정적 ECDSA** — 임시값을 난수 생성기 대신 개인키와 메시지로부터 정해진 절차로 만든다. 같은 메시지에는 같은 값, 다른 메시지에는 예측할 수 없는 다른 값이 나온다. 검증 방법은 기존과 같다. → [5.2 결정적 ECDSA](digital-signature.md#52-결정적-ecdsa--rfc-6979와-fips-186-5의-관계)
-- 대응 2: 처음부터 결정적 임시값을 쓰도록 설계된 **EdDSA**
+- 대응 1: **Deterministic ECDSA** — Nonce를 난수 생성기 대신 개인키와 메시지로부터 정해진 절차로 만든다. 같은 메시지에는 같은 값, 다른 메시지에는 예측할 수 없는 다른 값이 나온다. 검증 방법은 기존과 같다. → [5.2 Deterministic ECDSA](digital-signature.md#52-deterministic-ecdsa--rfc-6979와-fips-186-5의-관계)
+- 대응 2: 처음부터 Deterministic Nonce를 쓰도록 설계된 **EdDSA**
 
 > 해설: 대칭키의 Nonce 재사용(→ [Symmetric Encryption 3.2 IV / Nonce 관리](symmetric-encryption.md#32-iv--nonce-관리))과 같은 교훈이다.
 > 암호 알고리즘 자체보다 **난수와 일회용 값 관리**에서 사고가 더 자주 난다.
@@ -121,17 +121,17 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 | 실수 | 결과 | 대응 |
 |------|------|------|
 | MD5·SHA-1 해시로 서명 | 충돌을 이용한 서명 위조 | SHA-2 이상 사용 |
-| ECDSA 임시값 재사용·약한 난수 | 서명 두 개로 개인키 계산 | 결정적 ECDSA 또는 EdDSA |
+| ECDSA Nonce 재사용·약한 난수 | 서명 두 개로 개인키 계산 | Deterministic ECDSA 또는 EdDSA |
 | DSA로 새 서명 생성 | 연방 표준 비승인 | RSA-PSS·ECDSA·EdDSA로 전환, DSA는 기존 서명 검증에만 사용 |
 | 서명 검증 생략·검증 결과 무시 | 위조 데이터 수용 | 검증 실패 시 반드시 거부, 검증 경로 테스트 |
 | JWT `alg` 헤더를 그대로 신뢰 | `none` 알고리즘 허용, RS256 공개키를 HS256 비밀키로 쓰는 알고리즘 혼동 공격 | 서버가 허용 알고리즘을 고정, 키와 알고리즘을 묶어 관리 |
-| 공개키 출처 미확인 | 공격자 공개키로 검증 통과 | 인증서 체인 검증, 키 고정(pinning) 검토 |
+| 공개키 출처 미확인 | 공격자 공개키로 검증 통과 | 인증서 체인 검증, key pinning 검토 |
 | 개인키를 소스·서버 파일에 저장 | 키 유출로 서명 위조 | HSM/KMS 보관, 접근 통제와 로깅 |
 | 한 키를 서명·암호화에 겸용 | 용도 간 공격 전이 | 용도별 키 분리 |
 | 유출 키 폐기 지연 | 유출 뒤 위조 서명 계속 유효 | 폐기 절차·인증서 수명 단축 |
 | 장기 서명에 기존 알고리즘만 사용 | 양자 컴퓨터 등장 후 위조 가능 | 서명 인벤토리 작성, PQC·하이브리드 전환 계획 |
 
-점검 시 확인할 것: 서명 알고리즘과 해시, 임시값 생성 방식, 검증 실패 처리, 허용 알고리즘 고정 여부, 공개키·인증서 검증 경로, 개인키 보관 위치, 폐기 절차.
+점검 시 확인할 것: 서명 알고리즘과 해시, Nonce 생성 방식, 검증 실패 처리, 허용 알고리즘 고정 여부, 공개키·인증서 검증 경로, 개인키 보관 위치, 폐기 절차.
 
 ## 5. 심화 (Advanced)
 
@@ -142,15 +142,15 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 | 알고리즘 | *FIPS 186-5* 기준 |
 |----------|-----------------|
 | RSA (PKCS #1 v1.5, PSS) | 신규 서명 생성 및 검증 |
-| ECDSA (결정적 ECDSA 포함) | 신규 서명 생성 및 검증 |
+| ECDSA (Deterministic ECDSA 포함) | 신규 서명 생성 및 검증 |
 | EdDSA (Ed25519, Ed448) | 신규 서명 생성 및 검증 |
 | DSA | **기존 서명 검증만 허용** |
 
-### 5.2 결정적 ECDSA — RFC 6979와 FIPS 186-5의 관계
+### 5.2 Deterministic ECDSA — RFC 6979와 FIPS 186-5의 관계
 
 - ***RFC 6979*** "Deterministic Usage of the Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm (ECDSA)"는 **Informational** RFC다(Standards Track 아님).
-  임시값 k를 개인키와 메시지 해시를 입력으로 하는 **HMAC 기반 절차**로 만든다.
-- ***FIPS 186-5***는 결정적 ECDSA를 승인된 서명 생성 방식으로 규정한다. k 생성 절차는 HMAC_DRBG(HMAC-based Deterministic Random Bit Generator)를 쓰며 *RFC 6979*를 참조한다.
+  Nonce k를 개인키와 메시지 해시를 입력으로 하는 **HMAC 기반 절차**로 만든다.
+- ***FIPS 186-5***는 Deterministic ECDSA를 승인된 서명 생성 방식으로 규정한다. k 생성 절차는 HMAC_DRBG(HMAC-based Deterministic Random Bit Generator)를 쓰며 *RFC 6979*를 참조한다.
 - 즉 *RFC 6979*가 **절차를 정의하고**, *FIPS 186-5*가 **그 방식을 연방 표준으로 인정**한다. *RFC 6979* 문서 자체가 FIPS 승인을 받았다는 뜻은 아니다.
 
 ### 5.3 PQC 서명 파라미터와 크기 (바이트)
@@ -214,11 +214,11 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 | 문서 | 판 / 지위 | 인용 위치 | 공식 링크 |
 |------|-----------|-----------|-----------|
-| *NIST FIPS 186-5* "Digital Signature Standard (DSS)" | 2023-02, Final | 승인 알고리즘, DSA 지위, 결정적 ECDSA | https://doi.org/10.6028/NIST.FIPS.186-5 |
+| *NIST FIPS 186-5* "Digital Signature Standard (DSS)" | 2023-02, Final | 승인 알고리즘, DSA 지위, Deterministic ECDSA | https://doi.org/10.6028/NIST.FIPS.186-5 |
 | *NIST FIPS 204* "Module-Lattice-Based Digital Signature Standard" | 2024-08-13, Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.204 |
 | *NIST FIPS 205* "Stateless Hash-Based Digital Signature Standard" | 2024-08-13, Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.205 |
 | *NIST FIPS 206* (FN-DSA) | 개발 중 | — | — |
-| *IETF RFC 6979* | Informational | 결정적 임시값 생성 절차 | https://www.rfc-editor.org/rfc/rfc6979 |
+| *IETF RFC 6979* | Informational | Deterministic Nonce 생성 절차 | https://www.rfc-editor.org/rfc/rfc6979 |
 | *IETF RFC 7515* (JWS) | Standards Track | — | https://www.rfc-editor.org/rfc/rfc7515 |
 | *3GPP TS 33.501* | V19.7.0, Release 19 | SBA Access Token | 위 [5.4](digital-signature.md#54-5g-sba-access-token) 표 참조 |
 

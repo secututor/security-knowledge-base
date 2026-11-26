@@ -104,9 +104,9 @@ sequenceDiagram
 
 ## 3. 상세 (Details)
 
-### 3.1 전방 비밀성 (PFS)
+### 3.1 PFS (Perfect Forward Secrecy)
 
-PFS(Perfect Forward Secrecy, 전방 비밀성)는 **장기 개인키가 나중에 유출되더라도, 과거 세션의 키를 복원할 수 없는 성질**이다.
+PFS(Perfect Forward Secrecy)는 **장기 개인키가 나중에 유출되더라도, 과거 세션의 키를 복원할 수 없는 성질**이다.
 
 - 세션마다 새로 만든 **임시(ephemeral) 키**로 키 교환을 하고, 세션이 끝나면 임시 개인키를 버린다.
 - 장기 키(서버 인증서 키)는 "누구인지 증명(서명)"에만 쓰고, 세션 키 생성에는 쓰지 않는다.
@@ -148,7 +148,7 @@ sequenceDiagram
 
 ### 3.4 양자내성 하이브리드 키 교환
 
-양자 컴퓨터는 DH·ECDH를 깨뜨린다. 공격자가 지금 트래픽을 저장해 두었다가 나중에 해독하는 **"지금 수집, 나중에 해독(Harvest now, decrypt later)"** 위협 때문에, 키 교환은 서명보다 먼저 양자내성으로 전환해야 한다(→ [Asymmetric Encryption 3.4 양자 컴퓨터의 영향](asymmetric-encryption.md#34-양자-컴퓨터의-영향)).
+양자 컴퓨터는 DH·ECDH를 깨뜨린다. 공격자가 지금 트래픽을 저장해 두었다가 나중에 해독하는 **Harvest Now, Decrypt Later** 위협 때문에, 키 교환은 서명보다 먼저 양자내성으로 전환해야 한다(→ [Asymmetric Encryption 3.4 양자 컴퓨터의 영향](asymmetric-encryption.md#34-양자-컴퓨터의-영향)).
 
 **하이브리드 키 교환**은 기존 ECDH와 양자내성 KEM을 **동시에** 수행하고, 두 공유 비밀을 이어 붙여 키를 만든다.
 
@@ -221,7 +221,7 @@ sequenceDiagram
 | 공유 비밀을 그대로 키로 사용 | 키 품질·용도 분리 실패 | HKDF 등 KDF로 용도별 키 파생 |
 | 상대 공개 값 검증 생략 | 잘못된 곡선 점을 이용한 개인키 유출(Invalid curve attack) | 공개 값 유효성 검증, 검증된 라이브러리 |
 | 약한 DH 그룹·짧은 파라미터 | 공유 비밀 계산 가능 | 표준 그룹·곡선 사용 |
-| 장기 보호 트래픽에 ECDH만 사용 | 지금 수집, 나중에 해독 | 하이브리드 키 교환(X25519MLKEM768 등) 도입 검토 |
+| 장기 보호 트래픽에 ECDH만 사용 | Harvest Now, Decrypt Later | 하이브리드 키 교환(X25519MLKEM768 등) 도입 검토 |
 | 5G 홈 네트워크 개인키 관리 소홀 | 과거·미래 SUCI 복호화로 가입자 추적 | HSM(Hardware Security Module) 보관, 키 교체 절차 |
 
 점검 시 확인할 것: TLS 버전과 허용 그룹(하이브리드 포함 여부), 정적 키 교환 사용 여부, PFS 보장, 키 교환 인증 방식, KDF 사용, 공개 값 검증, 장기 키 보관 위치.
