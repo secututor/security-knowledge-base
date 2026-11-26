@@ -18,7 +18,7 @@
 
 | 영역 | 구조 | 내용 완성도 |
 |------|------|-------------|
-| `security-fundamentals/` 일반 보안 (공통 지식) | ✅ 8하위영역 + references | 🟡 Cryptography **4/9** 완성, 나머지 하위영역 준비중 |
+| `security-fundamentals/` 일반 보안 (공통 지식) | ✅ 8하위영역 + references | 🟡 Cryptography **9/9** 완성, 나머지 하위영역 준비중 |
 | `5g-security/` 5G 보안 | ✅ 완성 | 🟡 **3개 완성 / 97개 스텁** |
 | `cloud-security/` 클라우드 | ✅ 8하위영역 + references | ⬜ 준비중 |
 | `ai-security/` AI 보안 | ✅ 7하위영역 + references | ⬜ 준비중 |
@@ -30,11 +30,11 @@
 | 02 | `symmetric-encryption.md` | ✅ |
 | 03 | `hashing-mac.md` | ✅ |
 | 04 | `asymmetric-encryption.md` (RSA·ECC·KEM·PQC 지형도) | ✅ |
-| 05 | `digital-signature.md` (ML-DSA·SLH-DSA 상세 포함) | ⬜ 다음 작업 (필요 표준 확인됨) |
-| 06 | `key-exchange.md` (ML-KEM·하이브리드) | ⬜ 하이브리드 표준화 현황 확인 필요 |
-| 07 | `key-management.md` | ⬜ NIST SP 800-57 판 확인 필요 |
-| 08 | `tls-overview.md` | ⬜ TLS 1.3 RFC 확인 필요 |
-| 09 | `cryptography-in-practice.md` | ⬜ |
+| 05 | `digital-signature.md` (ML-DSA·SLH-DSA 상세 포함) | ✅ |
+| 06 | `key-exchange.md` (ML-KEM·하이브리드) | ✅ |
+| 07 | `key-management.md` | ✅ |
+| 08 | `tls-overview.md` | ✅ (RFC 9852·10015 제목, RFC 9150 지위, TS 33.210·33.310 판 확인 예정) |
+| 09 | `cryptography-in-practice.md` | ✅ 01~08 연결 지도 (새 표준 사실 없음) |
 
 - 04 범위 결정: 서명 상세는 05, 키 교환·ML-KEM 상세는 06, PKI·CA는 `pki-identity`로 링크(중복 금지).
 - 작성된 문서 중 **공식 확인 필요**: 5G SUCI ECIES Profile A/B = TS 33.501 Annex C,
@@ -74,6 +74,12 @@
     §5.6.2, §5.6.3 Table 4, §7 Figure 3 / FIPS 186-5 §6.3.2, App. A.3.3 / RFC 6979 §3.2 / FIPS 204·205 Table 2 / FIPS 203 §8 Table 3 /
     RFC 10024 §4.1~4.3 / RFC 9954 §3.3 / RFC 9846 App. F.10 / TS 33.501 §6.2.1~6.2.3.3, §6.12, Annex C.2·C.3 / TS 23.003 §2.2, §28.3.
   - 문서 간 참조는 GitHub 헤딩 앵커로 연결함. GitBook 앵커 규칙이 다르면 링크가 페이지 상단으로만 이동할 수 있음 → GitBook 확인 필요.
+  - TLS Overview(08) 외부 검증값: RFC 9846(2026-07)이 RFC 8446·5246 대체 / RFC 5246 Proposed Std, Obsoleted / RFC 8996·9325 BCP 195 /
+    RFC 9852·10015(2026-07)가 RFC 9325 갱신 (공식 제목 미확인) / RFC 6066·6797 Proposed Std / TLS 1.3 기본 스위트 5개 = RFC 9846 App. B.4 Table 5,
+    구현 요구는 §9.1 (AES-128-GCM MUST, AES-256-GCM·ChaCha20 SHOULD) / RFC 9150 인증·무결성 전용 스위트(지위 미확인) /
+    NIST SP 800-52 Rev.2 Final(2019-08), 2026-11-19 개정 결정·후속판 미발행 /
+    5G SBA TLS: TS 33.501 §13.1.0 (검증자는 V19.4.0으로 확인, 공개 문서는 기준판 V19.7.0 표기 → V19.7.0 대조 필요),
+    TLS 프로파일 TS 33.210 §6.2(.2 TLS 1.3/.3 TLS 1.2), 인증서 프로파일 TS 33.310 §6.1.3c (두 규격 판 미확인).
   - **[보류 작업] GitBook 같은 페이지 앵커 일괄 수정** (사용자 지시: 나중에 한 번에 처리)
     - 확인됨: 같은 페이지 링크는 GitBook 오른쪽 목차 앵커 형식만 동작. `asymmetric-encryption.md` 53행 `[3.4 …](#id-3.4)`로 시험 → 이동 성공 (커밋 ad9b9fb).
     - 동작 안 함: `#34-양자-컴퓨터의-영향`, `asymmetric-encryption.md#34-…` (GitHub 슬러그 형식, 같은 페이지일 때).
