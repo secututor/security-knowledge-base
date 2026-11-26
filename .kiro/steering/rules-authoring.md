@@ -407,6 +407,10 @@ NN-MM-{Issue_Name}.md
   - 다른 문서: `[Key Exchange 3.4 양자내성 하이브리드 키 교환](key-exchange.md#34-양자내성-하이브리드-키-교환)`
   - 앵커는 GitHub 헤딩 앵커 규칙(소문자, 공백→`-`, 문장부호 제거)을 따른다. 헤딩을 바꾸면 그 앵커를 쓰는 링크도 함께 고친다.
   - 링크 대상이 아직 내용이 없는 로드맵·준비 중 페이지면 링크 뒤에 `(작성 예정)` 또는 `(로드맵, 문서 작성 예정)`을 붙인다.
+- **용어는 실무에서 통용되는 형태를 쓴다.** 업계에서 영어로 그대로 쓰는 용어는 억지로 한글화하지 않는다.
+  - 영어 유지 예: Nonce, Deterministic ECDSA, PFS(Perfect Forward Secrecy), textbook RSA, trapdoor, Harvest Now, Decrypt Later, Revocation, Approved mode, work factor, constant-time, key pinning, ciphertext-only
+  - 한글 사용 예: 공격자(Adversary — 생소한 영어는 한글로), 중간자 공격, 무차별 대입, 부인방지, 운용 모드, 봉투 암호화
+  - 같은 개념은 지식베이스 전체에서 한 용어로 통일한다(예: "적대자"·"공격자" 혼용 금지 → "공격자").
 - **5G 3GPP 규격 기준 버전**: 지식베이스 전체에서 **TS 33.501 V19.7.0 (Release 19)** 하나로 통일해 인용한다. 기준 버전을 바꿀 때는 모든 문서의 인용을 함께 바꾼다.
 - 문장은 간결하게. 과장 없이 사실 위주로.
 - 표준/논문을 인용할 때 없는 내용을 지어내지 않는다 (환각 금지). 근거가 없으면 명시하지 않는다.
