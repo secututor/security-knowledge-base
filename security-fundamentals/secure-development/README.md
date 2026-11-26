@@ -2,7 +2,7 @@
 
 안전한 소프트웨어 개발 생명주기와 보안 테스트를 다루는 하위 영역입니다.
 
-- SSDLC(Secure Software Development Life Cycle) — NIST SSDF(SP 800-218) 연계
+- SSDLC(Secure Software Development Life Cycle) — NIST SSDF(*SP 800-218*) 연계
 - Secure Coding 원칙
 - SAST / DAST / SCA / IAST
 - 의존성·공급망 보안 기초

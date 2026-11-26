@@ -36,7 +36,7 @@ sequenceDiagram
 | 블록 암호 (Block cipher) | 고정 길이 블록 단위로 변환한다. 블록보다 긴 데이터는 **운용 모드**로 처리한다 | AES(Advanced Encryption Standard) |
 | 스트림 암호 (Stream cipher) | 키와 Nonce(Number used once)로 키스트림을 만들어 평문과 XOR(배타적 논리합)한다 | ChaCha20 |
 
-- AES는 블록 크기 128비트, 키 길이 128/192/256비트를 쓰는 블록 암호로, FIPS 197에 규정되어 있다.
+- AES는 블록 크기 128비트, 키 길이 128/192/256비트를 쓰는 블록 암호로, *FIPS 197*에 규정되어 있다.
 - 블록 암호도 CTR(Counter) 같은 운용 모드를 쓰면 스트림 암호처럼 동작한다.
 
 ### 2.3 운용 모드 (Mode of operation)
@@ -78,7 +78,7 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 ### 3.1 키 길이와 보안 강도
 
 - 잘 설계된 대칭키 암호는 키 길이 n비트일 때 약 n비트 보안 강도를 목표로 한다(전수 조사가 최선의 공격이 되도록).
-- 키 길이가 같아도 알고리즘이 다르면 강도가 같다고 단정하지 않는다. 공개키 암호와 비교할 때는 특히 그렇다(→ [Cryptography Overview](cryptography-overview.md) §2.4).
+- 키 길이가 같아도 알고리즘이 다르면 강도가 같다고 단정하지 않는다. 공개키 암호와 비교할 때는 특히 그렇다(→ [Cryptography Overview 2.4 안전성의 개념](cryptography-overview.md#24-안전성의-개념)).
 - 양자 컴퓨터의 Grover 알고리즘은 대칭키 전수 조사를 제곱근 수준으로 가속한다고 알려져 있어,
   장기 보호 데이터에는 더 긴 키(예: 256비트)를 고려하는 논의가 있다. 구체적 권고는 기관 표준을 따른다.
 
@@ -92,13 +92,13 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 - Nonce(Number used once)는 암호 연산에서 **재사용되지 않도록 관리하는 값**이다. 반드시 무작위일 필요는 없으며,
   알고리즘에 따라 고유성(CTR, GCM) 또는 예측 불가능성(CBC의 IV)이 요구된다.
 - Nonce는 비밀이 아니다. 암호문과 함께 전송해도 된다. 중요한 것은 **유일성**이다.
-- 랜덤 Nonce를 쓰면 한 키로 암호화할 수 있는 메시지 수에 한계가 생긴다. 그 전에 키를 교체한다(→ 키 관리, 작성 예정).
+- 랜덤 Nonce를 쓰면 한 키로 암호화할 수 있는 메시지 수에 한계가 생긴다. 그 전에 키를 교체한다(→ [Key Management 2.3 사용 기간](key-management.md#23-사용-기간-cryptoperiod)).
 
 ### 3.3 대표 알고리즘 현황
 
 | 알고리즘 | 상태 (일반 인식) | 비고 |
 |----------|------------------|------|
-| AES | 현행 표준 | FIPS 197 (2023 개정판) |
+| AES | 현행 표준 | *FIPS 197* (2023 개정판) |
 | ChaCha20-Poly1305 | 널리 사용 | 하드웨어 AES 가속이 없는 환경에서 유리 |
 | DES(Data Encryption Standard) | 폐기 | 56비트 키로 전수 조사 가능 |
 | 3DES(Triple DES) | 퇴출 단계 | 블록 크기가 64비트로 작아 대량 데이터에 취약 |
@@ -110,8 +110,8 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 무선·NAS(Non-Access Stratum) 구간 암호화 알고리즘(NEA, NR(New Radio) Encryption Algorithm) 중 128-NEA2가 AES-CTR 기반이다. 무결성 알고리즘(NIA, NR Integrity Algorithm)은 별도로 적용된다(3GPP TS 33.501 §5.11.1.1) |
-| Cloud | 저장 데이터 암호화(봉투 암호화의 데이터 키) → [Data Protection](../../cloud-security/data-protection/README.md) |
+| 5G | 무선·NAS(Non-Access Stratum) 구간 암호화 알고리즘(NEA, NR(New Radio) Encryption Algorithm) 중 128-NEA2가 AES-CTR 기반이다. 무결성 알고리즘(NIA, NR Integrity Algorithm)은 별도로 적용된다(*3GPP TS 33.501*) |
+| Cloud | 저장 데이터 암호화(봉투 암호화의 데이터 키) → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
 | Web | TLS 1.3 레코드 보호는 AEAD 암호만 사용한다 → `tls-overview.md`(작성 예정) |
 
 > 해설: 5G는 암호화(NEA)와 무결성(NIA)을 **분리된 알고리즘**으로 운용하는 구조라, AEAD 한 번으로 둘을 묶는 TLS 1.3과 설계가 다르다.
@@ -139,6 +139,6 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 
 ## 출처
 
-- AES 규격: NIST, FIPS 197 (2023 개정판).
-- 5G 128-NEA2 = AES-CTR: 3GPP, TS 33.501 V19.7.0 (Release 19) §5.11.1.1 (세부는 5G 영역 문서에서 다룬다). V19.7.0 원문 조항 대조는 확인 예정.
+- AES 규격: NIST, *FIPS 197* (2023 개정판).
+- 5G 128-NEA2 = AES-CTR: 3GPP, *TS 33.501 V19.7.0 (Release 19)* (세부는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다).
 - 그 외 내용은 대칭키 암호의 일반 원리를 재구성한 해설이다. 폐기 일정·권고 키 길이 등 구체 수치는 다루지 않았다.

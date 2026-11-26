@@ -3,7 +3,7 @@
 클라우드 환경의 보안을 다루는 **최상위 영역**입니다.
 이 지식베이스는 기술 설명에 그치지 않고 **통제 기준 → 기술적 설정 → 공격 시나리오 →
 점검 방법 → 평가 보고서** 로 이어지는 실무형 구조를 지향합니다.
-향후 **ISMS-P · CSAP · ISO/IEC 27017** 클라우드 보안 컨설팅에 활용할 수 있도록 구성합니다.
+향후 **ISMS-P · CSAP · *ISO/IEC 27017*** 클라우드 보안 컨설팅에 활용할 수 있도록 구성합니다.
 
 > 5G의 NFV/클라우드 네이티브 위협은 [5G Security — NFV & Cloud](../5g-security/security-risks/08-nfv-cloud/README.md)에서 다루고,
 > 이 영역은 **일반 클라우드 보안 관점**을 다룹니다. 두 영역은 서로 링크로 연결됩니다.
@@ -33,9 +33,9 @@
 |-----------|------|------|
 | **CSA CCM** | 클라우드 보안 **통제·평가의 중심 기준** | CCM · CAIQ · 통제 매핑 |
 | **CIS Benchmarks** | 실제 시스템 설정·Hardening 기준 | AWS · Azure · GCP · Kubernetes |
-| **NIST** | 보안 통제·클라우드 보안 원칙 | SP 800-53 · 800-144 · 800-210 |
+| **NIST** | 보안 통제·클라우드 보안 원칙 | *SP 800-53* · *SP 800-144* · *SP 800-210* |
 | **MITRE ATT&CK (Cloud)** | 공격 시나리오·탐지·대응 연계 | IaaS · SaaS · Identity Provider |
-| **ISO/IEC** | 클라우드 보안 관리체계·통제 지침 | 27017 · 27018 |
+| **ISO/IEC** | 클라우드 보안 관리체계·통제 지침 | *27017* · *27018* |
 | **국내(KISA)** | 국내 인증·규제 대응 | ISMS-P · CSAP |
 
 > 역할 요약: CSA CCM=통제 베이스라인 / CIS=설정 Hardening / NIST=통제 원칙 /
@@ -57,12 +57,12 @@
 | 프레임워크 | 기준 버전 | 상태 / 날짜 | 공식 출처 |
 |-----------|-----------|-------------|-----------|
 | CSA CCM | **4.1** (207 통제 / 17 영역, CAIQ v4.1 동반) | released, 2026-01 | https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1 |
-| ISO/IEC 27017 | **2026** (Edition 2) | published, 2026-07-27 (이전판 2015) | https://www.iso.org/standard/27017 |
-| ISO/IEC 27018 | 최신판 | 확인 예정 | https://www.iso.org/standard/76559.html |
+| *ISO/IEC 27017* | **2026** (Edition 2) | published, 2026-07-27 (이전판 2015) | https://www.iso.org/standard/27017 |
+| *ISO/IEC 27018* | 최신판 | 확인 예정 | https://www.iso.org/standard/76559.html |
 | CSAP 해설서 | **2026년 해설서** | 게시 2026-07-06 / 정정 2026-07-28(내용 변경 없음) | https://www.isms-p.or.kr/ |
 | ISMS-P | 최신 고시 | 확인 예정 | https://www.isms-p.or.kr/ |
 | CIS Benchmarks | CSP·서비스별 최신판 | CSP별 분리 관리 | https://www.cisecurity.org/cis-benchmarks |
-| NIST SP 800-53 | Rev.5 | released | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
+| *NIST SP 800-53* | Rev.5 | released | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
 | MITRE ATT&CK (Cloud) | 최신판 | 확인 예정 | https://attack.mitre.org/matrices/enterprise/cloud/ |
 
 > 각 버전은 공식 링크에서 확인할 수 있다.

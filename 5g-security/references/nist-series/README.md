@@ -15,13 +15,13 @@ NIST의 5G Cybersecurity 백서 시리즈입니다. "Applying 5G Cybersecurity a
 
 | 코드 | 자료 | 다루는 문제 |
 |------|------|-------------|
-| **US-1** | NIST CSWP 36 (시리즈 전체) | 5G Cybersecurity & Privacy 전체 개요 |
-| **US-2** | NIST CSWP 36A | SUCI — 가입자 식별자(SUPI) 보호 |
-| **US-3** | NIST CSWP 36B | Hardware(-enabled) Root of Trust / 플랫폼 무결성 |
-| **US-4** | NIST CSWP 36C | Temporary Identity(GUTI 등) 재할당 |
-| **US-5** | NIST CSWP 36D | No-SUPI-based Paging (Paging 시 SUPI 노출 방지) |
-| **US-6** | NIST CSWP 36E | 5G Network Security Design Principles |
-| **US-7** | NIST CSWP 36F | Initial NAS Message Security (Initial Public Draft) |
+| **US-1** | *NIST CSWP 36* (시리즈 전체) | 5G Cybersecurity & Privacy 전체 개요 |
+| **US-2** | *NIST CSWP 36A* | SUCI — 가입자 식별자(SUPI) 보호 |
+| **US-3** | *NIST CSWP 36B* | Hardware(-enabled) Root of Trust / 플랫폼 무결성 |
+| **US-4** | *NIST CSWP 36C* | Temporary Identity(GUTI 등) 재할당 |
+| **US-5** | *NIST CSWP 36D* | No-SUPI-based Paging (Paging 시 SUPI 노출 방지) |
+| **US-6** | *NIST CSWP 36E* | 5G Network Security Design Principles |
+| **US-7** | *NIST CSWP 36F* | Initial NAS Message Security (Initial Public Draft) |
 
 ### 특징
 - **36A(US-2)**: SUCI로 SUPI를 암호화해 식별자 노출/추적을 막는 방법.

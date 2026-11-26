@@ -34,8 +34,8 @@
 |------|------------------|------|
 | MD5(Message Digest 5) | 사용 금지 | 실용적 충돌 공격 공개 |
 | SHA(Secure Hash Algorithm)-1 | 사용 금지(서명 용도) | 실용적 충돌 사례 공개 |
-| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | FIPS 180-4 |
-| SHA-3 (SHA3-256 등, SHAKE) | 현행 | FIPS 202. SHA-2와 다른 스펀지(Sponge) 구조 |
+| SHA-2 (SHA-256, SHA-384, SHA-512 등) | 현행 | *FIPS 180-4* |
+| SHA-3 (SHA3-256 등, SHAKE) | 현행 | *FIPS 202*. SHA-2와 다른 스펀지(Sponge) 구조 |
 
 > SHA-3는 SHA-2가 깨져서 만든 대체재가 아니라, **구조가 다른 예비 표준**이다. SHA-2는 현재도 현행이다.
 
@@ -59,7 +59,7 @@ sequenceDiagram
 대표 MAC 구성:
 - **HMAC(Hash-based MAC)**: 해시 함수(SHA-256 등)와 키를 결합한 구조. 가장 널리 쓰인다.
 - **CMAC(Cipher-based MAC)**: 블록 암호(AES, Advanced Encryption Standard) 기반 MAC.
-- **AEAD(Authenticated Encryption with Associated Data)의 인증 태그**: 암호화와 MAC을 통합(→ [Symmetric Encryption](symmetric-encryption.md) §2.4).
+- **AEAD(Authenticated Encryption with Associated Data)의 인증 태그**: 암호화와 MAC을 통합(→ [Symmetric Encryption 2.4 인증 암호화 (AEAD)](symmetric-encryption.md#24-인증-암호화-aead)).
 
 ### 2.4 왜 `Hash(Key || Message)`가 아닌 HMAC인가
 
@@ -90,7 +90,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 | 패스워드 기반 KDF | 사람이 고른 낮은 엔트로피 비밀 | 패스워드 저장, 패스워드로부터 키 생성 | PBKDF2(Password-Based KDF 2), scrypt, Argon2 |
 
 - 키 파생에는 보통 **용도 라벨(context)** 을 함께 넣어, 같은 마스터 비밀에서 나온 키라도 용도별로 서로 다른 값이 되게 한다.
-- 이 "마스터 → 용도별 키" 구조가 키 계층(Key hierarchy)의 기본 원리다(→ 5G 키 계층 문서).
+- 이 "마스터 → 용도별 키" 구조가 키 계층(Key hierarchy)의 기본 원리다(→ [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)).
 
 ### 3.3 패스워드 저장
 
@@ -109,9 +109,9 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 키 계층의 각 키는 상위 키에서 KDF로 파생된다. 범용 KDF는 HMAC-SHA-256 기반이며(3GPP TS 33.220 Annex B), 5G 키별 입력 파라미터와 FC(Function Code) 값은 TS 33.501 Annex A가 정의한다. 즉 모든 키가 "같은 연산"으로 나오는 것이 아니라 **키마다 입력 구성이 달라 서로 다른 키가 파생**된다. NAS(Non-Access Stratum)·RRC(Radio Resource Control) 메시지 무결성은 NIA(NR(New Radio) Integrity Algorithm) 알고리즘이 담당하며 128-NIA2는 AES-CMAC 기반이다(TS 33.501 §5.11.1.2) → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md) |
-| Web | 세션 토큰·JWT(JSON Web Token)의 HMAC 서명(HS256 등), 패스워드 저장 → [Web & Application Security](../web-app-security/README.md) |
-| Cloud | 객체 무결성 검사(체크섬), API(Application Programming Interface) 요청 서명(HMAC 기반) → [Cloud Security](../../cloud-security/README.md) |
+| 5G | 키 계층의 각 키는 상위 키에서 KDF로 파생된다. 범용 KDF는 HMAC-SHA-256 기반이며(*3GPP TS 33.220*), 5G 키별 입력 파라미터와 FC(Function Code) 값은 *TS 33.501*이 정의한다. 즉 모든 키가 "같은 연산"으로 나오는 것이 아니라 **키마다 입력 구성이 달라 서로 다른 키가 파생**된다. NAS(Non-Access Stratum)·RRC(Radio Resource Control) 메시지 무결성은 NIA(NR(New Radio) Integrity Algorithm) 알고리즘이 담당하며 128-NIA2는 AES-CMAC 기반이다(*TS 33.501*) → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md) |
+| Web | 세션 토큰·JWT(JSON Web Token)의 HMAC 서명(HS256 등), 패스워드 저장 → [Web & Application Security](../web-app-security/README.md) (작성 예정) |
+| Cloud | 객체 무결성 검사(체크섬), API(Application Programming Interface) 요청 서명(HMAC 기반) → [Cloud Security](../../cloud-security/README.md) (로드맵, 문서 작성 예정) |
 | 공급망 | 배포 파일 해시 게시 — 해시만으로는 게시처가 변조되면 무의미하므로 서명과 함께 쓴다 |
 
 ## 4. 보안 관점 (Security Relevance)
@@ -137,8 +137,7 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 ## 출처
 
-- SHA-2: NIST, FIPS 180-4 / SHA-3: NIST, FIPS 202.
-- 5G 128-NIA2 = AES-CMAC: 3GPP, TS 33.501 V19.7.0 (Release 19) §5.11.1.2 / 5G 키 파생 입력 구성: TS 33.501 Annex A /
-  범용 KDF(HMAC-SHA-256): TS 33.220 V19.1.0 (Release 19) Annex B (세부는 5G 영역 문서에서 다룬다).
-  TS 33.501 V19.7.0과 TS 33.220 V19.1.0의 원문 조항 대조는 확인 예정.
+- SHA-2: NIST, *FIPS 180-4* / SHA-3: NIST, *FIPS 202*.
+- 5G 128-NIA2 = AES-CMAC, 5G 키 파생 입력 구성: 3GPP, *TS 33.501 V19.7.0 (Release 19)* /
+  범용 KDF(HMAC-SHA-256): *TS 33.220 V19.1.0 (Release 19)* (세부는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다).
 - 그 외 내용은 해시·MAC·KDF의 일반 원리를 재구성한 해설이다. 패스워드 해시 파라미터 등 구체 수치는 다루지 않았다.

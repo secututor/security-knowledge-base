@@ -38,6 +38,6 @@ K_gNB에서 다시 RRC·사용자 평면 보호 키가 파생된다.
 
 ## 7. 3GPP / O-RAN 표준
 
-TS 33.501
+*TS 33.501*
 
-> 상세 정의는 [12. 3GPP / O-RAN 표준](../references/3gpp-standards/README.md) 참조. 5G 키 계층과 파생 함수는 TS 33.501에 정의된다.
+> 상세 정의는 [12. 3GPP / O-RAN 표준](../references/3gpp-standards/README.md) 참조. 5G 키 계층과 파생 함수는 *TS 33.501*에 정의된다.

@@ -53,7 +53,7 @@ flowchart LR
 | 01 | `cryptography-overview.md` | 기밀성·무결성·인증·부인방지와 암호 기능의 대응, Kerckhoffs 원칙, 위협 모델과 공격자 능력, 안전성(보안 강도) 개념 | — | `../threat-modeling/` |
 | 02 | `symmetric-encryption.md` | 블록·스트림 암호, 운용 모드(CBC(Cipher Block Chaining)/CTR(Counter)/GCM(Galois/Counter Mode)), 인증 암호화(AEAD, Authenticated Encryption with Associated Data), IV(Initialization Vector)·Nonce 재사용 위험 | 01 | 5G NEA(NR Encryption Algorithm)/NIA(NR Integrity Algorithm), Cloud 저장 데이터 암호화 |
 | 03 | `hashing-mac.md` | 해시 성질(충돌·역상 저항), SHA(Secure Hash Algorithm)-2/SHA-3, MAC·HMAC(Hash-based MAC), KDF(Key Derivation Function), 패스워드 해시와의 구분 | 01 | 5G 키 파생(KDF), 패스워드 저장 |
-| 04 | `asymmetric-encryption.md` | 공개키 개념, RSA(Rivest-Shamir-Adleman)·ECC(Elliptic Curve Cryptography) 원리 수준, 공개키 암호화 vs KEM(Key Encapsulation Mechanism) 구분, 키 크기와 보안 강도, 양자 위협과 PQC 지형도(FIPS 203~205 개요) | 02 | `../pki-identity/` |
+| 04 | `asymmetric-encryption.md` | 공개키 개념, RSA(Rivest-Shamir-Adleman)·ECC(Elliptic Curve Cryptography) 원리 수준, 공개키 암호화 vs KEM(Key Encapsulation Mechanism) 구분, 키 크기와 보안 강도, 양자 위협과 PQC 지형도(*FIPS 203*~205 개요) | 02 | `../pki-identity/` |
 | 05 | `digital-signature.md` | 서명의 목적(무결성·인증·부인방지), RSA/ECDSA(Elliptic Curve Digital Signature Algorithm)/EdDSA(Edwards-curve Digital Signature Algorithm) 개념, 해시-서명 결합, PQC 서명(ML-DSA(Module-Lattice-Based Digital Signature Algorithm)·SLH-DSA(Stateless Hash-Based Digital Signature Algorithm)) 상세 | 03, 04 | 코드 서명, 인증서, JWT(JSON Web Token) |
 | 06 | `key-exchange.md` | DH/ECDH, 전방 비밀성(PFS, Perfect Forward Secrecy), 중간자 공격과 인증된 키 교환, ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) 상세와 하이브리드 키 교환 | 04 | 5G SUCI(ECIES, Elliptic Curve Integrated Encryption Scheme), TLS |
 | 07 | `key-management.md` | 키 수명주기(생성·저장·회전·폐기), 키 계층, HSM(Hardware Security Module)/KMS, 키 래핑 | 05, 06 | 5G 키 계층, Cloud `data-protection` KMS |
@@ -74,19 +74,19 @@ flowchart LR
 
 | 표준 | 용도 | 상태 |
 |------|------|------|
-| FIPS 197 (AES, Advanced Encryption Standard) | 대칭 블록 암호 | 현행 (2023 개정) |
-| FIPS 180-4 (SHS, Secure Hash Standard) | SHA-2 계열 | 현행 |
-| FIPS 202 (SHA-3) | SHA-3 계열 | 현행 |
-| FIPS 186-5 (DSS, Digital Signature Standard) | 디지털 서명 | 현행 (2023) |
-| TLS 1.3 (RFC 9846, RFC 8446 대체) | 전송 구간 보안 | 현행 (Standards Track) |
-| RFC 10024 (TLS 1.3 PQ/T 하이브리드 키 합의) / RFC 9954 (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard (2026-08) / Informational |
-| RFC 5869 (HKDF, HMAC-based Key Derivation Function) | 키 파생 | Informational |
-| NIST SP 800-57 Part 1 Rev. 5 (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 (2020-05-04 Final) |
-| FIPS 140-3 | 암호 모듈 보안 요구사항·검증 | 현행 (2019-03-22 승인) |
-| FIPS 203 (ML-KEM) / 204 (ML-DSA) / 205 (SLH-DSA) | PQC(Post-Quantum Cryptography, 양자내성암호) 확정 표준 | 확정 (2024-08-13 발행) |
-| FIPS 206 (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 2025-03 선정 (둘 다 최종 표준 아님) |
-| 3GPP TS 33.501 V19.7.0 (Release 19) | 5G NEA/NIA, 5G KDF 입력(Annex A), 키 계층(§6.2) | Release 19 최종판, 이 지식베이스의 기준판 (Release 20 판과 조항을 혼용하지 않음). 인용 조항의 원문 대조는 확인 예정 |
-| 3GPP TS 33.220 V19.1.0 (Release 19) Annex B | 범용 KDF(HMAC-SHA-256) | Release 19 발행본. Annex B 원문 대조는 확인 예정 |
+| *FIPS 197* (AES, Advanced Encryption Standard) | 대칭 블록 암호 | 현행 (2023 개정) |
+| *FIPS 180-4* (SHS, Secure Hash Standard) | SHA-2 계열 | 현행 |
+| *FIPS 202* (SHA-3) | SHA-3 계열 | 현행 |
+| *FIPS 186-5* (DSS, Digital Signature Standard) | 디지털 서명 | 현행 (2023) |
+| TLS 1.3 (*RFC 9846*, *RFC 8446* 대체) | 전송 구간 보안 | 현행 (Standards Track) |
+| *RFC 10024* (TLS 1.3 PQ/T 하이브리드 키 합의) / *RFC 9954* (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard (2026-08) / Informational |
+| *RFC 5869* (HKDF, HMAC-based Key Derivation Function) | 키 파생 | Informational |
+| *NIST SP 800-57 Part 1 Rev. 5* (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 (2020-05-04 Final) |
+| *FIPS 140-3* | 암호 모듈 보안 요구사항·검증 | 현행 (2019-03-22 승인) |
+| *FIPS 203* (ML-KEM) / *204* (ML-DSA) / *205* (SLH-DSA) | PQC(Post-Quantum Cryptography, 양자내성암호) 확정 표준 | 확정 (2024-08-13 발행) |
+| *FIPS 206* (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 2025-03 선정 (둘 다 최종 표준 아님) |
+| *3GPP TS 33.501 V19.7.0 (Release 19)* | 5G NEA/NIA, 5G KDF 입력, 키 계층 | Release 19 최종판, 이 지식베이스의 기준판 (Release 20 판과 혼용하지 않음) |
+| *3GPP TS 33.220 V19.1.0 (Release 19)* | 범용 KDF(HMAC-SHA-256) | Release 19 발행본 |
 
 > 표준별 정의는 [References](../references/README.md)에 정리되어 있다.
 
@@ -95,7 +95,7 @@ flowchart LR
 - **인증서 구조·CA(Certificate Authority)·신뢰 모델** → [PKI & Identity](../pki-identity/README.md) (여기서는 서명·키 교환까지 다룬다)
 - **Authentication·OAuth·OIDC(OpenID Connect)** → [PKI & Identity](../pki-identity/README.md)
 - **TLS 서버 설정 점검·웹 취약점** → [Web & Application Security](../web-app-security/README.md)
-- **5G 키 계층·SUCI 상세** → [5G Fundamentals](../../5g-security/fundamentals/README.md) (여기서는 일반 원리만 다룬다)
+- **5G 키 계층·SUCI 상세** → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md), [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) (여기서는 일반 원리만 다룬다)
 - **Cloud KMS 서비스별 구성** → [Cloud Data Protection](../../cloud-security/data-protection/README.md)
 
 ## 문서 목록
@@ -106,6 +106,6 @@ flowchart LR
 - [Asymmetric Encryption](asymmetric-encryption.md) — 04. 공개키 원리, RSA·ECC, KEM, 양자 위협과 PQC 지형도
 - [Digital Signature](digital-signature.md) — 05. 서명·검증 원리, RSA·ECDSA·EdDSA, ML-DSA·SLH-DSA, 서명 실수와 대응
 - [Key Exchange](key-exchange.md) — 06. DH·ECDH·KEM·HKDF 구분, PFS, TLS 1.2/1.3 비교, 하이브리드(X25519MLKEM768), 5G SUCI ECIES
-- [Key Management](key-management.md) — 07. 키 생명주기, KEK/DEK·봉투 암호화, HSM·KMS, 침해 대응, Cloud·5G 사례, FIPS 140-3
+- [Key Management](key-management.md) — 07. 키 생명주기, KEK/DEK·봉투 암호화, HSM·KMS, 침해 대응, Cloud·5G 사례, *FIPS 140-3*
 
 _나머지 문서는 로드맵 순서대로 추가될 예정이다._

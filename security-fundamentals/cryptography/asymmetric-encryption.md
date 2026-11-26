@@ -49,7 +49,7 @@ sequenceDiagram
 | DH(Diffie-Hellman) | 이산로그 문제 | 거듭제곱을 계산한다 | 결과로부터 지수를 찾는다 |
 
 - 수식 세부는 이 문서의 범위 밖이다. "공개키에서 개인키를 계산하는 것이 현실적으로 불가능하다"는 성질이 핵심이다.
-- 이 성질은 **고전 컴퓨터 기준**이다. 양자 컴퓨터는 이 가정을 깬다(§3.4).
+- 이 성질은 **고전 컴퓨터 기준**이다. 양자 컴퓨터는 이 가정을 깬다(→ [3.4 양자 컴퓨터의 영향](#34-양자-컴퓨터의-영향)).
 
 ### 2.3 하이브리드 암호 — 실제로는 공개키로 데이터를 직접 암호화하지 않는다
 
@@ -122,14 +122,14 @@ sequenceDiagram
 
 ### 3.3 키 길이와 보안 강도
 
-공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. NIST SP 800-57 Part 1 Rev. 5 기준 대표 대응은 다음과 같다(전체 표 → §5.1).
+공개키 암호는 키 길이와 보안 강도가 일대일로 대응하지 않는다. *NIST SP 800-57 Part 1 Rev. 5* 기준 대표 대응은 다음과 같다(전체 표 → [5.1 보안 강도 대응표](#51-보안-강도-대응표)).
 
 | 보안 강도 | RSA 모듈러스 | ECC 키 |
 |:--------:|:-----------:|:------:|
 | 약 128비트 | 약 3072비트 | 약 256비트 |
 
 - RSA는 강도를 올릴수록 키가 급격히 길어지고, ECC는 완만하게 늘어난다.
-- 권고 최소 길이와 사용 기한은 기관 표준(NIST SP 800-57 등)을 따른다 → §5.1, [Key Management](key-management.md)
+- 권고 최소 길이와 사용 기한은 기관 표준(*NIST SP 800-57* 등)을 따른다 → [5.1 보안 강도 대응표](#51-보안-강도-대응표), [Key Management](key-management.md)
 
 ### 3.4 양자 컴퓨터의 영향
 
@@ -150,10 +150,10 @@ PQC(Post-Quantum Cryptography, 양자내성암호)는 양자 컴퓨터로도 풀
 
 | 표준 | 알고리즘 | 기능 | 기존 대응 | 상태 |
 |------|---------|------|-----------|------|
-| FIPS 203 | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 (2024-08-13 발행) |
-| FIPS 204 | ML-DSA(Module-Lattice-Based Digital Signature Algorithm) | 서명 | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
-| FIPS 205 | SLH-DSA(Stateless Hash-Based Digital Signature Algorithm) | 서명(해시 기반) | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
-| FIPS 206 | FN-DSA(FFT over NTRU-Lattice-Based Digital Signature Algorithm) | 서명 | — | 개발 중 (확정 표준 아님) |
+| *FIPS 203* | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 (2024-08-13 발행) |
+| *FIPS 204* | ML-DSA(Module-Lattice-Based Digital Signature Algorithm) | 서명 | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
+| *FIPS 205* | SLH-DSA(Stateless Hash-Based Digital Signature Algorithm) | 서명(해시 기반) | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
+| *FIPS 206* | FN-DSA(FFT over NTRU-Lattice-Based Digital Signature Algorithm) | 서명 | — | 개발 중 (확정 표준 아님) |
 | — | HQC(Hamming Quasi-Cyclic) | KEM(예비) | — | 2025-03 추가 표준화 대상 선정 (최종 표준 아님) |
 
 - ML-KEM은 CRYSTALS-Kyber, ML-DSA는 CRYSTALS-Dilithium, SLH-DSA는 SPHINCS+로 알려졌던 방식이다.
@@ -177,18 +177,18 @@ flowchart LR
 ```
 
 텍스트 설명: 기존 키 설정 기능(RSA 키 전송, ECDH)은 ML-KEM으로, 기존 서명 기능(RSA·ECDSA)은 ML-DSA 또는 SLH-DSA로 교체된다.
-전환 초기에는 기존 방식과 PQC를 함께 쓰는 **하이브리드** 구성이 널리 논의된다(→ [Key Exchange](key-exchange.md) §3.4).
+전환 초기에는 기존 방식과 PQC를 함께 쓰는 **하이브리드** 구성이 널리 논의된다(→ [Key Exchange 3.4 양자내성 하이브리드 키 교환](key-exchange.md#34-양자내성-하이브리드-키-교환)).
 
 ### 3.6 다른 영역에서의 사용
 
 | 영역 | 사용처 |
 |------|--------|
-| 5G | 단말은 홈 네트워크 공개키로 영구 식별자 SUPI(Subscription Permanent Identifier)를 SUCI로 은닉한다. ECIES 기반 보호 방식(Profile A: Curve25519/X25519, Profile B: secp256r1)을 사용한다(3GPP TS 33.501 Annex C.3.4.1·C.3.4.2) → [Key Exchange](key-exchange.md) §3.5, [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) |
-| Web | TLS 인증서의 서버 공개키(RSA·ECDSA)로 서버를 인증한다. TLS 1.3(RFC 9846)은 정적 RSA 키 전송을 제거하고 (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) 키 교환을 쓴다. RSA는 서명 용도로 계속 쓰인다 → [Key Exchange](key-exchange.md) §3.2 |
-| PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Identity](../pki-identity/README.md) |
-| Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 비대칭 키 쌍을 생성·보관하고, 개인키를 외부로 내보내지 않은 채 서명·복호화 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) |
+| 5G | 단말은 홈 네트워크 공개키로 영구 식별자 SUPI(Subscription Permanent Identifier)를 SUCI로 은닉한다. ECIES 기반 보호 방식(Profile A: Curve25519/X25519, Profile B: secp256r1)을 사용한다(*3GPP TS 33.501*) → [Key Exchange 3.5 5G SUCI의 ECIES](key-exchange.md#35-5g-suci의-ecies--실제-적용-사례), [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md) |
+| Web | TLS 인증서의 서버 공개키(RSA·ECDSA)로 서버를 인증한다. TLS 1.3(*RFC 9846*)은 정적 RSA 키 전송을 제거하고 (EC)DHE((Elliptic Curve) Diffie-Hellman Ephemeral) 키 교환을 쓴다. RSA는 서명 용도로 계속 쓰인다 → [Key Exchange 3.2 TLS 1.2와 TLS 1.3의 키 교환 비교](key-exchange.md#32-tls-12와-tls-13의-키-교환-비교) |
+| PKI | 공개키가 "정말 그 주체의 것인지"를 인증서와 CA(Certificate Authority)로 보증한다 → [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정) |
+| Cloud | KMS(Key Management Service)·HSM(Hardware Security Module)에서 비대칭 키 쌍을 생성·보관하고, 개인키를 외부로 내보내지 않은 채 서명·복호화 연산만 제공한다 → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
 
-> 해설: 5G SUCI는 이 문서의 하이브리드 구조(§2.3)를 그대로 보여 주는 사례다. 단말이 매번 새 임시 키로 홈 네트워크 공개키와 ECDH를 수행하고,
+> 해설: 5G SUCI는 이 문서의 하이브리드 구조([2.3 하이브리드 암호](#23-하이브리드-암호--실제로는-공개키로-데이터를-직접-암호화하지-않는다))를 그대로 보여 주는 사례다. 단말이 매번 새 임시 키로 홈 네트워크 공개키와 ECDH를 수행하고,
 > 그 결과로 대칭키를 파생해 SUPI를 암호화한다. 같은 단말이라도 SUCI 값이 매번 달라지는 이유가 여기에 있다.
 
 ## 4. 보안 관점 (Security Relevance)
@@ -209,7 +209,9 @@ flowchart LR
 
 > 보안 컨설턴트·점검자를 위한 규격 세부다. 본문만으로 개념 이해에는 충분하다.
 
-### 5.1 보안 강도 대응 (NIST SP 800-57 Part 1 Rev. 5 §5.6.1.1, Table 2)
+### 5.1 보안 강도 대응표
+
+기준: *NIST SP 800-57 Part 1 Rev. 5*
 
 | 보안 강도 | 대칭키 알고리즘 | RSA 모듈러스 (IFC) | ECC 키 (ECC) |
 |:--------:|:--------------:|:------------------:|:------------:|
@@ -221,19 +223,19 @@ flowchart LR
 - 읽는 법: 약 128비트 보안 강도는 RSA 3072비트 또는 ECC 256비트 이상의 키 크기에 대응한다.
 - ECC 값은 키 크기 범위이며, 실제 강도는 곡선과 파라미터에 따라 달라진다. 특정 곡선을 예로 들 때는 해당 곡선 규격을 따로 확인한다.
 - IFC(Integer Factorization Cryptography)는 RSA처럼 소인수분해에 기반한 방식, ECC는 타원곡선 기반 방식을 말한다.
-- 해시 함수의 보안 강도는 별도 표(§5.6.1.2, Table 3), 여러 알고리즘을 조합했을 때의 실질 강도는 §5.6.2, 강도별 사용 가능 기간은 §5.6.3(Table 4)을 따른다(→ [Key Management](key-management.md) §5.1).
-- 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 §3.4를 따른다.
+- 같은 권고는 해시 함수의 보안 강도, 여러 알고리즘을 조합했을 때의 실질 강도, 강도별 사용 가능 기간도 따로 정한다(→ [Key Management 5.1 *SP 800-57* 문서 구성과 지위](key-management.md#51-sp-800-57-문서-구성과-지위)).
+- 이 강도는 고전 컴퓨터 기준이다. 양자 컴퓨터에 대해서는 [3.4 양자 컴퓨터의 영향](#34-양자-컴퓨터의-영향)을 참고한다.
 
 ## 관련 문서
 
 - 이전: [Symmetric Encryption](symmetric-encryption.md), [Hashing & MAC](hashing-mac.md)
 - 다음: [Digital Signature](digital-signature.md), [Key Exchange](key-exchange.md)
-- 신뢰 모델: [PKI & Identity](../pki-identity/README.md)
+- 신뢰 모델: [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정)
 - 로드맵: [Cryptography](README.md)
 
 ## 출처
 
-- PQC 표준: NIST, FIPS 203 / FIPS 204 / FIPS 205 (2024-08-13 발행), FIPS 206·HQC 진행 상황.
-- 5G SUCI 보호 방식: 3GPP, TS 33.501 V19.7.0 (Release 19) Annex C.3.4.1·C.3.4.2 (세부는 [Key Exchange](key-exchange.md) §5.3). V19.7.0 원문 조항 대조는 확인 예정.
-- 보안 강도 대응: NIST SP 800-57 Part 1 Rev. 5 (2020-05-04), §5.6.1.1 Table 2. https://doi.org/10.6028/NIST.SP.800-57pt1r5
+- PQC 표준: NIST, *FIPS 203 / FIPS 204 / FIPS 205* (2024-08-13 발행), *FIPS 206*·HQC 진행 상황.
+- 5G SUCI 보호 방식: 3GPP, *TS 33.501 V19.7.0 (Release 19)* (세부는 [Key Exchange 5.3 5G SUCI ECIES 프로파일](key-exchange.md#53-5g-suci-ecies-프로파일)).
+- 보안 강도 대응: *NIST SP 800-57 Part 1 Rev. 5* (2020-05-04). https://doi.org/10.6028/NIST.SP.800-57pt1r5
 - 그 외 내용은 공개키 암호의 일반 원리를 재구성한 해설이다.

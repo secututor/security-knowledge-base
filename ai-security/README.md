@@ -19,10 +19,10 @@ AI/ML 시스템의 보안을 다루는 **최상위 영역**입니다.
 | 01 | **[LLM Security](llm-security/README.md)** | Prompt Injection · RAG · AI Agent · OWASP LLM Top 10 |
 | 02 | **[ML Security](ml-security/README.md)** | Adversarial ML · Poisoning · Model Theft · Evasion |
 | 03 | **[AI Infrastructure Security](ai-infrastructure-security/README.md)** | AI 플랫폼 · GPU · 모델 서빙 · API · 클라우드 · AI 공급망 |
-| 04 | **[AI Governance & Risk](ai-governance/README.md)** | NIST AI RMF · ISO/IEC 42001 · EU AI Act · 위험평가 |
+| 04 | **[AI Governance & Risk](ai-governance/README.md)** | *NIST AI RMF* · *ISO/IEC 42001* · EU AI Act · 위험평가 |
 | 05 | **[AI Security Assessment](ai-security-assessment/README.md)** | OWASP AISVS · Threat Modeling · Red Teaming · 체크리스트 · 보고서 양식 |
 | 06 | **[Telecom AI Security](telecom-ai-security/README.md)** | 5G/O-RAN AI 연계 (본문은 `5g-security` 교차 참조 인덱스) |
-| — | **[References](references/README.md)** | OWASP(LLM/ML/AISVS) · MITRE ATLAS · NIST AI RMF · ISO 정의집 |
+| — | **[References](references/README.md)** | OWASP(LLM/ML/AISVS) · MITRE ATLAS · *NIST AI RMF* · ISO 정의집 |
 
 ---
 
@@ -34,8 +34,8 @@ AI/ML 시스템의 보안을 다루는 **최상위 영역**입니다.
 |-----------|------|------|
 | **OWASP** | AI 시스템의 취약점·보안 검증 기준 | LLM Top 10 · ML Top 10 · AISVS |
 | **MITRE ATLAS** | 실제 공격자의 전술·기법(TTP)·사례 | AI Attack Matrix · Case Studies |
-| **NIST** | AI 위험관리·신뢰성 체계 | AI RMF · Generative AI Profile |
-| **ISO/IEC** | 기업 AI 관리체계 구축·운영 | 42001 · 23894 · 22989 |
+| **NIST** | AI 위험관리·신뢰성 체계 | *AI RMF* · Generative AI Profile |
+| **ISO/IEC** | 기업 AI 관리체계 구축·운영 | *42001* · *23894* · *22989* |
 
 > 역할 요약: OWASP=검증 기준 / MITRE ATLAS=공격 TTP / NIST=위험관리 / ISO=관리체계.
 > 같은 위협을 네 관점에서 함께 살펴본다.
@@ -53,8 +53,8 @@ AI/ML 시스템의 보안을 다루는 **최상위 영역**입니다.
 | OWASP AISVS (차기) | 1.02 | development (기준에서 제외) | https://github.com/OWASP/AISVS |
 | OWASP ML Top 10 | 최신판 | 확인 예정 | https://owasp.org/www-project-machine-learning-security-top-10/ |
 | MITRE ATLAS | 최신판 | 확인 예정 | https://atlas.mitre.org/ |
-| NIST AI RMF | 1.0 | released | https://www.nist.gov/itl/ai-risk-management-framework |
-| ISO/IEC 42001 | 2023 | released (유료 표준) | https://www.iso.org/standard/81230.html |
+| *NIST AI RMF* | 1.0 | released | https://www.nist.gov/itl/ai-risk-management-framework |
+| *ISO/IEC 42001* | 2023 | released (유료 표준) | https://www.iso.org/standard/81230.html |
 
 > 각 버전은 공식 링크에서 확인할 수 있다. 개발 중인 버전은 기준에서 제외한다.
 
@@ -81,7 +81,7 @@ AI/ML 시스템의 보안을 다루는 **최상위 영역**입니다.
 | **1** | Fundamentals | AI/ML/LLM 구조, Lifecycle, Threat Model, Attack Surface, Security vs Safety |
 | **2** | LLM Security | OWASP LLM Top 10 (2026), Prompt Injection, RAG/Agent/MCP Security |
 | **3** | AI Security Assessment | OWASP AISVS (1.01), Threat Modeling, Red Teaming, 체크리스트, 보고서 양식 |
-| **4** | AI Governance & Risk | NIST AI RMF, ISO/IEC 42001, EU AI Act, 위험·영향 평가 |
+| **4** | AI Governance & Risk | *NIST AI RMF*, *ISO/IEC 42001*, EU AI Act, 위험·영향 평가 |
 | **5** | ML Security & AI Infrastructure | Adversarial ML, Poisoning, Model Extraction, 공급망, 클라우드·GPU·서빙 |
 | **6** | Telecom AI Security | 5G/O-RAN AI 연계 (교차 참조 인덱스) |
 

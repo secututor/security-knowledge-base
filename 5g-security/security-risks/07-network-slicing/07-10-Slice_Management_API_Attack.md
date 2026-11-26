@@ -10,7 +10,7 @@ US-8
 EU-2
 
 ## 3GPP / O-RAN 표준
-TS 28.530 series
+*TS 28.530* series
 
 ## 참조 논문
 P5, P6

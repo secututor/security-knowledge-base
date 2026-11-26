@@ -116,15 +116,15 @@ flowchart TD
 | 영역 | 연결되는 암호 개념 | 링크 |
 |------|--------------------|------|
 | 5G | 키 계층, KDF, SUCI(Subscription Concealed Identifier, 공개키 기반 식별자 은닉), NAS(Non-Access Stratum) 보호 | [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md) |
-| Cloud | KMS(Key Management Service), 저장·전송 데이터 암호화, 키 회전 | [Data Protection](../../cloud-security/data-protection/README.md) |
-| Web | TLS, 인증서, 세션·토큰 서명 | [Web & Application Security](../web-app-security/README.md) |
-| PKI(Public Key Infrastructure) | 인증서·CA(Certificate Authority) 신뢰 모델 | [PKI & Identity](../pki-identity/README.md) |
+| Cloud | KMS(Key Management Service), 저장·전송 데이터 암호화, 키 회전 | [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
+| Web | TLS, 인증서, 세션·토큰 서명 | [Web & Application Security](../web-app-security/README.md) (작성 예정) |
+| PKI(Public Key Infrastructure) | 인증서·CA(Certificate Authority) 신뢰 모델 | [PKI & Identity](../pki-identity/README.md) (로드맵, 문서 작성 예정) |
 
 ## 관련 문서
 
 - 다음 문서: [Symmetric Encryption](symmetric-encryption.md), [Hashing & MAC](hashing-mac.md)
 - 로드맵: [Cryptography](README.md)
-- 위협 사고방식: [Threat Modeling](../threat-modeling/README.md)
+- 위협 사고방식: [Threat Modeling](../threat-modeling/README.md) (작성 예정)
 
 ## 출처
 

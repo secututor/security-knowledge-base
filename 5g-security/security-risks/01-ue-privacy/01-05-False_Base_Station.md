@@ -6,7 +6,7 @@ False Base Station(FBS, 가짜 기지국)은 공격자가 정상 gNB(5G 기지�
 
 UE는 셀 선택 시 신호가 강한 셀을 선호하는 특성이 있으므로, 공격자가 강한 신호로 위장 셀을 방송하면 UE를 끌어들일 수 있다. 일단 UE가 FBS에 접속하면 공격자는 식별자 수집, 위치 추적, 다운그레이드 유도, 서비스 거부 등 다양한 후속 공격을 시도할 수 있다.
 
-5G는 SUCI(가입자 식별자 암호화) 도입으로 4G 대비 식별자 노출을 크게 줄였으나, FBS는 여전히 가용성 공격(접속 방해)과 일부 프라이버시 공격(패턴 관찰, 다운그레이드 유도)의 진입점으로 활용될 수 있다. 3GPP는 이 문제를 별도 연구 과제(TR 33.809)로 다루고 있다.
+5G는 SUCI(가입자 식별자 암호화) 도입으로 4G 대비 식별자 노출을 크게 줄였으나, FBS는 여전히 가용성 공격(접속 방해)과 일부 프라이버시 공격(패턴 관찰, 다운그레이드 유도)의 진입점으로 활용될 수 있다. 3GPP는 이 문제를 별도 연구 과제(*TR 33.809*)로 다루고 있다.
 
 ## 2. 공격 대상 (Target)
 
@@ -23,7 +23,7 @@ UE는 셀 선택 시 신호가 강한 셀을 선호하는 특성이 있으므로
 - **브로드캐스트 정보의 무결성 보호 부재**: 셀 선택에 사용되는 System Information(SIB) 등 초기 브로드캐스트 메시지는 UE가 인증하기 전에 수신하므로, 위조·조작을 즉시 검증하기 어렵다.
 - **셀 선택의 신호 강도 의존**: UE는 더 강한 신호의 셀을 선호하므로, 공격자가 근거리에서 강한 위장 셀을 방송하면 유인이 가능하다.
 - **인증 이전 단계의 신뢰 공백**: 상호 인증(5G-AKA)은 접속 이후 이뤄지므로, 그 이전 구간에는 공격 표면이 남는다.
-- **4G와의 차이**: 5G는 SUCI로 SUPI를 암호화해 식별자 수집을 어렵게 만들었지만, 초기 브로드캐스트 보호나 셀 진위 검증은 여전히 연구·강화가 진행 중인 영역이다(TR 33.809).
+- **4G와의 차이**: 5G는 SUCI로 SUPI를 암호화해 식별자 수집을 어렵게 만들었지만, 초기 브로드캐스트 보호나 셀 진위 검증은 여전히 연구·강화가 진행 중인 영역이다(*TR 33.809*).
 
 ## 4. 공격 시나리오 (Attack Scenario)
 
@@ -61,7 +61,7 @@ sequenceDiagram
 
 **표준·기술적 통제**
 - SUCI 사용으로 초기 식별자(SUPI) 노출 최소화 (관련: [01-01 SUPI Exposure](01-01-SUPI_Exposure.md), [01-04 SUCI Misconfiguration](01-04-SUCI_Misconfiguration.md))
-- 3GPP TR 33.809에서 검토 중인 브로드캐스트/System Information 보호 및 셀 진위 검증 메커니즘 적용
+- *3GPP TR 33.809*에서 검토 중인 브로드캐스트/System Information 보호 및 셀 진위 검증 메커니즘 적용
 - 상호 인증(5G-AKA) 절차 준수 및 다운그레이드 방지 (관련: [02-07 NAS Security Downgrade](../02-auth-nas/02-07-NAS_Security_Downgrade.md))
 
 **탐지·운영 통제**
@@ -71,15 +71,15 @@ sequenceDiagram
 
 ## 7. 3GPP / O-RAN 표준
 
-TR 33.809
+*TR 33.809*
 
-> 상세 정의는 [12. 3GPP / O-RAN 표준](../../references/3gpp-standards/README.md) 참조. TR 33.809는 False Base Station 대응을 위한 보안 강화 연구 보고서다.
+> 상세 정의는 [12. 3GPP / O-RAN 표준](../../references/3gpp-standards/README.md) 참조. *TR 33.809*는 False Base Station 대응을 위한 보안 강화 연구 보고서다.
 
 ## 8. 관련 US 가이드라인
 
 US-2
 
-> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-2(NIST CSWP 36A)는 SUCI를 통한 가입자 식별자 보호를 다룬다 — FBS의 식별자 수집을 완화하는 관점.
+> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-2(*NIST CSWP 36A*)는 SUCI를 통한 가입자 식별자 보호를 다룬다 — FBS의 식별자 수집을 완화하는 관점.
 
 ## 9. 관련 EU 가이드라인
 
@@ -101,9 +101,9 @@ P1
 - [01-01 SUPI Exposure](01-01-SUPI_Exposure.md)
 
 ## 출처
-- 3GPP, TR 33.809 "Study on 5G security enhancements against false base stations (FBS)". (표준)
+- 3GPP, *TR 33.809* "Study on 5G security enhancements against false base stations (FBS)". (표준)
 - ENISA, "Threat Landscape for 5G Networks". (EU-1)
-- NIST, CSWP 36A "Protecting Subscriber Identifiers with SUCI". (US-2)
+- NIST, *CSWP 36A* "Protecting Subscriber Identifiers with SUCI". (US-2)
 - 논문 P1 (참조 논문 정의 참고)
 
 > 위 내용은 원문을 그대로 옮긴 것이 아니라 핵심을 한국어로 재구성한 해설이다.

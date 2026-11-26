@@ -52,7 +52,7 @@ API 뒤의 서비스 간 통신은 mTLS나 SPIFFE(Secure Production Identity Fra
 | 04 | `pki-certificates.md` | PKI, X.509 인증서, CA(Certificate Authority), 신뢰 체인, 폐기(CRL(Certificate Revocation List)/OCSP(Online Certificate Status Protocol)) | 핵심 | [Asymmetric Encryption](../cryptography/asymmetric-encryption.md) |
 | 05 | `oauth2-oidc.md` | OAuth 2.0 역할·흐름, Authorization Code + PKCE(Proof Key for Code Exchange), OIDC, OAuth 2.1(Draft) 방향 | 핵심 | 5G [OAuth Token Abuse](../../5g-security/security-risks/06-sba-security/06-06-OAuth_Token_Abuse.md) |
 | 06 | `token-security.md` | JWT/JWS(JSON Web Signature)/JWE(JSON Web Encryption), JWK(JSON Web Key)/JWKS(JWK Set), Access·Refresh·ID Token, Revocation, Introspection, DPoP(Demonstrating Proof of Possession), 인증서 바인딩 토큰 | 핵심 | [OWASP API Security Top 10](../web-app-security/owasp/api-security-top-10/README.md) |
-| 07 | `federation-sso.md` | SAML 2.0, IdP/SP(Service Provider), Identity Federation, SSO | 확장 | 05 OIDC |
+| 07 | `federation-sso.md` | *SAML 2.0*, IdP/SP(Service Provider), Identity Federation, SSO | 확장 | 05 OIDC |
 | 08 | `enterprise-identity.md` | LDAP(Lightweight Directory Access Protocol), Active Directory, Kerberos, SCIM(System for Cross-domain Identity Management) | 확장 | 11 공격(Kerberoasting 등) |
 | 09 | `workload-identity.md` | mTLS, SPIFFE/SPIRE(SPIFFE Runtime Environment), Service Account, API Key의 한계 | 확장 | [Cloud IAM](../../cloud-security/iam/README.md), [Cloud Native](../../cloud-security/cloud-native/README.md), 5G SBA |
 | 10 | `session-token-lifecycle.md` | 세션과 토큰의 발급·갱신·만료·폐기, 로그아웃 처리 | 확장 | [Web & Application Security](../web-app-security/README.md) (쿠키·웹 취약점) |
@@ -98,31 +98,31 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 
 | 영역 | 표준 | 상태 |
 |------|------|------|
-| 디지털 신원 전반 | NIST SP 800-63-4 (63A·63B·63C 포함) | 현행 (2025 Final) |
-| OAuth 2.0 | RFC 6749, RFC 6750(Bearer Token) | 현행 |
-| PKCE | RFC 7636 | 현행 |
-| OAuth 보안 모범 사례 | RFC 9700 | 현행 |
-| OAuth 2.1 | draft-ietf-oauth-v2-1-17 | **Draft (확정 표준 아님)** |
-| 토큰 폐기 / 검사 | RFC 7009 / RFC 7662 | 현행 |
-| mTLS 클라이언트 인증·인증서 바인딩 토큰 | RFC 8705 | 현행 |
-| DPoP | RFC 9449 | 현행 |
-| JWT / JWT 보안 모범 사례 | RFC 7519 / RFC 8725 (BCP) | 현행. 후속 개정 draft-ietf-oauth-rfc8725bis-10은 **Internet-Draft (RFC 미확정)** 이며, RFC 8725는 아직 대체되지 않았다 |
-| JWS / JWE / JWK | RFC 7515 / RFC 7516 / RFC 7517 | 현행 |
-| JWT Access Token 프로파일 | RFC 9068 | 현행 |
-| OIDC | OpenID Connect Core 1.0 | 현행 |
-| SAML | OASIS SAML 2.0 | 현행 |
-| WebAuthn | W3C WebAuthn Level 3 | W3C Recommendation (2026-08) |
-| FIDO2 CTAP(Client to Authenticator Protocol) | FIDO Alliance CTAP 2.3 | Proposed Standard (2026-02-26). CTAP 2.3.1은 Working Draft (2026-05-29)로 기준에서 제외 |
-| TOTP / HOTP | RFC 6238 / RFC 4226 | 현행 |
-| X.509 인증서 프로파일 / OCSP | RFC 5280 / RFC 6960 | 현행 |
-| Kerberos / LDAP / SCIM | RFC 4120 / RFC 4511 / RFC 7643·7644 | 현행 |
+| 디지털 신원 전반 | *NIST SP 800-63-4* (63A·63B·63C 포함) | 현행 (2025 Final) |
+| OAuth 2.0 | *RFC 6749*, *RFC 6750*(Bearer Token) | 현행 |
+| PKCE | *RFC 7636* | 현행 |
+| OAuth 보안 모범 사례 | *RFC 9700* | 현행 |
+| OAuth 2.1 | *draft-ietf-oauth-v2-1-17* | **Draft (확정 표준 아님)** |
+| 토큰 폐기 / 검사 | *RFC 7009* / *RFC 7662* | 현행 |
+| mTLS 클라이언트 인증·인증서 바인딩 토큰 | *RFC 8705* | 현행 |
+| DPoP | *RFC 9449* | 현행 |
+| JWT / JWT 보안 모범 사례 | *RFC 7519* / *RFC 8725* (BCP) | 현행. 후속 개정 *draft-ietf-oauth-rfc8725bis-10*은 **Internet-Draft (RFC 미확정)** 이며, *RFC 8725*는 아직 대체되지 않았다 |
+| JWS / JWE / JWK | *RFC 7515* / *RFC 7516* / *RFC 7517* | 현행 |
+| JWT Access Token 프로파일 | *RFC 9068* | 현행 |
+| OIDC | *OpenID Connect Core 1.0* | 현행 |
+| SAML | *OASIS SAML 2.0* | 현행 |
+| WebAuthn | *W3C WebAuthn Level 3* | W3C Recommendation (2026-08) |
+| FIDO2 CTAP(Client to Authenticator Protocol) | *FIDO Alliance CTAP 2.3* | Proposed Standard (2026-02-26). *CTAP 2.3.1*은 Working Draft (2026-05-29)로 기준에서 제외 |
+| TOTP / HOTP | *RFC 6238* / *RFC 4226* | 현행 |
+| X.509 인증서 프로파일 / OCSP | *RFC 5280* / *RFC 6960* | 현행 |
+| Kerberos / LDAP / SCIM | *RFC 4120* / *RFC 4511* / *RFC 7643·7644* | 현행 |
 | SPIFFE | CNCF(Cloud Native Computing Foundation) SPIFFE 사양군: SPIFFE ID, SVID(SPIFFE Verifiable Identity Document), X.509-SVID, JWT-SVID, Workload API, Trust Domain and Bundle, Federation | 단일 버전 번호 없음. 핵심 문서는 공식 저장소에 Stable 표시, 개별 사양의 안정성 표시는 확인 예정 |
-| DID | W3C DID 1.0 / DID 1.1 | DID 1.0: W3C Recommendation (2022-07-19) / DID 1.1: Candidate Recommendation Snapshot (2026-03-05, 최종 표준 아님) |
-| VC | W3C VC Data Model 2.0 / Securing Verifiable Credentials using JOSE(JSON Object Signing and Encryption) and COSE(CBOR(Concise Binary Object Representation) Object Signing and Encryption) | VC Data Model 2.0: W3C Recommendation (2025-05-15) / JOSE·COSE 보안 규격: W3C Recommendation (발행일 확인 예정) |
+| DID | *W3C DID 1.0* / *DID 1.1* | *DID 1.0*: W3C Recommendation (2022-07-19) / *DID 1.1*: Candidate Recommendation Snapshot (2026-03-05, 최종 표준 아님) |
+| VC | *W3C VC Data Model 2.0* / Securing Verifiable Credentials using JOSE(JSON Object Signing and Encryption) and COSE(CBOR(Concise Binary Object Representation) Object Signing and Encryption) | *VC Data Model 2.0*: W3C Recommendation (2025-05-15) / JOSE·COSE 보안 규격: W3C Recommendation (발행일 확인 예정) |
 | SD-JWT / SD-JWT VC | IETF SD-JWT, IETF SD-JWT VC (서로 다른 사양) | 각 사양의 현재 지위 확인 예정 |
 
 > 표준별 정의는 [References](../references/README.md)에 정리한다.
-> Token Binding(RFC 8471~8473)은 주요 브라우저에서 지원이 중단된 방식으로, 06 문서에서 역사적 배경으로만 다룬다. 현재의 토큰 바인딩은 DPoP와 RFC 8705가 담당한다.
+> Token Binding(*RFC 8471~8473*)은 주요 브라우저에서 지원이 중단된 방식으로, 06 문서에서 역사적 배경으로만 다룬다. 현재의 토큰 바인딩은 DPoP와 *RFC 8705*가 담당한다.
 
 ---
 

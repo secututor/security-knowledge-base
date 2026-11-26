@@ -87,7 +87,7 @@ sequenceDiagram
 ## 6. 대응 방안 (Countermeasure)
 
 **표준·기술적 통제**
-- TS 33.501이 정의한 5G-AKA 절차 준수: AUTN 기반 네트워크 인증, RES* 검증, 홈망 제어(AUSF) 유지
+- *TS 33.501*이 정의한 5G-AKA 절차 준수: AUTN 기반 네트워크 인증, RES* 검증, 홈망 제어(AUSF) 유지
 - SUCI 사용으로 인증 개시 시 식별자 노출 최소화 (연관: [01-04 SUCI Misconfiguration](../01-ue-privacy/01-04-SUCI_Misconfiguration.md))
 - 다운그레이드/재전송 방지 메커니즘 적용 (연관: [02-07 NAS Security Downgrade](02-07-NAS_Security_Downgrade.md))
 
@@ -98,15 +98,15 @@ sequenceDiagram
 
 ## 7. 3GPP / O-RAN 표준
 
-TS 33.501
+*TS 33.501*
 
-> 상세 정의는 [12. 3GPP / O-RAN 표준](../../references/3gpp-standards/README.md) 참조. 5G-AKA 인증 절차와 키 파생은 TS 33.501에 정의된다.
+> 상세 정의는 [12. 3GPP / O-RAN 표준](../../references/3gpp-standards/README.md) 참조. 5G-AKA 인증 절차와 키 파생은 *TS 33.501*에 정의된다.
 
 ## 8. 관련 US 가이드라인
 
 US-1
 
-> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-1(NIST CSWP 36 시리즈)은 5G 보안 기능의 구현·검증 관점을 다룬다.
+> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-1(*NIST CSWP 36* 시리즈)은 5G 보안 기능의 구현·검증 관점을 다룬다.
 
 ## 9. 관련 EU 가이드라인
 
@@ -129,8 +129,8 @@ P1, P2
 - [01-01 5G Key Hierarchy](../../fundamentals/01-01-5G_Key_Hierarchy.md)
 
 ## 출처
-- 3GPP, TS 33.501 (5G System 보안 아키텍처 및 절차). (표준)
-- NIST, CSWP 36 시리즈. (US-1)
+- 3GPP, *TS 33.501* (5G System 보안 아키텍처 및 절차). (표준)
+- NIST, *CSWP 36* 시리즈. (US-1)
 - ENISA, "Security in 5G Specifications". (EU-3)
 - 논문 P1, P2 (참조 논문 정의 참고)
 

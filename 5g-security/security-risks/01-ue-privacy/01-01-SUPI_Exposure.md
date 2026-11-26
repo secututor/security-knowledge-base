@@ -10,11 +10,11 @@ SUPI Exposure는 5G 가입자의 유일한 영구 식별자인 **SUPI(Subscripti
 
 ### 1.1 가입자 식별자 포맷 및 필드 구조
 
-**SUPI 포맷 (3GPP TS 23.003 Sec 2.2)** — Section 2.2(SUPI 구조 & IMSI 매핑) / Section 28.2
+**SUPI 포맷 (*3GPP TS 23.003*)** — SUPI 구조와 IMSI 매핑
 
 ```text
 +-------------------------------------------------------------------+
-|               SUPI Format (3GPP TS 23.003 Sec 2.2)                |
+|                    SUPI Format (3GPP TS 23.003)                   |
 +-------------------+-------------------+---------------------------+
 |    MCC (3 dgt)    |  MNC (2 or 3 dgt) |       MSIN (9-10 dgt)     |
 | (Mobile Cntry Cd) | (Mobile Ntwk Cd)  |  (Subscr Stn Ident Nbr)   |
@@ -23,11 +23,11 @@ SUPI Exposure는 5G 가입자의 유일한 영구 식별자인 **SUPI(Subscripti
 +---------------------------------------+---------------------------+
 ```
 
-**SUCI 포맷 (3GPP TS 23.003 Sec 28.3 / TS 33.501 Sec 6.12)** — 데이터 구조는 TS 23.003 Sec 28.3, 보안 아키텍처는 TS 33.501 Sec 6.12(Subscription Identifier Privacy)
+**SUCI 포맷 (*3GPP TS 23.003* / *TS 33.501*)** — 데이터 구조는 *TS 23.003*, 보안 아키텍처(Subscription Identifier Privacy)는 *TS 33.501*이 정의한다.
 
 ```text
 +--------------------------------------------------------------------------------------------------------------------------+
-|                          SUCI Format (3GPP TS 23.003 Sec 28.3 / TS 33.501 Sec 6.12)                                      |
+|                                         SUCI Format (3GPP TS 23.003 / TS 33.501)                                         |
 +-----------+------------+------------+-------------------+----------------------+--------------------+--------------------+
 | SUPI Type |    MCC     |    MNC     | Routing Indicator | Protection Scheme ID | Home Net PK ID     |   Scheme Output    |
 | (1 Byte)  |  (3 dgt)   | (2-3 dgt)  |    (4 Hex dgt)    |       (1 Byte)       |     (1 Byte)       |  (Var-Length Bytes)|
@@ -38,7 +38,7 @@ SUPI Exposure는 5G 가입자의 유일한 영구 식별자인 **SUPI(Subscripti
 |<----------------------- Plaintext Area (Header for Routing) ------------------------------------->|<-- Encrypted Area -|
 ```
 
-**Protection Scheme ID 규격 (3GPP TS 33.501 Annex C.2)**
+**Protection Scheme ID 규격 (*3GPP TS 33.501*)**
 
 - `0x0`: Null-Scheme (No Encryption)
 - `0x1`: Profile A (ECIES Sequence — Curve25519)
@@ -46,27 +46,27 @@ SUPI Exposure는 5G 가입자의 유일한 영구 식별자인 **SUPI(Subscripti
 
 > MCC와 MNC는 홈 네트워크(HN)로의 정확한 패킷 라우팅을 위해 반드시 평문(Plaintext)으로 유지되어야 한다. 실제 암호화 대상은 MSIN이다.
 
-### 1.2 End-to-End 은폐/복원 흐름 (3GPP TS 33.501 Sec 6.12.2)
+### 1.2 End-to-End 은폐/복원 흐름
 
-SUCI 생성(Calculation)과 복호화(De-concealment) 절차는 TS 33.501 Sec 6.12.2 및 Annex C.3(ECIES 연산)에 정의된다.
+SUCI 생성(Calculation)과 복호화(De-concealment) 절차(ECIES 연산 포함)는 *TS 33.501*에 정의된다.
 
 ```text
 [ User Equipment (UE) ]
-  │  (3GPP TS 33.501 Annex C.3 - ECIES Calculation)
-  ├─ 1. Generate Raw SUPI (TS 23.003 Sec 2.2)
+  │  (3GPP TS 33.501 - ECIES Calculation)
+  ├─ 1. Generate Raw SUPI (TS 23.003)
   │     └─ [ MCC: 450 ] [ MNC: 05 ] [ MSIN: 01012345678 ]
   │
   ├─ 2. Asymmetric Encryption via ECIES (Home Net Public Key)
   │     └─ MSIN --------------------------------------------┐
   │                                                         ▼
-  ├─ 3. Construct SUCI Packet (TS 23.003 Sec 28.3)    [ Scheme Output ]
+  ├─ 3. Construct SUCI Packet (TS 23.003)             [ Scheme Output ]
   │     └─ [ 0x0 | 450 | 05 | 0001 | 0x1 | 0x01 | 8f9a2b...c3d4e5f ]
   │
   └─( Air Interface : 3GPP TS 38.331 RRC / TS 24.501 NAS )──┐
                                                             │
                                                             ▼
 [ Home Network (5G Core UDM / SIDF) ]
-  │  (3GPP TS 33.501 Sec 6.12.2 - De-concealment via SIDF)
+  │  (3GPP TS 33.501 - De-concealment via SIDF)
   ├─ 1. Receive SUCI & Route Packet by Header (MCC: 450, MNC: 05)
   │
   ├─ 2. Asymmetric Decryption via ECIES (Home Net Private Key at SIDF)
@@ -94,7 +94,7 @@ SUCI 생성(Calculation)과 복호화(De-concealment) 절차는 TS 33.501 Sec 6.
 
 SUPI 노출을 유발하는 핵심 메커니즘은 크게 세 가지다.
 
-1. **Null-Scheme (운영 설정 오류)**: 3GPP TS 33.501이 테스트 목적으로 정의한 `0x0(Null-Scheme)`이 상용 환경에서 활성화된 경우다. PKI 프로비저닝 실패나 설정 오류로 암호화가 누락되면, 패킷은 SUCI 형식을 띠지만 내부에는 평문 SUPI가 담겨 무선 스니핑에 노출된다.
+1. **Null-Scheme (운영 설정 오류)**: *3GPP TS 33.501*이 테스트 목적으로 정의한 `0x0(Null-Scheme)`이 상용 환경에서 활성화된 경우다. PKI 프로비저닝 실패나 설정 오류로 암호화가 누락되면, 패킷은 SUCI 형식을 띠지만 내부에는 평문 SUPI가 담겨 무선 스니핑에 노출된다.
 2. **초기 비암호화 구간 (Initial Unprotected Signaling)**: 초기 NAS 등록 절차 중 NAS SMC 완료 이전의 보안 공백을 악용한다. 암호화 키 수립 전 전송되는 Registration Request 내 식별자·보안 역량(Capability) 정보가 중간자 공격(MITM)에 탈취될 수 있다.
 3. **가짜 기지국 유인 (Rogue gNB / FBS)**: 공격자가 고출력 가짜 기지국으로 단말 접속을 유도한 뒤 Identity Request를 보낸다. 단말이 SUCI 표준 절차를 우회해 예외 처리(Legacy Fallback)를 수행하도록 유도하면, 단말이 스스로 평문 SUPI를 응답(Catching)하게 만들 수 있다.
 
@@ -154,22 +154,22 @@ SUPI는 영구 식별자이므로 한 번 노출되면 재발급이 어렵고, �
 
 ## 7. 3GPP / O-RAN 표준
 
-TS 33.501
+*TS 33.501*
 
 > 상세 정의는 [12. 3GPP / O-RAN 표준](../../references/3gpp-standards/README.md) 참조.
 >
-> - **TS 33.501**: 5G 보안 아키텍처. SUCI 생성을 위한 ECIES 프로파일(Profile A: Curve25519 / Profile B: secp256r1)과 SIDF 복호화 절차, Encrypted NAS Container를 정의한다.
-> - **TS 23.003**: SUPI/SUCI의 필드 구조·비트 할당 규격 정의 (MSIN이 암호화 핵심 대상).
-> - **TS 24.501 (NAS) / TS 38.331 (RRC)**: 식별자 교환 및 보안 모드 설정 등 시그널링 규격.
+> - ***TS 33.501***: 5G 보안 아키텍처. SUCI 생성을 위한 ECIES 프로파일(Profile A: Curve25519 / Profile B: secp256r1)과 SIDF 복호화 절차, Encrypted NAS Container를 정의한다.
+> - ***TS 23.003***: SUPI/SUCI의 필드 구조·비트 할당 규격 정의 (MSIN이 암호화 핵심 대상).
+> - ***TS 24.501*** (NAS) / ***TS 38.331*** (RRC): 식별자 교환 및 보안 모드 설정 등 시그널링 규격.
 
 ## 8. 관련 US 가이드라인
 
 US-2
 
-> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-2(NIST CSWP 36A)는 SUCI를 통한 가입자 식별자 보호를 다룬다.
+> 상세 정의는 [14. US 보안 가이드라인](../../references/nist-series/README.md) 참조. US-2(*NIST CSWP 36A*)는 SUCI를 통한 가입자 식별자 보호를 다룬다.
 >
-> - **CSWP 36A**: 상용 환경에서 Null-Scheme 사용을 엄격히 금지하고, HN 공개키 관리 체계를 강화한다. 3GPP가 Optional로 둔 보안 기능을 Mandatory로 전환하는 관점.
-> - **CSWP 36F**: 초기 NAS 보안 강화(Encrypted NAS Container, 무결성 사후 검증)를 통해 Downgrade 공격을 차단한다.
+> - ***CSWP 36A***: 상용 환경에서 Null-Scheme 사용을 엄격히 금지하고, HN 공개키 관리 체계를 강화한다. 3GPP가 Optional로 둔 보안 기능을 Mandatory로 전환하는 관점.
+> - ***CSWP 36F***: 초기 NAS 보안 강화(Encrypted NAS Container, 무결성 사후 검증)를 통해 Downgrade 공격을 차단한다.
 
 ## 9. 관련 EU 가이드라인
 
@@ -192,10 +192,10 @@ P1, P2
 - [01-05 False Base Station](01-05-False_Base_Station.md)
 
 ## 출처
-- 3GPP, TS 23.003 "Numbering, addressing and identification". (표준)
-- 3GPP, TS 33.501 "Security architecture and procedures for 5G System". (표준)
-- NIST, CSWP 36A "Protecting Subscriber Identifiers with SUCI". (US-2)
-- NIST, CSWP 36F "5G Cybersecurity White Paper". (US-2 계열)
+- 3GPP, *TS 23.003* "Numbering, addressing and identification". (표준)
+- 3GPP, *TS 33.501* "Security architecture and procedures for 5G System". (표준)
+- NIST, *CSWP 36A* "Protecting Subscriber Identifiers with SUCI". (US-2)
+- NIST, *CSWP 36F* "5G Cybersecurity White Paper". (US-2 계열)
 - ENISA, "Threat Landscape for 5G Networks". (EU-1)
 
 > 위 내용은 원문을 그대로 옮긴 것이 아니라 핵심을 한국어로 재구성한 해설이다.

@@ -9,12 +9,12 @@
 |------|-----------|-----------|-------------|-----------|
 | CSA-CCM | CSA Cloud Controls Matrix | 4.1 (207 통제 / 17 영역) | released, 2026-01 | https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1 |
 | CIS | CIS Benchmarks | CSP·서비스별 최신판 | CSP별 분리 관리 | https://www.cisecurity.org/cis-benchmarks |
-| NIST-80053 | NIST SP 800-53 | Rev.5 | released | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
-| NIST-800144 | NIST SP 800-144 | — | released | https://csrc.nist.gov/pubs/sp/800/144/final |
-| NIST-800210 | NIST SP 800-210 | — | released | https://csrc.nist.gov/pubs/sp/800/210/final |
+| NIST-80053 | *NIST SP 800-53* | Rev.5 | released | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
+| NIST-800144 | *NIST SP 800-144* | — | released | https://csrc.nist.gov/pubs/sp/800/144/final |
+| NIST-800210 | *NIST SP 800-210* | — | released | https://csrc.nist.gov/pubs/sp/800/210/final |
 | ATTACK-CLOUD | MITRE ATT&CK (Cloud) | 최신판 | 확인 예정 | https://attack.mitre.org/matrices/enterprise/cloud/ |
-| ISO-27017 | ISO/IEC 27017 | 2026 (Edition 2) | published, 2026-07-27 (이전판 2015) | https://www.iso.org/standard/27017 |
-| ISO-27018 | ISO/IEC 27018 | 최신판 | 확인 예정 | https://www.iso.org/standard/76559.html |
+| ISO-27017 | *ISO/IEC 27017* | 2026 (Edition 2) | published, 2026-07-27 (이전판 2015) | https://www.iso.org/standard/27017 |
+| ISO-27018 | *ISO/IEC 27018* | 최신판 | 확인 예정 | https://www.iso.org/standard/76559.html |
 | ISMS-P | ISMS-P (KISA) | 최신 고시 | 확인 예정 | https://www.isms-p.or.kr/ |
 | CSAP | CSAP 보안인증 (KISA) | 2026 해설서 | 게시 2026-07-06 / 정정 2026-07-28(내용 변경 없음) | https://www.isms-p.or.kr/ |
 
@@ -24,4 +24,4 @@
 ## 세부 정의 문서
 
 _각 프레임워크별 상세 정의 문서(CSA CCM, CIS Benchmarks, NIST, MITRE ATT&CK Cloud,
-ISO/IEC 27017, ISO/IEC 27018, ISMS-P, CSAP)는 준비 중입니다._
+*ISO/IEC 27017*, *ISO/IEC 27018*, ISMS-P, CSAP)는 준비 중입니다._
