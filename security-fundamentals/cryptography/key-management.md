@@ -258,7 +258,7 @@ IG는 이 전체를 실제 검증에서 어떻게 해석할지 설명하는 지�
 ## 관련 문서
 
 - 이전: [Digital Signature](digital-signature.md), [Key Exchange](key-exchange.md)
-- 다음(예정): `tls-overview.md`
+- 다음: [TLS Overview](tls-overview.md)
 - 5G 키 계층: [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)
 - Cloud: [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정)
 - 로드맵: [Cryptography](README.md)

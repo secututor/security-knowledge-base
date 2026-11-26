@@ -78,7 +78,8 @@ flowchart LR
 | *FIPS 180-4* (SHS, Secure Hash Standard) | SHA-2 계열 | 현행 |
 | *FIPS 202* (SHA-3) | SHA-3 계열 | 현행 |
 | *FIPS 186-5* (DSS, Digital Signature Standard) | 디지털 서명 | 현행 (2023) |
-| TLS 1.3 (*RFC 9846*, *RFC 8446* 대체) | 전송 구간 보안 | 현행 (Standards Track) |
+| TLS 1.3 (*RFC 9846*, *RFC 8446*·*RFC 5246* 대체) | 전송 구간 보안 | 현행 (Standards Track, 2026-07) |
+| *RFC 8996* / *RFC 9325* / *RFC 9852* / *RFC 10015* | TLS 버전 폐기·안전한 사용 권고 | BCP 195 등 (→ [TLS Overview](tls-overview.md)) |
 | *RFC 10024* (TLS 1.3 PQ/T 하이브리드 키 합의) / *RFC 9954* (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard (2026-08) / Informational |
 | *RFC 5869* (HKDF, HMAC-based Key Derivation Function) | 키 파생 | Informational |
 | *NIST SP 800-57 Part 1 Rev. 5* (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 (2020-05-04 Final) |
@@ -107,5 +108,6 @@ flowchart LR
 - [Digital Signature](digital-signature.md) — 05. 서명·검증 원리, RSA·ECDSA·EdDSA, ML-DSA·SLH-DSA, 서명 실수와 대응
 - [Key Exchange](key-exchange.md) — 06. DH·ECDH·KEM·HKDF 구분, PFS, TLS 1.2/1.3 비교, 하이브리드(X25519MLKEM768), 5G SUCI ECIES
 - [Key Management](key-management.md) — 07. 키 생명주기, KEK/DEK·봉투 암호화, HSM·KMS, 침해 대응, Cloud·5G 사례, *FIPS 140-3*
+- [TLS Overview](tls-overview.md) — 08. 핸드셰이크와 레코드, TLS 1.2/1.3 비교, 암호 스위트, 인증서 검증, mTLS, 0-RTT, 설정 실수와 대응
+- [Cryptography in Practice](cryptography-in-practice.md) — 09. 5G·Cloud·Web·AI·공급망별 암호 적용 지도, 공통 점검 질문, 양자 전환 순서
 
-_나머지 문서는 로드맵 순서대로 추가될 예정이다._

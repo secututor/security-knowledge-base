@@ -293,7 +293,7 @@ X25519 단독 key_share는 32바이트다.
 ## 관련 문서
 
 - 이전: [Asymmetric Encryption](asymmetric-encryption.md), [Digital Signature](digital-signature.md)
-- 다음: [Key Management](key-management.md) / 다음(예정): `tls-overview.md`
+- 다음: [Key Management](key-management.md), [TLS Overview](tls-overview.md)
 - 5G 적용: [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md), [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)
 - 로드맵: [Cryptography](README.md)
 

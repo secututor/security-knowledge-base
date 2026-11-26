@@ -36,7 +36,14 @@
 
 | 코드 | 제목 | 문서 지위 | 공식 링크 |
 |------|------|-----------|-----------|
-| *RFC 9846* | The Transport Layer Security (TLS) Protocol Version 1.3 (*RFC 8446* 대체) | Standards Track | https://www.rfc-editor.org/rfc/rfc9846 |
+| *RFC 9846* | The Transport Layer Security (TLS) Protocol Version 1.3 (*RFC 8446*·*RFC 5246* 대체) | Standards Track (2026-07) | https://www.rfc-editor.org/rfc/rfc9846 |
+| *RFC 5246* | The Transport Layer Security (TLS) Protocol Version 1.2 | Proposed Standard, *RFC 9846*에 의해 Obsoleted | https://www.rfc-editor.org/rfc/rfc5246 |
+| *RFC 8996* | Deprecating TLS 1.0 and TLS 1.1 | BCP 195 | https://www.rfc-editor.org/rfc/rfc8996 |
+| *RFC 9325* | Recommendations for Secure Use of Transport Layer Security (TLS) and Datagram Transport Layer Security (DTLS) | BCP 195 (*RFC 9852*·*RFC 10015*가 갱신) | https://www.rfc-editor.org/rfc/rfc9325 |
+| *RFC 9852* | TLS를 쓰는 새 프로토콜의 TLS 1.3 요구 (제목 확인 예정) | 2026-07 | https://www.rfc-editor.org/rfc/rfc9852 |
+| *RFC 10015* | TLS 1.2의 오래된 DH·RSA 키 교환 폐기 (제목 확인 예정) | 2026-07 | https://www.rfc-editor.org/rfc/rfc10015 |
+| *RFC 6066* | Transport Layer Security (TLS) Extensions: Extension Definitions | Proposed Standard (*RFC 9846* 등이 일부 갱신) | https://www.rfc-editor.org/rfc/rfc6066 |
+| *RFC 6797* | HTTP Strict Transport Security (HSTS) | Proposed Standard | https://www.rfc-editor.org/rfc/rfc6797 |
 | *RFC 10024* | Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3 | Proposed Standard (2026-08) | https://www.rfc-editor.org/rfc/rfc10024 |
 | *RFC 9954* | Hybrid Key Exchange in TLS 1.3 (일반 설계 프레임워크) | Informational | https://www.rfc-editor.org/rfc/rfc9954 |
 | *RFC 5869* | HMAC-based Extract-and-Expand Key Derivation Function (HKDF) | Informational | https://www.rfc-editor.org/rfc/rfc5869 |

@@ -13,6 +13,8 @@
     * [Digital Signature](security-fundamentals/cryptography/digital-signature.md)
     * [Key Exchange](security-fundamentals/cryptography/key-exchange.md)
     * [Key Management](security-fundamentals/cryptography/key-management.md)
+    * [TLS Overview](security-fundamentals/cryptography/tls-overview.md)
+    * [Cryptography in Practice](security-fundamentals/cryptography/cryptography-in-practice.md)
   * [PKI & Identity](security-fundamentals/pki-identity/README.md)
   * [Access Control](security-fundamentals/access-control/README.md)
   * [Threat Modeling](security-fundamentals/threat-modeling/README.md)

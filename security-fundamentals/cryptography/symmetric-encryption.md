@@ -114,7 +114,7 @@ AEAD는 **암호화(기밀성)와 무결성·출처 검증을 한 번에 제공*
 |------|--------|
 | 5G | 무선·NAS(Non-Access Stratum) 구간 암호화 알고리즘(NEA, NR(New Radio) Encryption Algorithm) 중 128-NEA2가 AES-CTR 기반이다. 무결성 알고리즘(NIA, NR Integrity Algorithm)은 별도로 적용된다(*3GPP TS 33.501*) |
 | Cloud | 저장 데이터 암호화(봉투 암호화의 데이터 키) → [Data Protection](../../cloud-security/data-protection/README.md) (작성 예정) |
-| Web | TLS 1.3 레코드 보호는 AEAD 암호만 사용한다 → `tls-overview.md`(작성 예정) |
+| Web | TLS 1.3 레코드 보호는 AEAD 암호만 사용한다 → [TLS Overview](tls-overview.md) |
 
 > 해설: 5G는 암호화(NEA)와 무결성(NIA)을 **분리된 알고리즘**으로 운용하는 구조라, AEAD 한 번으로 둘을 묶는 TLS 1.3과 설계가 다르다.
 > 무결성 알고리즘이 빠지거나 Null로 협상되면 변조 공격 여지가 생긴다(5G NAS 관련 이슈 참조).
