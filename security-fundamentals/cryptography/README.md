@@ -92,7 +92,7 @@ flowchart LR
 - **인증서 구조·CA(Certificate Authority)·신뢰 모델** → [PKI & Certificates](../pki-identity/pki-certificates.md). 여기서는 서명·키 교환까지 다룬다.
 - **인증 방식·OAuth·OIDC(OpenID Connect)·토큰** → [PKI & Identity](../pki-identity/README.md)
 - **TLS 서버 설정 점검·웹 취약점** → [Web & Application Security](../web-app-security/README.md)
-- **위협 모델링 방법론** → [Threat Modeling](../threat-modeling/README.md) (작성 예정). 여기서는 암호 관점의 공격자 능력만 다룬다.
+- **위협 모델링 방법론** → [Threat Modeling](../threat-modeling/README.md). 여기서는 암호 관점의 공격자 능력만 다룬다.
 - **5G 키 계층·SUCI 상세** → [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md), [SUPI Exposure](../../5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md). 여기서는 일반 원리만 다룬다.
 - **Cloud KMS 서비스별 구성** → [Cloud Data Protection](../../cloud-security/data-protection/README.md) (작성 예정)
 

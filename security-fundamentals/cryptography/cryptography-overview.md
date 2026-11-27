@@ -128,7 +128,7 @@ flowchart TD
 
 - 다음 문서: [Symmetric Encryption](symmetric-encryption.md), [Hashing & MAC](hashing-mac.md)
 - 로드맵: [Cryptography](README.md)
-- 위협 사고방식: [Threat Modeling](../threat-modeling/README.md) (작성 예정)
+- 위협 사고방식: [Threat Modeling](../threat-modeling/README.md)
 
 ## 출처
 
