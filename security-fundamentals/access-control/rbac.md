@@ -165,7 +165,7 @@ RBAC의 가장 큰 운영 문제는 역할이 계속 늘어나는 것이다.
 | 구성 요소 | 내용 |
 |-----------|------|
 | Core RBAC | 사용자, 역할, 권한(행위 + 객체), 세션, 사용자 배정(UA(User Assignment)), 권한 배정(PA(Permission Assignment)). 세션은 한 사용자에 속하고 배정된 역할 중 일부를 활성화한다 |
-| Hierarchical RBAC | 역할 간 상속. 상위 역할(Senior)이 하위 역할(Junior)의 권한을 물려받는다. **General**은 역할 간 부분 순서를 허용해 다중 상속이 가능한 일반 계층이고, **Limited**는 다중 상속을 막고 트리 형태의 단순 구조로 제한한 계층이다 |
+| Hierarchical RBAC | 역할 간 상속. 상위 역할(Senior)이 하위 역할(Junior)의 권한을 물려받는다. **General**은 역할 간 부분 순서를 허용해 다중 상속이 가능한 일반 계층이고, **Limited**는 다중 상속을 제한해 단순한 트리 구조로 만든 계층이다. 각 역할은 직접 상위 역할(immediate ascendant)을 여러 개 가질 수 있지만, 직접 하위 역할(immediate descendant)은 하나로 제한된다 |
 | Static SoD | 사용자 배정에 대한 제약. 역할 집합 RS와 정수 n(2 이상)으로 정의하며, 한 사용자의 역할 중 RS에 속하는 것이 n개 미만이어야 한다(최대 n-1개). 예: RS = {회계 담당자, 감사자}, n = 2면 둘을 함께 배정할 수 없다 |
 | Dynamic SoD | 세션 활성화에 대한 제약. "이 역할 집합에서 n개 이상을 한 세션에서 동시에 활성화할 수 없다" |
 
@@ -230,7 +230,7 @@ Azure와 Google Cloud의 역할 배정은 "누구에게 + 어떤 역할을 + **�
 | 문서 | 이 문서에서의 사용 |
 |------|-------------------|
 | *ANSI INCITS 359* (Role Based Access Control) | Core RBAC, 역할 계층, SSD·DSD 구성 |
-| Sandhu, Ferraiolo, Kuhn, "The NIST Model for Role-Based Access Control: Towards a Unified Standard" | NIST RBAC 모델 |
+| Sandhu, Ferraiolo, Kuhn, "The NIST Model for Role-Based Access Control: Towards a Unified Standard" | NIST RBAC 모델, Limited 계층의 방향 정의 |
 | Kubernetes 공식 문서 (Using RBAC Authorization) | Role·ClusterRole·Binding, 권한 상승 방지, 기본 ClusterRole |
 | Microsoft Azure RBAC 문서 | 역할 정의·할당·범위 상속 |
 | Google Cloud IAM 문서 | 역할 종류, 리소스 계층 상속 |
