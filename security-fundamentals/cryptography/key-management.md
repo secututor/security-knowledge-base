@@ -199,12 +199,12 @@ HSM·암호 라이브러리처럼 키를 실제로 다루는 장치·소프트�
 
 ### 5.1 SP 800-57 문서 구성과 지위
 
-| 문서 | 다루는 범위 | 판 / 발행일 | 지위 |
-|------|------------|------------|------|
-| Part 1 Rev. 5 "General" | 키 종류, 키 상태와 전이, 사용 기간, 보안 강도 등 일반 원칙 | 2020-05-04 | **최종본 (이 문서의 핵심 기준)** |
-| Part 1 Rev. 6 | Part 1 개정안 | 2025-12-05 | **Initial Public Draft — 최종본 아님, 참고만** |
-| Part 2 Rev. 1 "Best Practices for Key Management Organizations" | 조직 차원의 키 관리 체계 | 2019-05-23 | 최종본 (NIST 검토 중) |
-| Part 3 Rev. 1 "Application-Specific Key Management Guidance" | 응용·프로토콜별 키 관리 지침 | 2015-01-22 | 최종본 (NIST 검토 중) |
+| 문서 | 다루는 범위 | 지위 |
+|------|------------|------|
+| Part 1 Rev. 5 "General" | 키 종류, 키 상태와 전이, 사용 기간, 보안 강도 등 일반 원칙 | **최종본 (이 문서의 핵심 기준)** |
+| Part 1 Rev. 6 | Part 1 개정안 | **Initial Public Draft — 최종본 아님, 참고만** |
+| Part 2 Rev. 1 "Best Practices for Key Management Organizations" | 조직 차원의 키 관리 체계 | 최종본 (NIST 검토 중) |
+| Part 3 Rev. 1 "Application-Specific Key Management Guidance" | 응용·프로토콜별 키 관리 지침 | 최종본 (NIST 검토 중) |
 
 - Rev. 6 초안의 내용은 최종본이 나올 때까지 본문 기준으로 쓰지 않는다.
 
@@ -215,23 +215,23 @@ HSM·암호 라이브러리처럼 키를 실제로 다루는 장치·소프트�
 
 | 문서 | 역할 |
 |------|------|
-| *FIPS 140-3* (2019-03-22 승인) | 미국 연방 표준. 요구사항 본문을 국제 표준에 위임하고, 미국 연방 사용을 위한 조건을 정한다 |
+| *FIPS 140-3* | 미국 연방 표준. 요구사항 본문을 국제 표준에 위임하고, 미국 연방 사용을 위한 조건을 정한다 |
 | *ISO/IEC 19790:2012* | 암호 모듈 **보안 요구사항** (*FIPS 140-3*이 참조) |
 | *ISO/IEC 24759:2017* | 암호 모듈 **시험 요구사항** — 요구사항을 어떻게 시험하는가 (*FIPS 140-3*이 참조) |
 | *SP 800-140* 시리즈 | *ISO/IEC 19790* 또는 *24759*의 특정 요구사항을 **보완·수정**한다 (아래 표). *FIPS 140-3* 자체를 대체하지 않는다 |
-| *FIPS 140-3* IG(Implementation Guidance) | 검증 프로그램이 요구사항을 **어떻게 해석·적용하는지** 설명하는 지침. 수시로 개정된다 (Updated 2026-11-20) |
+| *FIPS 140-3* IG(Implementation Guidance) | 검증 프로그램이 요구사항을 **어떻게 해석·적용하는지** 설명하는 지침. 수시로 개정된다 |
 
 ***SP 800-140*** **시리즈** (모두 Final)
 
-| 문서 | 판 | 발행일 |
-|------|----|--------|
-| *SP 800-140* | Rev. 표기 없음 | 2020-03-20 |
-| *SP 800-140A* | Rev. 표기 없음 | 2020-03-20 |
-| *SP 800-140B* | Rev. 1 | 2023-11-17 |
-| *SP 800-140C* | Rev. 2 | 2023-07-25 |
-| *SP 800-140D* | Rev. 2 | 2023-07-25 |
-| *SP 800-140E* | Rev. 표기 없음 | 2020-03-20 |
-| *SP 800-140F* | Rev. 표기 없음 | 2020-03-20 |
+| 문서 | 판 |
+|------|----|
+| *SP 800-140* | Rev. 표기 없음 |
+| *SP 800-140A* | Rev. 표기 없음 |
+| *SP 800-140B* | Rev. 1 |
+| *SP 800-140C* | Rev. 2 |
+| *SP 800-140D* | Rev. 2 |
+| *SP 800-140E* | Rev. 표기 없음 |
+| *SP 800-140F* | Rev. 표기 없음 |
 
 ```mermaid
 %%{init: {"theme": "base", "themeVariables": {"fontSize": "18px", "primaryColor": "#e8eef7", "primaryTextColor": "#1f2328", "primaryBorderColor": "#7a8ca8", "secondaryColor": "#eef1f5", "tertiaryColor": "#f5f7fa", "lineColor": "#8a8a8a", "edgeLabelBackground": "#eef1f5", "clusterBkg": "#f5f7fa", "clusterBorder": "#7a8ca8", "actorBkg": "#e8eef7", "actorBorder": "#7a8ca8", "actorTextColor": "#1f2328", "actorLineColor": "#8a8a8a", "signalColor": "#8a8a8a", "signalTextColor": "#8a8a8a", "noteBkgColor": "#fff8dc", "noteTextColor": "#1f2328", "noteBorderColor": "#c9b458"}, "flowchart": {"nodeSpacing": 25, "rankSpacing": 30, "padding": 8}, "sequence": {"width": 110, "height": 40, "boxMargin": 6, "noteMargin": 6, "actorMargin": 40}}}%%
@@ -253,7 +253,7 @@ IG는 이 전체를 실제 검증에서 어떻게 해석할지 설명하는 지�
 
 ### 5.3 5G 키 계층 기준
 
-기준: *3GPP TS 33.501 V19.7.0*, Release 19 (2026-08). 키 계층 구조, 네트워크 엔티티와 UE(User Equipment)의 키 파생·분배, 키 설정·식별·수명을 규정한다.
+기준: *3GPP TS 33.501 V19.7.0*, Release 19. 키 계층 구조, 네트워크 엔티티와 UE(User Equipment)의 키 파생·분배, 키 설정·식별·수명을 규정한다.
 
 - 키 계층의 중심 흐름: K → CK/IK → K_AUSF → K_SEAF → K_AMF → K_NASenc/K_NASint, 그리고 K_AMF → K_gNB → AS 키(RRC·UP).
 
@@ -267,17 +267,17 @@ IG는 이 전체를 실제 검증에서 어떻게 해석할지 설명하는 지�
 
 ## 출처
 
-| 문서 | 판 / 발행일 | 지위 | 이 문서에서의 사용 | 공식 링크 |
-|------|------------|------|-------------------|-----------|
-| *NIST SP 800-57 Part 1 Rev. 5* "Recommendation for Key Management: Part 1 – General" | 2020-05-04 | **최종본 (핵심 기준)** | 키 사용 목적, 사용 기간, 보안 강도, 키 상태와 전이 | https://doi.org/10.6028/NIST.SP.800-57pt1r5 |
-| *NIST SP 800-57 Part 1 Rev. 6* | 2025-12-05 | **Initial Public Draft (최종본 아님, 참고만)** | 인용하지 않음 | https://doi.org/10.6028/NIST.SP.800-57pt1r6.ipd |
-| *NIST SP 800-57 Part 2 Rev. 1* "Best Practices for Key Management Organizations" | 2019-05-23 | 최종본 (NIST 검토 중) | 조직 차원의 키 관리 | https://doi.org/10.6028/NIST.SP.800-57pt2r1 |
-| *NIST SP 800-57 Part 3 Rev. 1* "Application-Specific Key Management Guidance" | 2015-01-22 | 최종본 (NIST 검토 중) | 응용별 키 관리 | https://doi.org/10.6028/NIST.SP.800-57pt3r1 |
-| *FIPS 140-3* "Security Requirements for Cryptographic Modules" | 2019-03-22 승인 | 최종 표준 | 암호 모듈 보안 요구사항·검증 | https://doi.org/10.6028/NIST.FIPS.140-3 |
-| *ISO/IEC 19790:2012* / *ISO/IEC 24759:2017* | 2012 / 2017 | 국제 표준 (유료) | *FIPS 140-3*이 참조하는 요구사항·시험 요구사항 | https://www.iso.org/ |
-| *NIST SP 800-140*, *140A~140F* | 문서별 판·발행일은 [5.2](key-management.md#52-fips-140-3-문서-체계) 표 | Final | *ISO/IEC 19790·24759* 요구사항 보완·수정 | NIST CMVP Publications 목록 |
-| NIST CMVP, *FIPS 140-3* Implementation Guidance | Updated 2026-11-20 | 수시 개정 지침 | 검증 시 해석·적용 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
-| NIST CMVP, *FIPS 140-2* 전환 안내 | 2026-09-21 신규 사용 마지막 날, 2026-09-22 Historical 이동 | 공식 공지 | *FIPS 140-2* 모듈 상태 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
-| *3GPP TS 33.501* | V19.7.0, Release 19 (2026-08) | — | 5G 키 계층·파생·분배·수명 | ETSI 배포본 (*ETSI TS 133 501 V19.7.0*) |
+| 문서 | 지위 | 이 문서에서의 사용 | 공식 링크 |
+|------|------|-------------------|-----------|
+| *NIST SP 800-57 Part 1 Rev. 5* "Recommendation for Key Management: Part 1 – General" | **최종본 (핵심 기준)** | 키 사용 목적, 사용 기간, 보안 강도, 키 상태와 전이 | https://doi.org/10.6028/NIST.SP.800-57pt1r5 |
+| *NIST SP 800-57 Part 1 Rev. 6* | **Initial Public Draft (최종본 아님, 참고만)** | 인용하지 않음 | https://doi.org/10.6028/NIST.SP.800-57pt1r6.ipd |
+| *NIST SP 800-57 Part 2 Rev. 1* "Best Practices for Key Management Organizations" | 최종본 (NIST 검토 중) | 조직 차원의 키 관리 | https://doi.org/10.6028/NIST.SP.800-57pt2r1 |
+| *NIST SP 800-57 Part 3 Rev. 1* "Application-Specific Key Management Guidance" | 최종본 (NIST 검토 중) | 응용별 키 관리 | https://doi.org/10.6028/NIST.SP.800-57pt3r1 |
+| *FIPS 140-3* "Security Requirements for Cryptographic Modules" | 최종 표준 | 암호 모듈 보안 요구사항·검증 | https://doi.org/10.6028/NIST.FIPS.140-3 |
+| *ISO/IEC 19790:2012* / *ISO/IEC 24759:2017* | 국제 표준 (유료) | *FIPS 140-3*이 참조하는 요구사항·시험 요구사항 | https://www.iso.org/ |
+| *NIST SP 800-140*, *140A~140F* | Final | *ISO/IEC 19790·24759* 요구사항 보완·수정 | NIST CMVP Publications 목록 |
+| NIST CMVP, *FIPS 140-3* Implementation Guidance | 수시 개정 지침 | 검증 시 해석·적용 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
+| NIST CMVP, *FIPS 140-2* 전환 안내 | 공식 공지 | *FIPS 140-2* 모듈 상태 | https://csrc.nist.gov/projects/cryptographic-module-validation-program |
+| *3GPP TS 33.501 V19.7.0 (Release 19)* | — | 5G 키 계층·파생·분배·수명 | ETSI 배포본 (*ETSI TS 133 501 V19.7.0*) |
 
 - 그 외 내용은 키 관리의 일반 원리를 재구성한 해설이다. ISO/IEC 표준은 유료이므로 명칭과 역할만 적었다.

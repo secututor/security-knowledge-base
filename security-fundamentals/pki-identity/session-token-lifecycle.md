@@ -231,7 +231,7 @@ sequenceDiagram
 | *OpenID Connect Front-Channel Logout 1.0* | OP가 브라우저를 통해 각 RP의 로그아웃 주소를 호출 (iframe 등) | 서드파티 쿠키 제한의 영향을 받는다 |
 | *OpenID Connect Back-Channel Logout 1.0* | OP가 각 RP에 서버 간 직접 Logout Token(JWT)을 보냄 | 브라우저와 무관해 안정적. RP가 OP에서 접근 가능해야 한다 |
 
-- 세 규격 모두 OpenID Foundation Final(2022-09-12)이다. *Back-Channel Logout 1.0*은 Errata Set 1 반영본(2023-12-15)을 기준으로 본다.
+- 세 규격 모두 OpenID Foundation Final이다. *Back-Channel Logout 1.0*은 Errata Set 1 반영본을 기준으로 본다.
 
 **RP-Initiated Logout 요점**
 
@@ -265,13 +265,13 @@ sequenceDiagram
 
 | 규격 | 지위 | 다루는 내용 |
 |------|------|-------------|
-| *RFC 6265* HTTP State Management Mechanism | Proposed Standard (2011-04, *RFC 2965* 대체) | 쿠키 문법과 기본 속성 |
+| *RFC 6265* HTTP State Management Mechanism | Proposed Standard (*RFC 2965* 대체) | 쿠키 문법과 기본 속성 |
 | *draft-ietf-httpbis-rfc6265bis-22* | Internet-Draft. Proposed Standard를 목표로 IESG(Internet Engineering Steering Group) 단계를 지나 RFC Editor 최종 승인 대기 중이며, **아직 RFC가 아니다** | `SameSite`, `__Host-`·`__Secure-` 접두사 등 현대 브라우저 동작 반영 |
 
 - `__Host-` 쿠키 조건: `Secure` 있음, `Path=/`, `Domain` 지정 없음. 하나라도 어기면 브라우저는 쿠키를 거부한다.
 - `SameSite` 값이 없거나 알 수 없는 값이면 기본 처리 모드를 쓰며, 기본 동작은 `Lax`와 같다. 일부 브라우저는 호환성을 위해 막 만들어진 쿠키에 한해 `Lax-allowing-unsafe` 동작을 적용할 수 있다.
 - `SameSite=None`인데 `Secure`가 없는 쿠키는 거부된다.
-- 이 동작들은 *RFC 6265*(2011)가 아니라 개정 초안과 현대 브라우저 기준이다.
+- 이 동작들은 *RFC 6265*가 아니라 개정 초안과 현대 브라우저 기준이다.
 
 ```
 Set-Cookie: __Host-SessionID=<무작위 값>; Secure; HttpOnly; Path=/; SameSite=Lax
@@ -305,12 +305,12 @@ Set-Cookie: __Host-SessionID=<무작위 값>; Secure; HttpOnly; Path=/; SameSite
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *NIST SP 800-63B-4* | 2025-07 Final | AAL별 재인증 시간·유휴 시간과 규범 수준, AAL2·AAL3 재인증 조건 |
-| *RFC 6265* / *draft-ietf-httpbis-rfc6265bis-22* | Proposed Standard (2011-04) / Internet-Draft, RFC 발행 전 | 쿠키 속성, `SameSite`, 접두사 |
+| *NIST SP 800-63B-4* | Final | AAL별 재인증 시간·유휴 시간과 규범 수준, AAL2·AAL3 재인증 조건 |
+| *RFC 6265* / *draft-ietf-httpbis-rfc6265bis-22* | Proposed Standard / Internet-Draft, RFC 발행 전 | 쿠키 속성, `SameSite`, 접두사 |
 | *RFC 7009* | Proposed Standard | 토큰 폐기 |
-| *OpenID Connect RP-Initiated Logout 1.0*, *Front-Channel Logout 1.0*, *Back-Channel Logout 1.0* | OpenID Foundation Final (2022-09-12). *Back-Channel Logout 1.0*은 Errata Set 1 반영본 (2023-12-15) | 로그아웃 방식, 파라미터·Logout Token 규범 수준 |
-| *OpenID Shared Signals Framework 1.0*, *CAEP 1.0*, *RISC 1.0* | OpenID Foundation Final (2025-08-29 발행, 2025-09-02 승인 공지) | 보안 이벤트 공유 |
-| *W3C Device Bound Session Credentials* | First Public Working Draft (2025-08-21). Recommendation 아님 | 기기 결합 세션 |
+| *OpenID Connect RP-Initiated Logout 1.0*, *Front-Channel Logout 1.0*, *Back-Channel Logout 1.0* | OpenID Foundation Final. *Back-Channel Logout 1.0*은 Errata Set 1 반영본 | 로그아웃 방식, 파라미터·Logout Token 규범 수준 |
+| *OpenID Shared Signals Framework 1.0*, *CAEP 1.0*, *RISC 1.0* | OpenID Foundation Final | 보안 이벤트 공유 |
+| *W3C Device Bound Session Credentials* | First Public Working Draft. Recommendation 아님 | 기기 결합 세션 |
 | Chrome 개발자 문서, Google Workspace·Chrome Enterprise 안내 | 제조사 기술 문서 | DBSC 브라우저 지원 현황 |
 | *3GPP TS 33.501 V19.7.0 (Release 19)* | 3GPP 기술 규격 | NRF 서비스 접근 토큰의 폐기 미지원 |
 | OWASP Session Management Cheat Sheet | OWASP 프로젝트 | 세션 ID 엔트로피, 로그인 시 재발급, 쿠키, 서버 측 시간 제한, `HttpOnly`의 한계 |

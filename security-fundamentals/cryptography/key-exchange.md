@@ -302,10 +302,10 @@ X25519 단독 key_share는 32바이트다.
 | 구분 | 규격 | 지위 / 버전 | 인용 위치 |
 |------|------|-------------|-----------|
 | TLS 1.3 | *IETF RFC 9846* (*RFC 8446* 대체) | Standards Track | 정적 RSA 키 교환 제거, (EC)DHE, HKDF 키 스케줄, 정적 RSA 공격 |
-| TLS 하이브리드 키 교환 | *RFC 10024* "Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3" (2026-08) | Standards Track / Proposed Standard | 그룹 정의, key_share 크기, 공유 비밀 결합 순서 |
+| TLS 하이브리드 키 교환 | *RFC 10024* "Post-Quantum Traditional (PQ/T) Hybrid Key Agreement Mechanisms for TLS 1.3" | Standards Track / Proposed Standard | 그룹 정의, key_share 크기, 공유 비밀 결합 순서 |
 | 하이브리드 설계 프레임워크 | *RFC 9954* "Hybrid Key Exchange in TLS 1.3" | Informational | 공유 비밀 연결 구조 (일반 설계) |
 | HKDF | *RFC 5869* | Informational | Extract-then-Expand 구조 |
-| ML-KEM | *NIST FIPS 203* (2024-08-13 발행) | Final | 키·암호문 크기. https://doi.org/10.6028/NIST.FIPS.203 |
+| ML-KEM | *NIST FIPS 203* | Final | 키·암호문 크기. https://doi.org/10.6028/NIST.FIPS.203 |
 | 5G SUCI ECIES | *3GPP TS 33.501 V19.7.0 (Release 19)* | — | Profile A·B의 곡선, AES-128-CTR, HMAC-SHA-256, 64비트 MAC 태그 |
 
 - 그 외 내용은 키 교환의 일반 원리를 재구성한 해설이다.

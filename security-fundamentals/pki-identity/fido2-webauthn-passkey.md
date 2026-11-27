@@ -260,12 +260,12 @@ PC에 Passkey가 없어도 휴대폰의 Passkey로 PC 브라우저에 로그인�
 | -257 | RS256 | RSASSA-PKCS1-v1_5(PKCS(Public-Key Cryptography Standards) #1 v1.5 방식 RSA 서명) + SHA-256 |
 
 - RP는 등록 요청에 허용 알고리즘 목록을 선호 순서대로 보낸다. ES256은 대부분의 인증기가 지원한다.
-- *RFC 9864*(2025-10)는 COSE에서도 곡선을 특정하지 않는 EdDSA 식별자를 Deprecated 처리하고 Ed25519·Ed448 전용 식별자를 정의했다. WebAuthn 환경에서는 여전히 -8이 널리 쓰이므로, 새 식별자 지원 여부는 사용하는 인증기·라이브러리에서 확인한다.
+- *RFC 9864*는 COSE에서도 곡선을 특정하지 않는 EdDSA 식별자를 Deprecated 처리하고 Ed25519·Ed448 전용 식별자를 정의했다. WebAuthn 환경에서는 여전히 -8이 널리 쓰이므로, 새 식별자 지원 여부는 사용하는 인증기·라이브러리에서 확인한다.
 - 알고리즘 원리는 [Digital Signature](../cryptography/digital-signature.md) 참조.
 
 ### 5.4 표준 문서 체계
 
-| 규격 | 발행 | 다루는 범위 |
+| 규격 | 발행 기관 | 다루는 범위 |
 |------|------|-------------|
 | *W3C WebAuthn Level 3* | W3C | RP·브라우저 간 API, 인증기 데이터, 서버 검증 절차, 백업 플래그 |
 | *FIDO Alliance CTAP 2.3* | FIDO Alliance | 브라우저·OS와 외부 인증기 간 통신, USB·NFC·BLE·Hybrid 전송, PIN·UV 처리 |
@@ -291,8 +291,8 @@ PC에 Passkey가 없어도 휴대폰의 Passkey로 PC 브라우저에 로그인�
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *W3C WebAuthn Level 3* "Web Authentication: An API for accessing Public Key Credentials" | W3C Recommendation (2026-08-25) | 등록·인증 흐름, 인증기 데이터와 플래그, 서버 검증 절차 |
-| *FIDO Alliance CTAP 2.3* | Proposed Standard (2026-02-26) | 외부 인증기 통신, Hybrid 전송 |
-| *NIST SP 800-63B-4* | 2025-07 Final | 피싱 저항성, AAL 대응 |
+| *W3C WebAuthn Level 3* "Web Authentication: An API for accessing Public Key Credentials" | W3C Recommendation | 등록·인증 흐름, 인증기 데이터와 플래그, 서버 검증 절차 |
+| *FIDO Alliance CTAP 2.3* | Proposed Standard | 외부 인증기 통신, Hybrid 전송 |
+| *NIST SP 800-63B-4* | Final | 피싱 저항성, AAL 대응 |
 
 - 동기화·기기 고정 비교와 도입 판단 기준은 위 규격을 바탕으로 재구성한 해설이다.

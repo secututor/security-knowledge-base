@@ -206,7 +206,7 @@ sequenceDiagram
 
 ### 5.1 MITRE ATT&CK 대응
 
-MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v20.1의 기법 분류에 대응시키면 탐지 규칙과 점검 항목을 맞추기 쉽다. 하나의 공격 시나리오는 여러 단계로 이루어지므로, 기법 하나가 아니라 **단계별 기법의 조합**으로 표현하는 것이 정확하다.
+MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise의 기법 분류에 대응시키면 탐지 규칙과 점검 항목을 맞추기 쉽다. 하나의 공격 시나리오는 여러 단계로 이루어지므로, 기법 하나가 아니라 **단계별 기법의 조합**으로 표현하는 것이 정확하다.
 
 | 공격 | ATT&CK 기법 |
 |------|-------------|
@@ -229,7 +229,7 @@ MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v
 | 인증 절차 변조 (MFA 수단 추가, 연합 신뢰 변경) | Modify Authentication Process (T1556) |
 
 - Replay라는 이름의 범용 독립 기법은 없다. 무엇을 다시 쓰는지와 공격 맥락에 따라 관련 기법으로 대응시킨다. 예: 탈취한 세션 쿠키 재사용은 T1550.004, 중간자 위치에서의 재전송은 T1557.
-- 버전을 고정해 검증할 때는 웹사이트의 현재 기법 페이지보다 해당 버전의 공식 데이터 파일(enterprise-attack v20.1)을 기준으로 한다. 웹 페이지에는 이후 수정이 반영될 수 있다.
+- 기법 ID와 이름은 버전에 따라 바뀔 수 있으므로, 버전을 고정해 검증할 때는 웹사이트의 현재 페이지보다 해당 버전의 공식 데이터 파일을 기준으로 한다.
 - ATT&CK은 버전마다 기법이 추가·통합·폐기되므로, 탐지 규칙에 기법 ID를 붙일 때 기준 버전을 함께 기록한다.
 
 ### 5.2 OWASP 대응
@@ -242,7 +242,7 @@ MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v
 | Authentication Cheat Sheet | 인증 오류 메시지, 재인증, 잠금 정책이 다른 사용자를 일부러 잠그는 DoS에 악용되지 않게 할 것(점진적 지연, 잠금 중 복구 경로) |
 | Session Management Cheat Sheet | 세션 탈취·고정 방어 |
 
-- OWASP Top 10:2025는 Final로 공개되었고(2025-11-06 공개 일정), 2021판은 대체되었다 → [OWASP Top 10](../web-app-security/owasp/top-10/README.md)
+- OWASP Top 10:2025는 Final로 공개되어 2021판을 대체했다 → [OWASP Top 10](../web-app-security/owasp/top-10/README.md)
 
 ### 5.3 *NIST SP 800-63B-4*의 관련 요구
 
@@ -268,7 +268,7 @@ MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v
 
 | 자료 | 다루는 내용 |
 |------|-------------|
-| MITRE ATT&CK Enterprise v20.1, ATT&CK Mobile | 공격 기법 분류와 탐지 단서 (SIM Swap은 Mobile) |
+| MITRE ATT&CK Enterprise, ATT&CK Mobile | 공격 기법 분류와 탐지 단서 (SIM Swap은 Mobile) |
 | *NIST SP 800-63B-4* | 인증 수단 요구, 피싱 저항성, 비밀번호 정책 |
 | OWASP Top 10:2025, OWASP API Security Top 10 2023 | 인증 실패 위험 분류 |
 | OWASP Cheat Sheet Series (Credential Stuffing Prevention, Authentication, Session Management) | 구현 실무 권고 |
@@ -291,14 +291,14 @@ MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| MITRE ATT&CK Enterprise / Mobile | Enterprise v20.1 (2026-11-05) | 공격 기법 ID와 단계별 조합, SIM Card Swap (Mobile) |
-| *NIST SP 800-63B-4* | 2025-07 Final | 피싱 저항성, 속도 제한(100회 상한)과 보조 수단, PSTN 위험 지표 |
+| MITRE ATT&CK Enterprise / Mobile | — | 공격 기법 ID와 단계별 조합, SIM Card Swap (Mobile) |
+| *NIST SP 800-63B-4* | Final | 피싱 저항성, 속도 제한(100회 상한)과 보조 수단, PSTN 위험 지표 |
 | OWASP Top 10:2025 | OWASP 프로젝트, Final (2021판 대체) | A07:2025 Authentication Failures |
 | OWASP API Security Top 10 2023 | OWASP 프로젝트 | API 인증 실패 |
 | OWASP Cheat Sheet Series | OWASP 프로젝트 | Stuffing·인증·세션 방어 실무, 계정 잠금 DoS 경고 |
-| CISA, MFA Fatigue 대응 Number Matching 권고 | 2022-10 | 번호 일치는 피싱 저항 인증의 차선책 |
-| *W3C WebAuthn Level 3* | W3C Recommendation (2026-08-25) | Origin 결합 |
-| *RFC 8628* | Proposed Standard (2019-08) | Device Authorization Grant |
+| CISA, MFA Fatigue 대응 Number Matching 권고 | — | 번호 일치는 피싱 저항 인증의 차선책 |
+| *W3C WebAuthn Level 3* | W3C Recommendation | Origin 결합 |
+| *RFC 8628* | Proposed Standard | Device Authorization Grant |
 | Microsoft 기술 문서 (Kerberos 암호화 설정, dMSA, Golden SAML 탐지) | 제조사 기술 문서 | AES 전환의 한계, dMSA, 수신 측 이상 탐지 |
 | Uber 공식 사건 설명, CISA 교육 자료 | 기업 공식 발표, 정부 기관 자료 | 2022 Uber MFA Fatigue 사례 |
 | MGM Resorts SEC(Securities and Exchange Commission) 공시·공식 발표, 언론 보도 | 공시는 침해·운영 중단만 확인. 침투 경로는 보도 기반 | 2023 MGM 헬프데스크 사칭 사례 |

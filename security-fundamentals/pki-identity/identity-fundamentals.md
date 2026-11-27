@@ -20,7 +20,7 @@
 **인증은 인가가 아니다.** 로그인에 성공했다는 사실은 "누구인지 확인됐다"는 뜻일 뿐, "무엇이든 해도 된다"는 뜻이 아니다.
 
 이 문서는 PKI & Identity 하위 영역의 출발점으로, 이후 문서(인증 방식·FIDO2·PKI·OAuth·토큰)가 함께 쓰는 용어와 구조를 정리한다.
-인가 모델(RBAC·ABAC 등)의 상세는 [Access Control](../access-control/README.md) (작성 예정)에서 다룬다.
+인가 모델(RBAC·ABAC 등)의 상세는 [Access Control](../access-control/README.md)에서 다룬다.
 
 ## 2. 배경 / 원리 (Why & How)
 
@@ -193,7 +193,7 @@ stateDiagram-v2
 ## 관련 문서
 
 - 다음: [PKI & Certificates](pki-certificates.md), [Authentication Methods](authentication-methods.md)
-- 인가 모델: [Access Control](../access-control/README.md) (작성 예정)
+- 인가 모델: [Access Control](../access-control/README.md)
 - 암호 기반: [Digital Signature](../cryptography/digital-signature.md), [TLS Overview](../cryptography/tls-overview.md)
 - 로드맵: [PKI & Identity](README.md)
 
@@ -201,7 +201,7 @@ stateDiagram-v2
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *NIST SP 800-63-4* "Digital Identity Guidelines" (*63A-4*·*63B-4*·*63C-4* 포함) | 2025-07 Final (네 문서 모두) | IAL·AAL·FAL 보증 수준 체계 |
+| *NIST SP 800-63-4* "Digital Identity Guidelines" (*63A-4*·*63B-4*·*63C-4* 포함) | Final (네 문서 모두) | IAL·AAL·FAL 보증 수준 체계 |
 | *3GPP TS 33.501 V19.7.0 (Release 19)* | — | 5G 가입자 식별자와 인증 구조 (세부는 5G 문서) |
 
 - 그 외 내용은 신원·인증·인가의 일반 원리를 재구성한 해설이다.

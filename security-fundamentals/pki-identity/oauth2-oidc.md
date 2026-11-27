@@ -192,7 +192,7 @@ ID Token은 `aud`(대상)에 클라이언트 ID가 들어 있으므로, 클라�
 
 ### 3.7 OAuth 2.1 — 모범 사례를 기본값으로
 
-OAuth 2.1은 *RFC 6749* 이후 쌓인 보안 권고를 하나로 정리하는 개정판이다. 최신 개정판은 *draft-ietf-oauth-v2-1-17*(2026-10-30)이며, **Internet-Draft 단계로 아직 최종 RFC가 아니다.**
+OAuth 2.1은 *RFC 6749* 이후 쌓인 보안 권고를 하나로 정리하는 개정판이다. 최신 개정판은 *draft-ietf-oauth-v2-1-17*이며, **Internet-Draft 단계로 아직 최종 RFC가 아니다.**
 
 | 변경 방향 | 내용 |
 |-----------|------|
@@ -278,7 +278,7 @@ sequenceDiagram
 
 ### 5.1 *RFC 9700* 핵심 권고
 
-*RFC 9700*(Best Current Practice for OAuth 2.0 Security, BCP(Best Current Practice) 240, 2025-01)은 *RFC 6749* 이후 알려진 공격을 반영한 현행 보안 기준이다. 규범 수준은 MUST(반드시), MUST NOT(금지), SHOULD(권고), SHOULD NOT(지양), RECOMMENDED(권장)로 구분한다.
+*RFC 9700*(Best Current Practice for OAuth 2.0 Security, BCP(Best Current Practice) 240)은 *RFC 6749* 이후 알려진 공격을 반영한 현행 보안 기준이다. 규범 수준은 MUST(반드시), MUST NOT(금지), SHOULD(권고), SHOULD NOT(지양), RECOMMENDED(권장)로 구분한다.
 
 | 주제 | 권고 | 수준 |
 |------|------|:---:|
@@ -350,10 +350,10 @@ sequenceDiagram
 |------|------|------|
 | *RFC 6749* The OAuth 2.0 Authorization Framework | Proposed Standard | 기본 프레임워크 |
 | *RFC 6750* Bearer Token Usage | Proposed Standard | Bearer Token 전달 방법 |
-| *RFC 9700* Best Current Practice for OAuth 2.0 Security | BCP 240 (2025-01) | 현행 보안 기준 |
-| *RFC 8252* OAuth 2.0 for Native Apps | BCP 212 (2017-10) | 네이티브 앱. 외부 User-Agent, Authorization Code + PKCE |
-| *RFC 10017* OAuth 2.0 for Browser-Based Applications | BCP 212 (2026-08) | 브라우저 앱. BFF·Token-mediating Backend·Browser-based OAuth Client 구조 비교 |
-| *draft-ietf-oauth-v2-1-17* | Internet-Draft (2026-10-30) | OAuth 2.1, 최종 RFC 아님 |
+| *RFC 9700* Best Current Practice for OAuth 2.0 Security | BCP 240 | 현행 보안 기준 |
+| *RFC 8252* OAuth 2.0 for Native Apps | BCP 212 | 네이티브 앱. 외부 User-Agent, Authorization Code + PKCE |
+| *RFC 10017* OAuth 2.0 for Browser-Based Applications | BCP 212 | 브라우저 앱. BFF·Token-mediating Backend·Browser-based OAuth Client 구조 비교 |
+| *draft-ietf-oauth-v2-1-17* | Internet-Draft | OAuth 2.1, 최종 RFC 아님 |
 | *OpenID Connect Core 1.0 incorporating errata set 2* | OpenID Foundation Final | ID Token, 인증 흐름 |
 | *OpenID Connect Discovery 1.0 incorporating errata set 2* | OpenID Foundation Final | 메타데이터 자동 조회 |
 | 확장 규격 (*RFC 8628*, *8414*, *8707*, *8693*, *9126*, *9207*, *9396*, *7523*) | Proposed Standard | 5.4 확장 규격 지도 |
@@ -376,9 +376,9 @@ sequenceDiagram
 |------|-------------|-------------------|
 | *RFC 6749*, *RFC 6750* | Proposed Standard | 역할, Grant 유형, Bearer Token |
 | *RFC 7636* | Proposed Standard | PKCE |
-| *RFC 9700* | BCP 240 (2025-01) | 보안 권고와 규범 수준, 폐기된 Grant, redirect URI 정확 일치 |
-| *RFC 8252* / *RFC 10017* | BCP 212 / BCP 212 (2026-08) | 네이티브 앱 / 브라우저 앱 구조 |
-| *draft-ietf-oauth-v2-1-17* | Internet-Draft (2026-10-30) | OAuth 2.1 변경 방향 |
+| *RFC 9700* | BCP 240 | 보안 권고와 규범 수준, 폐기된 Grant, redirect URI 정확 일치 |
+| *RFC 8252* / *RFC 10017* | BCP 212 / BCP 212 | 네이티브 앱 / 브라우저 앱 구조 |
+| *draft-ietf-oauth-v2-1-17* | Internet-Draft | OAuth 2.1 변경 방향 |
 | *OpenID Connect Core 1.0 incorporating errata set 2*, *OpenID Connect Discovery 1.0 incorporating errata set 2* | OpenID Foundation Final | ID Token, 검증 절차, `alg=none` 예외, 메타데이터 |
 | *RFC 8628*, *RFC 8414*, *RFC 8707*, *RFC 8693*, *RFC 9126*, *RFC 9207*, *RFC 9396*, *RFC 7523* | Proposed Standard | 확장 규격 지도, Device Code 원격 피싱 |
 | *3GPP TS 33.501 V19.7.0 (Release 19)* | — | 5G SBA의 OAuth 2.0 역할, Client Credentials Grant, JWT Access Token |

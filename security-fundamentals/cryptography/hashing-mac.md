@@ -140,5 +140,5 @@ HMAC은 키를 두 번 섞는 구조로 이 문제를 피한다. **MAC이 필요
 
 - SHA-2: NIST, *FIPS 180-4* / SHA-3: NIST, *FIPS 202*.
 - 5G 128-NIA2 = AES-CMAC, 5G 키 파생 입력 구성: 3GPP, *TS 33.501 V19.7.0 (Release 19)* /
-  범용 KDF(HMAC-SHA-256): *TS 33.220 V19.1.0 (Release 19)* (세부는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다).
+  범용 KDF(HMAC-SHA-256): *TS 33.220* (세부는 [5G Key Hierarchy](../../5g-security/fundamentals/01-01-5G_Key_Hierarchy.md)에서 다룬다).
 - 그 외 내용은 해시·MAC·KDF의 일반 원리를 재구성한 해설이다. 패스워드 해시 파라미터 등 구체 수치는 다루지 않았다.

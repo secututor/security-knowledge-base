@@ -52,22 +52,21 @@
 
 ## 3. 기준 프레임워크 버전
 
-이 영역의 문서는 아래 버전을 기준으로 작성한다. 날짜는 각 규격의 발표·게시일이다.
+이 영역의 문서는 아래 버전을 기준으로 작성한다.
 
-| 프레임워크 | 기준 버전 | 상태 / 날짜 | 공식 출처 |
-|-----------|-----------|-------------|-----------|
-| CSA CCM | **4.1** (207 통제 / 17 영역, CAIQ v4.1 동반) | released, 2026-01 | https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1 |
-| *ISO/IEC 27017* | **2026** (Edition 2) | published, 2026-07-27 (이전판 2015) | https://www.iso.org/standard/27017 |
-| *ISO/IEC 27018* | 최신판 | 확인 예정 | https://www.iso.org/standard/76559.html |
-| CSAP 해설서 | **2026년 해설서** | 게시 2026-07-06 / 정정 2026-07-28(내용 변경 없음) | https://www.isms-p.or.kr/ |
-| ISMS-P | 최신 고시 | 확인 예정 | https://www.isms-p.or.kr/ |
-| CIS Benchmarks | CSP·서비스별 최신판 | CSP별 분리 관리 | https://www.cisecurity.org/cis-benchmarks |
-| *NIST SP 800-53* | Rev.5 | released | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
-| MITRE ATT&CK (Cloud) | 최신판 | 확인 예정 | https://attack.mitre.org/matrices/enterprise/cloud/ |
+| 프레임워크 | 기준 버전 | 공식 출처 |
+|-----------|-----------|-----------|
+| CSA CCM | **4.1** (207 통제 / 17 영역, CAIQ v4.1 동반) | https://cloudsecurityalliance.org/artifacts/cloud-controls-matrix-v4-1 |
+| *ISO/IEC 27017* | **2026** (Edition 2) | https://www.iso.org/standard/27017 |
+| *ISO/IEC 27018* | 최신판 | https://www.iso.org/standard/76559.html |
+| CSAP 해설서 | **2026년 해설서** | https://www.isms-p.or.kr/ |
+| ISMS-P | 최신 고시 | https://www.isms-p.or.kr/ |
+| CIS Benchmarks | CSP·서비스별 최신판 | https://www.cisecurity.org/cis-benchmarks |
+| *NIST SP 800-53* | Rev.5 | https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final |
+| MITRE ATT&CK (Cloud) | 최신판 | https://attack.mitre.org/matrices/enterprise/cloud/ |
 
 > 각 버전은 공식 링크에서 확인할 수 있다.
-> CSA CCM 발표일은 자료에 따라 1/27~1/28로 표기되어 `2026-01`로 적었다.
-> CSAP는 "해설서 게시/정정"이며 **보안인증기준 자체의 개정이 아니다**.
+> CSAP 해설서는 보안인증기준 자체의 개정이 아니다.
 
 ---
 

@@ -285,7 +285,7 @@ NRF(Network Repository Function)가 발급하는 JWT를 서비스를 제공하�
 | Ed25519 / Ed448 | 서명 | *RFC 9864*의 곡선까지 특정한(Fully-Specified) 식별자. JOSE 구현 요구는 Optional |
 | none | 없음 | 서명 없음. 일반 검증에서 거부 |
 
-- *RFC 9864*(Fully-Specified Algorithms for JOSE and COSE, 2025-10)는 *RFC 7518*·*RFC 8037*·*RFC 9053*을 갱신한다. RS256·PS256 같은 RSA 식별자는 그대로 유지된다.
+- *RFC 9864*(Fully-Specified Algorithms for JOSE and COSE)는 *RFC 7518*·*RFC 8037*·*RFC 9053*을 갱신한다. RS256·PS256 같은 RSA 식별자는 그대로 유지된다.
 - **RS256과 RSA 암호화를 혼동하지 않는다.** *RFC 8725*가 피하도록 권고하는 RSA PKCS #1 v1.5는 주로 JWE의 **암호화** 방식(RSAES-PKCS1-v1_5, `RSA1_5`)이다. RS256은 같은 표준 계열의 **서명** 방식(RSASSA-PKCS1-v1_5)으로 별개다.
 - 알고리즘 원리는 [Digital Signature](../cryptography/digital-signature.md) 참조.
 
@@ -308,7 +308,7 @@ NRF(Network Repository Function)가 발급하는 JWT를 서비스를 제공하�
 | 새로운 JWT 유형에는 명시적 `typ` 사용 | RECOMMENDED | Cross-JWT Confusion |
 | 서로 다른 JWT 유형의 검증 규칙을 상호 배타적으로 설계 | MUST | Cross-JWT Confusion |
 
-- 후속 개정안 *draft-ietf-oauth-rfc8725bis-10*(2026-08-21)은 IESG(Internet Engineering Steering Group) 승인을 받아 RFC Editor 발행을 기다리는 단계다. 아직 RFC로 발행되지 않았으므로 *RFC 8725*가 현행 기준이다.
+- 후속 개정안 *draft-ietf-oauth-rfc8725bis-10*은 IESG(Internet Engineering Steering Group) 승인을 받아 RFC Editor 발행을 기다리는 단계다. 아직 RFC로 발행되지 않았으므로 *RFC 8725*가 현행 기준이다.
 
 ### 5.3 JWT Access Token 프로파일 (*RFC 9068*)
 
@@ -376,10 +376,10 @@ DPoP: <서명된 DPoP 증명 JWT>
 |------|-------------|-------------------|
 | *RFC 7519*, *RFC 7515*, *RFC 7516*, *RFC 7517*, *RFC 7518* | Proposed Standard | JWT·JWS·JWE·JWK·JWA 구조와 알고리즘 |
 | *RFC 8725* | BCP 225 | JWT 보안 모범 사례와 규범 수준 |
-| *draft-ietf-oauth-rfc8725bis-10* | Internet-Draft (2026-08-21), IESG 승인·RFC Editor 발행 대기 | *RFC 8725* 후속 개정안 |
-| *RFC 9864* | Proposed Standard (2025-10) | EdDSA Deprecated, Ed25519·Ed448 식별자 |
+| *draft-ietf-oauth-rfc8725bis-10* | Internet-Draft, IESG 승인·RFC Editor 발행 대기 | *RFC 8725* 후속 개정안 |
+| *RFC 9864* | Proposed Standard | EdDSA Deprecated, Ed25519·Ed448 식별자 |
 | *RFC 9068* | Proposed Standard | JWT Access Token 프로파일 |
-| *RFC 7009*, *RFC 7662*, *RFC 9701* | Proposed Standard (*RFC 9701*: 2025-01) | 폐기, 상태 조회, JWT 상태 조회 응답 |
+| *RFC 7009*, *RFC 7662*, *RFC 9701* | Proposed Standard | 폐기, 상태 조회, JWT 상태 조회 응답 |
 | *RFC 9449*, *RFC 8705* | Proposed Standard | 송신자 제한 토큰 |
 | *RFC 8037* | Proposed Standard (*RFC 9864*가 갱신) | JOSE의 기존 EdDSA 식별자 |
 | *RFC 8471~8473* | Proposed Standard | Token Binding (역사적 배경) |

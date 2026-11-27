@@ -48,7 +48,7 @@ flowchart LR
 ### 2.3 인증과 인가는 여기서도 다르다
 
 워크로드 신원이 답하는 것은 "이 요청을 보낸 워크로드가 누구인가"다. **그 워크로드가 무엇을 할 수 있는가는 별도의 인가 정책**이 정한다.
-mTLS로 서로를 인증했다고 해서 모든 API 호출이 허용되는 것은 아니다. 서비스 메시의 인가 정책, 클라우드 IAM(Identity and Access Management) 정책, OAuth Scope가 그 역할을 맡는다 → [Access Control](../access-control/README.md) (작성 예정)
+mTLS로 서로를 인증했다고 해서 모든 API 호출이 허용되는 것은 아니다. 서비스 메시의 인가 정책, 클라우드 IAM(Identity and Access Management) 정책, OAuth Scope가 그 역할을 맡는다 → [Access Control](../access-control/README.md)
 
 ## 3. 상세 (Details)
 
@@ -184,7 +184,7 @@ sequenceDiagram
 
 - X.509-SVID는 mTLS에 바로 쓸 수 있다. JWT-SVID는 L7 프록시·로드밸런서가 중간에 있어 TLS를 끝까지 유지할 수 없는 경로에서 쓴다. JWT-SVID는 Bearer 토큰이라 탈취 시 **재전송 위험**이 있으므로, SPIFFE도 가능하면 X.509-SVID를 쓰고 JWT-SVID에는 짧은 만료와 좁은 대상(`aud`)을 적용하도록 권고한다.
 - 서로 다른 Trust Domain끼리는 **SPIFFE Federation**으로 신뢰를 맺는다. 상대 Trust Domain의 Bundle을 받아 **그 Trust Domain과 연결된 상태로** 보관하고, 상대 SVID는 그 Bundle로만 검증한다. 서로 신뢰하려면 양방향으로 구성한다. 여러 Trust Domain의 Bundle을 하나로 합치면 한 Trust Domain이 다른 Trust Domain의 신원을 위조할 수 있게 된다.
-- SPIFFE와 SPIRE는 모두 CNCF(Cloud Native Computing Foundation) Graduated 프로젝트다(SPIFFE 2022-08-23, SPIRE 2022-08-22). 핵심 사양(SPIFFE ID, X.509-SVID, JWT-SVID, Trust Domain and Bundle, Federation, Workload API)은 Stable이지만, Filesystem Delivery처럼 Incubating인 부가 사양도 있으므로 개별 사양의 안정성 표시를 확인한다.
+- SPIFFE와 SPIRE는 모두 CNCF(Cloud Native Computing Foundation) Graduated 프로젝트다. 핵심 사양(SPIFFE ID, X.509-SVID, JWT-SVID, Trust Domain and Bundle, Federation, Workload API)은 Stable이지만, Filesystem Delivery처럼 Incubating인 부가 사양도 있으므로 개별 사양의 안정성 표시를 확인한다.
 
 ### 3.7 다른 영역에서의 사용
 
@@ -314,7 +314,7 @@ AWS 신뢰 정책에서 특정 저장소의 `main` 브랜치만 허용하는 예
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| CNCF SPIFFE 사양군 | 단일 버전 번호 없음. 핵심 사양 Stable, Filesystem Delivery Incubating. SPIFFE·SPIRE 모두 CNCF Graduated (2022-08) | SPIFFE ID, SVID 규칙, Workload API, Trust Bundle, Federation |
+| CNCF SPIFFE 사양군 | 단일 버전 번호 없음. 핵심 사양 Stable, Filesystem Delivery Incubating. SPIFFE·SPIRE 모두 CNCF Graduated | SPIFFE ID, SVID 규칙, Workload API, Trust Bundle, Federation |
 | SPIRE 공식 문서 | 제조사 기술 문서 | 노드·워크로드 증명 흐름 |
 | Kubernetes 공식 문서 | 프로젝트 기술 문서 | Service Account, Bound Service Account Token, 장기 토큰 자동 생성 중단(v1.24 Beta, v1.27 GA), Issuer Discovery, TokenReview |
 | AWS EC2 IMDS 문서 | 제조사 기술 문서 | IMDSv2 동작과 한계 |

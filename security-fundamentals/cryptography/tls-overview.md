@@ -227,18 +227,18 @@ TLS 1.2를 유지해야 한다면 다음 조건을 모두 만족하는 스위트
 
 | 문서 | 내용 | 지위 |
 |------|------|------|
-| *RFC 9846* | TLS 1.3 (*RFC 8446*·*RFC 5246* 대체) | Standards Track (2026-07) |
+| *RFC 9846* | TLS 1.3 (*RFC 8446*·*RFC 5246* 대체) | Standards Track |
 | *RFC 5246* | TLS 1.2 원래 규격 | Proposed Standard, *RFC 9846*에 의해 Obsoleted. TLS 1.2 프로토콜 사용 자체가 금지된 것은 아님 |
 | *RFC 8996* | TLS 1.0·1.1 폐기 | BCP 195 |
 | *RFC 9325* | TLS·DTLS(Datagram TLS) 안전한 사용 권고 | BCP 195. *RFC 9852*·*RFC 10015*가 갱신 |
-| *RFC 9852* | TLS를 쓰는 새 프로토콜은 TLS 1.3을 요구 | 2026-07 (제목·지위 확인 예정) |
-| *RFC 10015* | TLS 1.2의 오래된 DH·RSA 키 교환 폐기, 정적 ECDH 억제 | 2026-07 (제목·지위 확인 예정) |
-| *RFC 9150* | TLS 1.3 인증·무결성 전용 암호 스위트 | 지위 확인 예정 |
+| *RFC 9852* | TLS를 쓰는 새 프로토콜은 TLS 1.3을 요구 | — |
+| *RFC 10015* | TLS 1.2의 오래된 DH·RSA 키 교환 폐기, 정적 ECDH 억제 | — |
+| *RFC 9150* | TLS 1.3 인증·무결성 전용 암호 스위트 | — |
 | *RFC 5280* | X.509 인증서·CRL 프로파일 | Standards Track |
 | *RFC 6066* | TLS 확장 (SNI(Server Name Indication), OCSP stapling 요청 등) | Proposed Standard. *RFC 9846* 등이 일부 갱신 |
 | *RFC 6797* | HSTS | Proposed Standard |
 | *RFC 10024* | TLS 1.3 PQ/T 하이브리드 키 합의 | Proposed Standard |
-| *NIST SP 800-52 Rev. 2* | 미국 연방 시스템의 TLS 선택·구성 지침 | Final (2019-08). 2026-11-19 NIST가 개정을 결정했으며 후속판은 아직 발행되지 않음 |
+| *NIST SP 800-52 Rev. 2* | 미국 연방 시스템의 TLS 선택·구성 지침 | Final. 개정이 예정되어 있으나 후속판은 아직 없음 |
 
 **NIST SP 800-52 개정 예정 방향** (NIST 공개 내용, 아직 확정 규정 아님): TLS 1.2 지원 권고를 SHOULD에서 MAY로 낮춤, TLS 1.0·1.1 일반적 불허,
 TLS 1.2의 SHA-1·DSA(Digital Signature Algorithm)·정적 키 교환·RSA 키 교환 제거 또는 불허, 양자내성 알고리즘 내용 추가, 최소 보안 강도 128비트로 상향.
@@ -256,7 +256,6 @@ TLS 1.2의 SHA-1·DSA(Digital Signature Algorithm)·정적 키 교환·RSA 키 �
 | HTTP/2·SNI | HTTP/2 프로파일과 호환되어야 하며, TLS 클라이언트는 SNI 확장을 포함해야 한다 |
 
 - 위는 규격의 의무사항이다. 실제 장비가 어떤 TLS 버전·암호 스위트·인증서 관리 방식을 쓰는지는 구현마다 다르므로 점검에서 따로 확인한다.
-- *TS 33.210*·*TS 33.310*의 판은 확인 예정이다.
 
 ## 관련 문서
 
@@ -269,18 +268,18 @@ TLS 1.2의 SHA-1·DSA(Digital Signature Algorithm)·정적 키 교환·RSA 키 �
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 | 공식 링크 |
 |------|-------------|-------------------|-----------|
-| *IETF RFC 9846* | Standards Track (2026-07, *RFC 8446*·*RFC 5246* 대체) | TLS 1.3 핸드셰이크, 기본 암호 스위트와 구현 요구 수준, 0-RTT | https://www.rfc-editor.org/rfc/rfc9846 |
+| *IETF RFC 9846* | Standards Track (*RFC 8446*·*RFC 5246* 대체) | TLS 1.3 핸드셰이크, 기본 암호 스위트와 구현 요구 수준, 0-RTT | https://www.rfc-editor.org/rfc/rfc9846 |
 | *IETF RFC 5246* | Proposed Standard, Obsoleted | TLS 1.2 구조 비교 | https://www.rfc-editor.org/rfc/rfc5246 |
 | *IETF RFC 8996* | BCP 195 | TLS 1.0·1.1 폐기 | https://www.rfc-editor.org/rfc/rfc8996 |
 | *IETF RFC 9325* | BCP 195 | TLS 1.2·1.3 권장 구성 | https://www.rfc-editor.org/rfc/rfc9325 |
-| *IETF RFC 9852* | 2026-07 | 신규 프로토콜의 TLS 1.3 요구 | https://www.rfc-editor.org/rfc/rfc9852 |
-| *IETF RFC 10015* | 2026-07 | TLS 1.2의 오래된 키 교환 폐기 | https://www.rfc-editor.org/rfc/rfc10015 |
-| *IETF RFC 9150* | 지위 확인 예정 | 인증·무결성 전용 스위트 구분 | https://www.rfc-editor.org/rfc/rfc9150 |
+| *IETF RFC 9852* | — | 신규 프로토콜의 TLS 1.3 요구 | https://www.rfc-editor.org/rfc/rfc9852 |
+| *IETF RFC 10015* | — | TLS 1.2의 오래된 키 교환 폐기 | https://www.rfc-editor.org/rfc/rfc10015 |
+| *IETF RFC 9150* | — | 인증·무결성 전용 스위트 구분 | https://www.rfc-editor.org/rfc/rfc9150 |
 | *IETF RFC 5280* | Standards Track | 인증서 검증 항목 | https://www.rfc-editor.org/rfc/rfc5280 |
 | *IETF RFC 6066* | Proposed Standard | SNI, OCSP stapling 요청 | https://www.rfc-editor.org/rfc/rfc6066 |
 | *IETF RFC 6797* | Proposed Standard | HSTS | https://www.rfc-editor.org/rfc/rfc6797 |
-| *NIST SP 800-52 Rev. 2* | Final (2019-08), 2026-11-19 개정 결정·후속판 미발행 | TLS 구성 지침 | https://csrc.nist.gov/ |
+| *NIST SP 800-52 Rev. 2* | Final (개정 예정) | TLS 구성 지침 | https://csrc.nist.gov/ |
 | *3GPP TS 33.501 V19.7.0 (Release 19)* | — | 5G SBA의 mTLS·HTTPS 요구사항 | ETSI 배포본 |
-| *3GPP TS 33.210* / *3GPP TS 33.310* | 판 확인 예정 | 3GPP TLS 프로파일 / SBA 인증서 프로파일 | ETSI 배포본 |
+| *3GPP TS 33.210* / *3GPP TS 33.310* | — | 3GPP TLS 프로파일 / SBA 인증서 프로파일 | ETSI 배포본 |
 
 - 그 외 내용은 TLS의 일반 원리를 재구성한 해설이다. 실제 장비·라이브러리의 기본값은 제품마다 다르다.

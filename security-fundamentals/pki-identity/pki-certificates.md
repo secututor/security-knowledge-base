@@ -212,19 +212,19 @@ CT(Certificate Transparency)는 공개 CA가 발급한 인증서를 **누구나 
 |------|------|------|
 | *RFC 5280* | X.509 v3 인증서와 CRL 프로파일, 인증 경로 검증 절차 | Standards Track |
 | *RFC 6960* | OCSP | Standards Track |
-| *RFC 9525* | Service Identity in TLS — 서비스 이름 확인 (CN 대신 SAN) | 지위 확인 예정 |
+| *RFC 9525* | Service Identity in TLS — 서비스 이름 확인 (CN 대신 SAN) | — |
 | *RFC 2986* | PKCS(Public-Key Cryptography Standards) #10: Certification Request Syntax Specification Version 1.7 — CSR 형식 | Informational |
 | *RFC 8555* | Automatic Certificate Management Environment (ACME) | Proposed Standard |
 | *RFC 6962* | Certificate Transparency (1.0) | Experimental, *RFC 9162*에 의해 Obsoleted |
 | *RFC 9162* | Certificate Transparency Version 2.0 | Experimental (Internet Standard 아님) |
-| *CA/Browser Forum Baseline Requirements v2.3.1* | 공개적으로 신뢰되는 TLS 서버 인증서의 발급 기준 (확인 수준, 수명, 키 요건 등) | 2026-10-04 판 |
-| *3GPP TS 33.310 V19.5.0 (Release 19)* | 3GPP 네트워크 도메인 보안 인증 체계, 인증서 공통 규칙과 프로파일 | 2026-01 판 확인 (최신판 여부 확인 예정) |
+| *CA/Browser Forum Baseline Requirements* | 공개적으로 신뢰되는 TLS 서버 인증서의 발급 기준 (확인 수준, 수명, 키 요건 등) | 현행판 |
+| *3GPP TS 33.310* | 3GPP 네트워크 도메인 보안 인증 체계, 인증서 공통 규칙과 프로파일 | — |
 
 ### 5.2 인증서 수명 단축 추세
 
-공개 TLS 인증서의 최대 유효 기간은 *CA/Browser Forum Baseline Requirements*에 따라 단계적으로 단축되고 있다. 아래는 v2.3.1(2026-10-04) 기준이며, 이후 판에서 바뀔 수 있으므로 점검할 때는 현행판을 다시 확인한다.
+공개 TLS 인증서의 최대 유효 기간은 *CA/Browser Forum Baseline Requirements*에 따라 단계적으로 단축되고 있다. 일정은 이후 판에서 바뀔 수 있으므로 점검할 때는 현행판을 다시 확인한다.
 
-| 인증서 발급일 | 최대 유효 기간 | 상태 (v2.3.1 기준) |
+| 인증서 발급일 | 최대 유효 기간 | 상태 |
 |---------------|---------------|-------------------|
 | 2026-03-15 이전 | 398일 | 종료 |
 | 2026-03-15 ~ 2027-03-14 | 200일 | **현재 적용** |
@@ -247,12 +247,12 @@ CT(Certificate Transparency)는 공개 CA가 발급한 인증서를 **누구나 
 |------|-------------|-------------------|
 | *IETF RFC 5280* | Standards Track | 인증서 필드·확장, 인증 경로 검증, CRL |
 | *IETF RFC 6960* | Standards Track | OCSP |
-| *IETF RFC 9525* | 지위 확인 예정 | SAN 기반 이름 확인 |
+| *IETF RFC 9525* | — | SAN 기반 이름 확인 |
 | *IETF RFC 2986* | Informational | CSR 형식 |
 | *IETF RFC 8555* | Proposed Standard | ACME 자동 발급 |
 | *IETF RFC 6962* / *RFC 9162* | Experimental (6962는 9162에 의해 Obsoleted) | 인증서 투명성 |
-| *CA/Browser Forum Baseline Requirements* | v2.3.1 (2026-10-04) | 공개 TLS 서버 인증서 확인 수준·수명 단축 일정 |
+| *CA/Browser Forum Baseline Requirements* | 현행판 | 공개 TLS 서버 인증서 확인 수준·수명 단축 일정 |
 | Chrome CT 정책, Mozilla Root CA Program | 브라우저 정책 | CT 요구 범위, EV 표시 변경 |
-| *3GPP TS 33.310 V19.5.0 (Release 19)* | 2026-01 판 확인 | 5G 인증서 공통 규칙 |
+| *3GPP TS 33.310* | — | 5G 인증서 공통 규칙 |
 
 - 그 외 내용은 PKI와 인증서의 일반 원리를 재구성한 해설이다. 실제 CA·제품의 동작은 정책과 구현마다 다르다.

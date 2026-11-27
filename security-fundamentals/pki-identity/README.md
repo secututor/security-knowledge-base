@@ -6,7 +6,7 @@
 사용자 인증, 토큰, 연합 인증, 서비스 간 인증, 인증 공격, 디지털 자격 증명까지 현대 인증 체계를 하나의 흐름으로 정리한다.
 
 > **구분 주의**: Authentication(인증, 누구인가) ≠ Authorization(인가, 무엇을 할 수 있나).
-> 인가 모델은 [Access Control](../access-control/README.md) (작성 예정), Zero Trust 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
+> 인가 모델은 [Access Control](../access-control/README.md), Zero Trust 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
 > 암호 원리(공개키·서명·해시)는 [Cryptography](../cryptography/README.md)를 바탕으로 한다.
 
 ---
@@ -96,7 +96,7 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 3. **SAML + LDAP + Kerberos + mTLS** — 기업·통신 인프라 인증 (07, 08, 09)
 4. **세션 + 공격** — 인증 이후의 방어와 공격자 관점 (10, 11)
 5. **SPIFFE + SD-JWT VC + DID** — 차세대 서비스 신원과 디지털 자격 증명 (09, 12)
-6. **인가 모델 + Zero Trust** — 인증 이후의 접근 통제 ([Access Control](../access-control/README.md) (작성 예정), [Security Architecture](../security-architecture/README.md) (작성 예정))
+6. **인가 모델 + Zero Trust** — 인증 이후의 접근 통제 ([Access Control](../access-control/README.md), [Security Architecture](../security-architecture/README.md) (작성 예정))
 
 ---
 
@@ -108,10 +108,10 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 
 | 영역 | 표준 | 상태 | 문서 |
 |------|------|------|:---:|
-| 디지털 신원 전반 | *NIST SP 800-63-4* (63A·63B·63C 포함) | 2025 Final | 01, 02, 07, 10, 11 |
+| 디지털 신원 전반 | *NIST SP 800-63-4* (63A·63B·63C 포함) | Final | 01, 02, 07, 10, 11 |
 | TOTP / HOTP | *RFC 6238* / *RFC 4226* | 현행 | 02 |
-| WebAuthn | *W3C WebAuthn Level 3* | W3C Recommendation (2026-08-25) | 03 |
-| FIDO2 CTAP(Client to Authenticator Protocol) | *FIDO Alliance CTAP 2.3* | Proposed Standard (2026-02-26). *CTAP 2.3.1*은 Working Draft (2026-05-29)로 기준에서 제외 | 03 |
+| WebAuthn | *W3C WebAuthn Level 3* | W3C Recommendation | 03 |
+| FIDO2 CTAP(Client to Authenticator Protocol) | *FIDO Alliance CTAP 2.3* | Proposed Standard. *CTAP 2.3.1*은 Working Draft로 기준에서 제외 | 03 |
 | X.509 인증서 프로파일 / OCSP | *RFC 5280* / *RFC 6960* | 현행 | 04 |
 
 **OAuth·OIDC·토큰**
@@ -120,17 +120,17 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 |------|------|------|:---:|
 | OAuth 2.0 | *RFC 6749*, *RFC 6750*(Bearer Token) | 현행 | 05 |
 | PKCE | *RFC 7636* | 현행 | 05 |
-| OAuth 보안 모범 사례 | *RFC 9700* | BCP(Best Current Practice) 240 (2025-01) | 05 |
-| 네이티브 앱 / 브라우저 앱 OAuth | *RFC 8252* / *RFC 10017* | BCP 212 / BCP 212 (2026-08) | 05 |
-| OAuth 2.1 | *draft-ietf-oauth-v2-1-17* | **Internet-Draft (2026-10-30), 최종 RFC 아님** | 05 |
-| Device Authorization Grant | *RFC 8628* | Proposed Standard (2019-08) | 05, 11 |
+| OAuth 보안 모범 사례 | *RFC 9700* | BCP(Best Current Practice) 240 | 05 |
+| 네이티브 앱 / 브라우저 앱 OAuth | *RFC 8252* / *RFC 10017* | BCP 212 / BCP 212 | 05 |
+| OAuth 2.1 | *draft-ietf-oauth-v2-1-17* | **Internet-Draft, 최종 RFC 아님** | 05 |
+| Device Authorization Grant | *RFC 8628* | Proposed Standard | 05, 11 |
 | OIDC | *OpenID Connect Core 1.0 incorporating errata set 2*, *OpenID Connect Discovery 1.0 incorporating errata set 2* | OpenID Foundation Final | 05 |
-| JWT / JWT 보안 모범 사례 | *RFC 7519* / *RFC 8725* (BCP 225) | 현행. 후속 개정 *draft-ietf-oauth-rfc8725bis-10*(2026-08-21)은 IESG(Internet Engineering Steering Group) 승인 후 RFC Editor 발행 대기 중인 **Internet-Draft**이며, *RFC 8725*는 아직 대체되지 않았다 | 06 |
+| JWT / JWT 보안 모범 사례 | *RFC 7519* / *RFC 8725* (BCP 225) | 현행. 후속 개정 *draft-ietf-oauth-rfc8725bis-10*은 IESG(Internet Engineering Steering Group) 승인 후 RFC Editor 발행 대기 중인 **Internet-Draft**이며, *RFC 8725*는 아직 대체되지 않았다 | 06 |
 | JWS / JWE / JWK | *RFC 7515* / *RFC 7516* / *RFC 7517* | 현행 | 06 |
-| JOSE(JSON Object Signing and Encryption)·COSE(CBOR(Concise Binary Object Representation) Object Signing and Encryption) 알고리즘 식별자 | *RFC 9864* | Proposed Standard (2025-10). 다형적 EdDSA를 Deprecated, Ed25519·Ed448 식별자 정의 | 06 |
+| JOSE(JSON Object Signing and Encryption)·COSE(CBOR(Concise Binary Object Representation) Object Signing and Encryption) 알고리즘 식별자 | *RFC 9864* | Proposed Standard. 다형적 EdDSA를 Deprecated, Ed25519·Ed448 식별자 정의 | 06 |
 | JWT Access Token 프로파일 | *RFC 9068* | 현행 | 06 |
 | 토큰 폐기 / 검사 | *RFC 7009* / *RFC 7662* | 현행 | 06, 10 |
-| JWT 형식의 Introspection 응답 | *RFC 9701* | Proposed Standard (2025-01) | 06 |
+| JWT 형식의 Introspection 응답 | *RFC 9701* | Proposed Standard | 06 |
 | mTLS 클라이언트 인증·인증서 바인딩 토큰 | *RFC 8705* | 현행 | 06, 09 |
 | DPoP | *RFC 9449* | 현행 | 06 |
 
@@ -138,35 +138,35 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 
 | 영역 | 표준 | 상태 | 문서 |
 |------|------|------|:---:|
-| SAML | *OASIS SAML 2.0* | OASIS Standard (2005-03-15 발행), Errata 05 (2012-05-01 승인) | 07 |
-| XML 서명·암호화 | *W3C XML Signature 1.1*, *W3C XML Encryption 1.1* | W3C Recommendation (2013-04-11) | 07 |
+| SAML | *OASIS SAML 2.0* | OASIS Standard, Errata 05 | 07 |
+| XML 서명·암호화 | *W3C XML Signature 1.1*, *W3C XML Encryption 1.1* | W3C Recommendation | 07 |
 | Kerberos / LDAP / SCIM | *RFC 4120* / *RFC 4511* / *RFC 7643·7644* | Proposed Standard (*RFC 7642* 개념 문서는 Informational) | 08 |
 | Kerberos RC4·3DES 폐기 | *RFC 8429* | BCP 218 (*RFC 4757* RC4-HMAC은 Historic) | 08 |
-| SPIFFE | CNCF(Cloud Native Computing Foundation) SPIFFE 사양군: SPIFFE ID, SVID(SPIFFE Verifiable Identity Document), X.509-SVID, JWT-SVID, Workload API, Trust Domain and Bundle, Federation | 단일 버전 번호 없음. 핵심 사양 Stable, Filesystem Delivery Incubating. SPIFFE·SPIRE 모두 CNCF Graduated (2022-08) | 09 |
+| SPIFFE | CNCF(Cloud Native Computing Foundation) SPIFFE 사양군: SPIFFE ID, SVID(SPIFFE Verifiable Identity Document), X.509-SVID, JWT-SVID, Workload API, Trust Domain and Bundle, Federation | 단일 버전 번호 없음. 핵심 사양 Stable, Filesystem Delivery Incubating. SPIFFE·SPIRE 모두 CNCF Graduated | 09 |
 
 **세션·공격**
 
 | 영역 | 표준 | 상태 | 문서 |
 |------|------|------|:---:|
-| 쿠키 | *RFC 6265* / *draft-ietf-httpbis-rfc6265bis-22* | Proposed Standard (2011-04) / **Internet-Draft**, RFC Editor 최종 승인 대기, 아직 RFC 아님 | 10 |
-| OIDC 로그아웃 | *OpenID Connect RP-Initiated Logout 1.0*, *Front-Channel Logout 1.0*, *Back-Channel Logout 1.0* | OpenID Foundation Final (2022-09-12). Back-Channel은 Errata Set 1 반영본 (2023-12-15) | 07, 10 |
-| 보안 이벤트 공유 | *OpenID Shared Signals Framework 1.0*, *CAEP 1.0*, *RISC 1.0* (CAEP(Continuous Access Evaluation Profile), RISC(Risk Incident Sharing and Coordination)) | OpenID Foundation Final (2025-08-29 발행) | 10 |
-| 기기 결합 세션 | *W3C Device Bound Session Credentials* | First Public Working Draft (2025-08-21), Recommendation 아님 | 10 |
-| 신원 공격 분류 | MITRE ATT&CK Enterprise / Mobile | Enterprise v20.1 (2026-11-05). SIM Card Swap은 Mobile | 08, 11 |
+| 쿠키 | *RFC 6265* / *draft-ietf-httpbis-rfc6265bis-22* | Proposed Standard / **Internet-Draft**, RFC Editor 최종 승인 대기, 아직 RFC 아님 | 10 |
+| OIDC 로그아웃 | *OpenID Connect RP-Initiated Logout 1.0*, *Front-Channel Logout 1.0*, *Back-Channel Logout 1.0* | OpenID Foundation Final. Back-Channel은 Errata Set 1 반영본 | 07, 10 |
+| 보안 이벤트 공유 | *OpenID Shared Signals Framework 1.0*, *CAEP 1.0*, *RISC 1.0* (CAEP(Continuous Access Evaluation Profile), RISC(Risk Incident Sharing and Coordination)) | OpenID Foundation Final | 10 |
+| 기기 결합 세션 | *W3C Device Bound Session Credentials* | First Public Working Draft, Recommendation 아님 | 10 |
+| 신원 공격 분류 | MITRE ATT&CK Enterprise / Mobile | SIM Card Swap은 Mobile | 08, 11 |
 | 웹·API 인증 위험 | OWASP Top 10:2025 / OWASP API Security Top 10 2023 | A07:2025 Authentication Failures (Final, 2021판 대체) / API2:2023 Broken Authentication | 11 |
 
 **디지털 자격 증명**
 
 | 영역 | 표준 | 상태 | 문서 |
 |------|------|------|:---:|
-| DID | *W3C DID 1.0* / *DID 1.1* | *DID 1.0*: W3C Recommendation (2022-07-19) / *DID 1.1*: Candidate Recommendation Snapshot (2026-03-05, 최종 표준 아님) | 12 |
-| VC 데이터 모델·보호 | *W3C VC Data Model 2.0* / *Securing Verifiable Credentials using JOSE and COSE* | W3C Recommendation (2025-05-15, 2.1은 Working Draft) / W3C Recommendation (2026-10-13) | 12 |
-| VC 증명·상태 | *VC Data Integrity 1.0*, ECDSA·EdDSA·BBS Cryptosuites, *Bitstring Status List v1.0* | Data Integrity·ECDSA·EdDSA·Bitstring Status List: W3C Recommendation (2025-05-15) / BBS: Candidate Recommendation Draft (2026-09-10), 정식판 아님 | 12 |
-| SD-JWT / SD-JWT VC / Token Status List | *RFC 9901* / *draft-ietf-oauth-sd-jwt-vc-27* / *draft-ietf-oauth-status-list-21* | Proposed Standard (2025-11) / **Internet-Draft** (2026-11-16), IESG 검토 중 / **Internet-Draft** (2026-06-21), RFC Editor 편집 중 | 12 |
-| 자격 증명 발급·제시 | *OpenID4VCI 1.0* / *OpenID4VP 1.0* (OpenID for Verifiable Credential Issuance / Presentations) | OpenID Foundation Final (2025-09-16 / 2025-07-10) | 12 |
-| 모바일 신분증 | *ISO/IEC 18013-5:2021* / *ISO/IEC TS 18013-7:2025* | 제1판, 개정판 DIS(Draft International Standard) 개발 중 / TS(Technical Specification) 제2판 (2025-05-29) | 12 |
+| DID | *W3C DID 1.0* / *DID 1.1* | *DID 1.0*: W3C Recommendation / *DID 1.1*: Candidate Recommendation Snapshot (최종 표준 아님) | 12 |
+| VC 데이터 모델·보호 | *W3C VC Data Model 2.0* / *Securing Verifiable Credentials using JOSE and COSE* | W3C Recommendation (2.1은 Working Draft) / W3C Recommendation | 12 |
+| VC 증명·상태 | *VC Data Integrity 1.0*, ECDSA·EdDSA·BBS Cryptosuites, *Bitstring Status List v1.0* | Data Integrity·ECDSA·EdDSA·Bitstring Status List: W3C Recommendation / BBS: Candidate Recommendation Draft, 정식판 아님 | 12 |
+| SD-JWT / SD-JWT VC / Token Status List | *RFC 9901* / *draft-ietf-oauth-sd-jwt-vc-27* / *draft-ietf-oauth-status-list-21* | Proposed Standard / **Internet-Draft**, IESG 검토 중 / **Internet-Draft**, RFC Editor 편집 중 | 12 |
+| 자격 증명 발급·제시 | *OpenID4VCI 1.0* / *OpenID4VP 1.0* (OpenID for Verifiable Credential Issuance / Presentations) | OpenID Foundation Final | 12 |
+| 모바일 신분증 | *ISO/IEC 18013-5:2021* / *ISO/IEC TS 18013-7:2025* | 제1판, 개정판 DIS(Draft International Standard) 개발 중 / TS(Technical Specification) 제2판 | 12 |
 | 브라우저 지갑 연동 | *W3C Digital Credentials API* | Working Draft | 12 |
-| EU 디지털 신원 | EU(European Union) 규정 2024/1183 (eIDAS(electronic IDentification, Authentication and trust Services) 개정) | 2024-05-20 발효. 회원국 EUDI(European Digital Identity) Wallet 제공 기한 2026-12-24 | 12 |
+| EU 디지털 신원 | EU(European Union) 규정 2024/1183 (eIDAS(electronic IDentification, Authentication and trust Services) 개정) | 현행. 회원국 EUDI(European Digital Identity) Wallet 제공 기한 2026-12-24 | 12 |
 
 - 공통 표준의 정의는 [Security Fundamentals References](../references/README.md)에도 정리되어 있다.
 - Token Binding(*RFC 8471~8473*)은 주요 브라우저에서 채택되지 않은 방식이라 [Token Security](token-security.md)에서 역사적 배경으로만 다룬다. 현재 토큰을 송신자에 묶는 방법은 DPoP와 *RFC 8705*다.
@@ -175,7 +175,7 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 
 ## 4. 범위 경계
 
-- **인가 모델(RBAC(Role-Based Access Control)·ABAC(Attribute-Based Access Control)·ReBAC(Relationship-Based Access Control)·PBAC(Policy-Based Access Control)·OPA(Open Policy Agent)·Cedar 등), PAM(Privileged Access Management)** → [Access Control](../access-control/README.md) (작성 예정)
+- **인가 모델(RBAC(Role-Based Access Control)·ABAC(Attribute-Based Access Control)·ReBAC(Relationship-Based Access Control)·PBAC(Policy-Based Access Control)·OPA(Open Policy Agent)·Cedar 등), PAM(Privileged Access Management)** → [Access Control](../access-control/README.md)
 - **Zero Trust, Continuous Authentication, Risk-based Access 설계** → [Security Architecture](../security-architecture/README.md) (작성 예정). 여기서는 인증 요소로서의 Risk-based 인증만 다룬다.
 - **공개키·서명·해시의 원리** → [Cryptography](../cryptography/README.md)
 - **쿠키·세션 이외의 웹 취약점** → [Web & Application Security](../web-app-security/README.md)

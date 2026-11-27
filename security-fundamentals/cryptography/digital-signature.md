@@ -215,9 +215,9 @@ RSA·ECDSA·EdDSA는 양자 컴퓨터에 취약하다(→ [Asymmetric Encryption
 
 | 문서 | 판 / 지위 | 인용 위치 | 공식 링크 |
 |------|-----------|-----------|-----------|
-| *NIST FIPS 186-5* "Digital Signature Standard (DSS)" | 2023-02, Final | 승인 알고리즘, DSA 지위, Deterministic ECDSA | https://doi.org/10.6028/NIST.FIPS.186-5 |
-| *NIST FIPS 204* "Module-Lattice-Based Digital Signature Standard" | 2024-08-13, Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.204 |
-| *NIST FIPS 205* "Stateless Hash-Based Digital Signature Standard" | 2024-08-13, Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.205 |
+| *NIST FIPS 186-5* "Digital Signature Standard (DSS)" | Final | 승인 알고리즘, DSA 지위, Deterministic ECDSA | https://doi.org/10.6028/NIST.FIPS.186-5 |
+| *NIST FIPS 204* "Module-Lattice-Based Digital Signature Standard" | Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.204 |
+| *NIST FIPS 205* "Stateless Hash-Based Digital Signature Standard" | Final | 파라미터별 크기 | https://doi.org/10.6028/NIST.FIPS.205 |
 | *NIST FIPS 206* (FN-DSA) | 개발 중 | — | — |
 | *IETF RFC 6979* | Informational | Deterministic Nonce 생성 절차 | https://www.rfc-editor.org/rfc/rfc6979 |
 | *IETF RFC 7515* (JWS) | Standards Track | — | https://www.rfc-editor.org/rfc/rfc7515 |

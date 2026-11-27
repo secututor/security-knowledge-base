@@ -258,7 +258,7 @@ Duo Security가 2017년 12월에 발견해 CERT/CC(CERT Coordination Center)와 
 
 ### 5.5 표준 문서 체계
 
-| 규격 | 발행 | 다루는 범위 |
+| 규격 | 발행 기관 | 다루는 범위 |
 |------|------|-------------|
 | *OASIS SAML 2.0* | OASIS | 아래 문서군 |
 | *W3C XML Signature Syntax and Processing Version 1.1*, *W3C XML Encryption Syntax and Processing Version 1.1* | W3C | SAML이 쓰는 XML 서명·암호화 |
@@ -276,7 +276,7 @@ Duo Security가 2017년 12월에 발견해 CERT/CC(CERT Coordination Center)와 
 | Security and Privacy Considerations | 보안·개인정보 고려 사항 |
 | Glossary | 용어 정의 |
 
-- *SAML 2.0*은 2005-03-01 승인, 2005-03-15 발행된 OASIS Standard다. 승인된 정오표로 Errata 05(2012-05-01 승인)가 있다. Errata Composite는 승인된 정정 사항을 원본 문서에 반영해 읽기 쉽게 묶은 통합 참고 문서이며, 별도의 새 표준이 아니다.
+- *SAML 2.0*은 OASIS Standard이며, 승인된 정오표로 Errata 05가 있다. Errata Composite는 승인된 정정 사항을 원본 문서에 반영해 읽기 쉽게 묶은 통합 참고 문서이며, 별도의 새 표준이 아니다.
 - *XML Signature 1.1*은 이전 *XML Signature Second Edition*을 잇는 개정판이다.
 - 규격 상태는 [PKI & Identity 3. 기준 표준](README.md#3-기준-표준)에 정리되어 있다.
 
@@ -292,10 +292,10 @@ Duo Security가 2017년 12월에 발견해 CERT/CC(CERT Coordination Center)와 
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *OASIS SAML 2.0* (Core, Bindings, Profiles, Metadata 등) | OASIS Standard (2005-03-15 발행), Errata 05 (2012-05-01 승인) | Assertion 구성, 바인딩, 프로파일, POST 바인딩의 Assertion 서명·재사용 방지 요구, IdP 시작 응답, NameID 형식 |
-| *W3C XML Signature Syntax and Processing Version 1.1*, *W3C XML Encryption Syntax and Processing Version 1.1* | W3C Recommendation (2013-04-11) | XML 서명·암호화 |
+| *OASIS SAML 2.0* (Core, Bindings, Profiles, Metadata 등) | OASIS Standard, Errata 05 | Assertion 구성, 바인딩, 프로파일, POST 바인딩의 Assertion 서명·재사용 방지 요구, IdP 시작 응답, NameID 형식 |
+| *W3C XML Signature Syntax and Processing Version 1.1*, *W3C XML Encryption Syntax and Processing Version 1.1* | W3C Recommendation | XML 서명·암호화 |
 | *OpenID Connect Core 1.0 incorporating errata set 2* | OpenID Foundation Final | SAML과 OIDC 비교 |
-| *NIST SP 800-63C-4* | 2025-07-31 Final | FAL 요구 비교, 구판과의 차이 |
+| *NIST SP 800-63C-4* | Final | FAL 요구 비교, 구판과의 차이 |
 | Somorovsky 외, "On Breaking SAML: Be Whoever You Want to Be", USENIX Security 2012 | 학술 논문 | XSW 사례 |
 | CERT/CC 취약점 공지, GitHub Security Advisory | 공개 취약점 공지 | NameID 주석 삽입 사례 |
 | Microsoft, CISA의 SolarWinds 침해 분석 보고 (2020) | 사고 분석 보고 | Golden SAML 실제 사용 |

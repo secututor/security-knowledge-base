@@ -153,11 +153,11 @@ PQC(Post-Quantum Cryptography, 양자내성암호)는 양자 컴퓨터로도 풀
 
 | 표준 | 알고리즘 | 기능 | 기존 대응 | 상태 |
 |------|---------|------|-----------|------|
-| *FIPS 203* | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 (2024-08-13 발행) |
-| *FIPS 204* | ML-DSA(Module-Lattice-Based Digital Signature Algorithm) | 서명 | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
-| *FIPS 205* | SLH-DSA(Stateless Hash-Based Digital Signature Algorithm) | 서명(해시 기반) | RSA·ECDSA 서명 | 확정 (2024-08-13 발행) |
+| *FIPS 203* | ML-KEM(Module-Lattice-Based Key-Encapsulation Mechanism) | 키 설정(KEM) | RSA 키 전송, (EC)DH | 확정 |
+| *FIPS 204* | ML-DSA(Module-Lattice-Based Digital Signature Algorithm) | 서명 | RSA·ECDSA 서명 | 확정 |
+| *FIPS 205* | SLH-DSA(Stateless Hash-Based Digital Signature Algorithm) | 서명(해시 기반) | RSA·ECDSA 서명 | 확정 |
 | *FIPS 206* | FN-DSA(FFT over NTRU-Lattice-Based Digital Signature Algorithm) | 서명 | — | 개발 중 (확정 표준 아님) |
-| — | HQC(Hamming Quasi-Cyclic) | KEM(예비) | — | 2025-03 추가 표준화 대상 선정 (최종 표준 아님) |
+| — | HQC(Hamming Quasi-Cyclic) | KEM(예비) | — | 추가 표준화 대상 선정 (최종 표준 아님) |
 
 - ML-KEM은 CRYSTALS-Kyber, ML-DSA는 CRYSTALS-Dilithium, SLH-DSA는 SPHINCS+로 알려졌던 방식이다.
 - **ML-KEM = 키 설정**, **ML-DSA·SLH-DSA = 서명**이다. 기능이 다르므로 서로 대체하지 않는다.
@@ -241,7 +241,7 @@ flowchart LR
 
 ## 출처
 
-- PQC 표준: NIST, *FIPS 203 / FIPS 204 / FIPS 205* (2024-08-13 발행), *FIPS 206*·HQC 진행 상황.
+- PQC 표준: NIST, *FIPS 203 / FIPS 204 / FIPS 205*, *FIPS 206*·HQC 진행 상황.
 - 5G SUCI 보호 방식: 3GPP, *TS 33.501 V19.7.0 (Release 19)* (세부는 [Key Exchange 5.3 5G SUCI ECIES 프로파일](key-exchange.md#53-5g-suci-ecies-프로파일)).
-- 보안 강도 대응: *NIST SP 800-57 Part 1 Rev. 5* (2020-05-04). https://doi.org/10.6028/NIST.SP.800-57pt1r5
+- 보안 강도 대응: *NIST SP 800-57 Part 1 Rev. 5*. https://doi.org/10.6028/NIST.SP.800-57pt1r5
 - 그 외 내용은 공개키 암호의 일반 원리를 재구성한 해설이다.

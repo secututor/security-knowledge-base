@@ -300,25 +300,25 @@ Key Binding 있음:  <발급자 서명 JWT>~<Disclosure 1>~<Disclosure 2>~<Key B
 
 | 규격 | 다루는 내용 | 지위 |
 |------|-------------|------|
-| *W3C DID 1.0* | DID 문법, DID Document | W3C Recommendation (2022-07-19) |
-| *W3C DID 1.1* | DID 개정판 | Candidate Recommendation Snapshot (2026-03-05), 이후 정식판 미발행 |
-| *W3C VC Data Model 2.0* | VC 데이터 모델 | W3C Recommendation (2025-05-15). 2.1은 Working Draft |
-| *W3C VC Data Integrity 1.0* | 문서 내장 증명 | W3C Recommendation (2025-05-15) |
-| *W3C Data Integrity ECDSA Cryptosuites v1.0*, *EdDSA Cryptosuites v1.0* | Data Integrity 서명 방식 | W3C Recommendation (2025-05-15) |
-| *W3C Data Integrity BBS Cryptosuites v1.0* | 연결되지 않는 파생 증명 | Candidate Recommendation Draft (2026-09-10), 정식판 아님 |
-| *W3C Securing Verifiable Credentials using JOSE and COSE* | VC의 JOSE·COSE 보호 | W3C Recommendation (2026-10-13) |
-| *W3C Bitstring Status List v1.0* | 상태 목록 | W3C Recommendation (2025-05-15) |
-| *RFC 9901* Selective Disclosure for JSON Web Tokens | SD-JWT | Proposed Standard (2025-11) |
-| *draft-ietf-oauth-sd-jwt-vc-27* | SD-JWT VC | Internet-Draft (2026-11-16), Proposed Standard 목표, IESG(Internet Engineering Steering Group) 검토 중 |
-| *draft-ietf-oauth-status-list-21* | Token Status List | Internet-Draft (2026-06-21). IESG 승인 후 RFC Editor 편집 중, RFC 미발행 |
-| *OpenID for Verifiable Credential Issuance 1.0* | 발급 프로토콜 | OpenID Foundation Final (2025-09-16) |
-| *OpenID for Verifiable Presentations 1.0* | 제시 프로토콜 | OpenID Foundation Final (2025-07-10 승인, 문서 2025-07-09) |
-| *ISO/IEC 18013-5:2021* | 모바일 운전면허, 대면 제시 | 2021 제1판 발행. 개정 대상이며 후속 DIS(Draft International Standard) 개발 중 |
-| *ISO/IEC TS 18013-7:2025* | 모바일 운전면허, 원격 제시 | TS(Technical Specification) 제2판 (2025-05-29). 2024 제1판은 철회 |
+| *W3C DID 1.0* | DID 문법, DID Document | W3C Recommendation |
+| *W3C DID 1.1* | DID 개정판 | Candidate Recommendation Snapshot, 이후 정식판 미발행 |
+| *W3C VC Data Model 2.0* | VC 데이터 모델 | W3C Recommendation. 2.1은 Working Draft |
+| *W3C VC Data Integrity 1.0* | 문서 내장 증명 | W3C Recommendation |
+| *W3C Data Integrity ECDSA Cryptosuites v1.0*, *EdDSA Cryptosuites v1.0* | Data Integrity 서명 방식 | W3C Recommendation |
+| *W3C Data Integrity BBS Cryptosuites v1.0* | 연결되지 않는 파생 증명 | Candidate Recommendation Draft, 정식판 아님 |
+| *W3C Securing Verifiable Credentials using JOSE and COSE* | VC의 JOSE·COSE 보호 | W3C Recommendation |
+| *W3C Bitstring Status List v1.0* | 상태 목록 | W3C Recommendation |
+| *RFC 9901* Selective Disclosure for JSON Web Tokens | SD-JWT | Proposed Standard |
+| *draft-ietf-oauth-sd-jwt-vc-27* | SD-JWT VC | Internet-Draft, Proposed Standard 목표, IESG(Internet Engineering Steering Group) 검토 중 |
+| *draft-ietf-oauth-status-list-21* | Token Status List | Internet-Draft. IESG 승인 후 RFC Editor 편집 중, RFC 미발행 |
+| *OpenID for Verifiable Credential Issuance 1.0* | 발급 프로토콜 | OpenID Foundation Final |
+| *OpenID for Verifiable Presentations 1.0* | 제시 프로토콜 | OpenID Foundation Final |
+| *ISO/IEC 18013-5:2021* | 모바일 운전면허, 대면 제시 | 제1판. 후속 개정판 DIS(Draft International Standard) 개발 중 |
+| *ISO/IEC TS 18013-7:2025* | 모바일 운전면허, 원격 제시 | TS(Technical Specification) 제2판 |
 | *W3C Digital Credentials API* | 브라우저와 지갑 연동 | Working Draft |
-| 규정 (EU) 2024/1183 | eIDAS 개정, EUDI Wallet, RP 등록 | 2024-05-20 발효 |
+| 규정 (EU) 2024/1183 | eIDAS 개정, EUDI Wallet, RP 등록 | 현행 |
 
-- **eIDAS 지갑 제공 기한**: 회원국은 관련 시행 규정 발효(2024-12-24)로부터 24개월 안에 최소 하나의 EUDI Wallet을 제공해야 하므로 기한은 2026-12-24다. 이는 법적 의무 기한이며, 각국이 그날까지 인증을 마친 지갑을 실제로 배포한다는 뜻은 아니다. 지갑 단위 증명은 시행 규정 (EU) 2024/2979와 그 개정 규정 (EU) 2026/1731이 다룬다.
+- **eIDAS 지갑 제공 기한**: 회원국은 2026-12-24까지 최소 하나의 EUDI Wallet을 제공해야 한다. 이는 법적 의무 기한이며, 각국이 그날까지 인증을 마친 지갑을 실제로 배포한다는 뜻은 아니다. 지갑 단위 증명은 시행 규정 (EU) 2024/2979와 그 개정 규정 (EU) 2026/1731이 다룬다.
 - **Digital Credentials API 브라우저 지원**: Chrome은 141부터 제시, 155부터 발급을 기본 지원한다. Edge는 제시를 지원하고 발급은 플랫폼·기능 플래그 조건이 있다. Safari 26은 제시를 지원하며 *ISO/IEC TS 18013-7* 기반 mdoc 중심이다. Firefox는 개발 중이다.
 - PKI & Identity 전체의 규격 상태는 [PKI & Identity 3. 기준 표준](README.md#3-기준-표준)에 정리되어 있다.
 
@@ -336,16 +336,16 @@ Key Binding 있음:  <발급자 서명 JWT>~<Disclosure 1>~<Disclosure 2>~<Key B
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *W3C DID 1.0* / *DID 1.1* | Recommendation (2022-07-19) / CR Snapshot (2026-03-05) | DID 구조 |
+| *W3C DID 1.0* / *DID 1.1* | Recommendation / CR Snapshot | DID 구조 |
 | W3C Credentials Community Group `did:web` 방식 규격 | 커뮤니티 그룹 작업 문서 | `did:web`의 DNS·TLS 의존 |
-| *W3C VC Data Model 2.0* | Recommendation (2025-05-15) | VC 속성과 필수 여부, VP |
-| *W3C VC Data Integrity 1.0*, ECDSA·EdDSA·BBS Cryptosuites | Recommendation (2025-05-15) / BBS는 Candidate Recommendation Draft (2026-09-10) | 증명 방식, `proofPurpose`·`domain`·`challenge` |
-| *W3C Securing Verifiable Credentials using JOSE and COSE* | Recommendation (2026-10-13) | VC 보호 방식 |
-| *W3C Bitstring Status List v1.0* | Recommendation (2025-05-15) | 상태 목록, group privacy |
-| *RFC 9901* | Proposed Standard (2025-11) | SD-JWT 구조, 검증 규칙, 연결 불가능성 고려 사항 |
-| *draft-ietf-oauth-sd-jwt-vc-27* | Internet-Draft (2026-11-16) | `dc+sd-jwt`, `vct` |
-| *draft-ietf-oauth-status-list-21* | Internet-Draft (2026-06-21) | herd anonymity |
-| *OpenID4VCI 1.0* / *OpenID4VP 1.0* | OpenID Foundation Final (2025-09-16 / 2025-07-10) | 발급·제시 프로토콜, 키 증명·지갑 증명 |
+| *W3C VC Data Model 2.0* | Recommendation | VC 속성과 필수 여부, VP |
+| *W3C VC Data Integrity 1.0*, ECDSA·EdDSA·BBS Cryptosuites | Recommendation / BBS는 Candidate Recommendation Draft | 증명 방식, `proofPurpose`·`domain`·`challenge` |
+| *W3C Securing Verifiable Credentials using JOSE and COSE* | Recommendation | VC 보호 방식 |
+| *W3C Bitstring Status List v1.0* | Recommendation | 상태 목록, group privacy |
+| *RFC 9901* | Proposed Standard | SD-JWT 구조, 검증 규칙, 연결 불가능성 고려 사항 |
+| *draft-ietf-oauth-sd-jwt-vc-27* | Internet-Draft | `dc+sd-jwt`, `vct` |
+| *draft-ietf-oauth-status-list-21* | Internet-Draft | herd anonymity |
+| *OpenID4VCI 1.0* / *OpenID4VP 1.0* | OpenID Foundation Final | 발급·제시 프로토콜, 키 증명·지갑 증명 |
 | *ISO/IEC 18013-5:2021* / *ISO/IEC TS 18013-7:2025* | 제1판(개정 중) / TS 제2판 | mdoc 구조, 대면·원격 제시 |
 | NIST 모바일 신분증 제시 기술 설명 | 정부 기관 공개 자료 | 대면 제시 연결·전송 방식 |
 | *W3C Digital Credentials API* | Working Draft | 브라우저·지갑 연동 |

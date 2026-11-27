@@ -159,7 +159,7 @@ AI 영역의 위협과 대응은 [AI Security](../../ai-security/README.md) (로
 | 키 교환 | *FIPS 203* (ML-KEM), *RFC 5869* (HKDF), *RFC 10024*, *RFC 9954* | 06 |
 | 키 관리 | *NIST SP 800-57 Part 1 Rev. 5*, *FIPS 140-3* | 07 |
 | TLS | *RFC 9846*, *RFC 8996*, *RFC 9325*, *RFC 9852*, *RFC 10015*, *NIST SP 800-52 Rev. 2* | 08 |
-| 5G | *3GPP TS 33.501 V19.7.0 (Release 19)*, *3GPP TS 33.220 V19.1.0 (Release 19)* | 02, 03, 05, 06, 07, 08 |
+| 5G | *3GPP TS 33.501 V19.7.0 (Release 19)*, *3GPP TS 33.220* | 02, 03, 05, 06, 07, 08 |
 
 표준별 정의는 [References](../references/README.md)에 정리되어 있다.
 

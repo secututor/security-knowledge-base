@@ -162,7 +162,7 @@ AD 침해의 대부분은 **관리자 계정이 덜 안전한 컴퓨터에 로�
 - **상위 계층 계정은 하위 계층 시스템에 로그인하지 않는다.** 직원 PC가 악성코드에 감염되어도 도메인 관리자 자격 증명이 그 PC 메모리에 남지 않게 하기 위해서다.
 - 관리 작업은 전용 관리 단말(PAW(Privileged Access Workstation))에서 한다.
 - Microsoft는 이 계층 모델을 폐기하지 않고, 클라우드·SaaS·API·자동화까지 포함하는 Enterprise Access Model로 확장했다. 대략 Tier 0은 Control Plane, Tier 1은 Management Plane과 Data/Workload Plane, Tier 2는 일반 사용자·애플리케이션 접근 경로(User and App Access)에 대응한다.
-- 특권 접근 관리 전반은 [Access Control](../access-control/README.md) (작성 예정)에서 다룬다.
+- 특권 접근 관리 전반은 [Access Control](../access-control/README.md)에서 다룬다.
 
 ### 3.2 서비스 계정 관리
 
@@ -275,7 +275,7 @@ SpecterOps가 2021년 발표한 연구 "Certified Pre-Owned: Abusing Active Dire
 
 ### 5.2 공격 기법과 MITRE ATT&CK 대응
 
-MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise v20.1의 기법 분류와 대응시키면 탐지 규칙과 점검 항목을 맞추기 쉽다.
+MITRE ATT&CK(Adversarial Tactics, Techniques, and Common Knowledge) Enterprise의 기법 분류와 대응시키면 탐지 규칙과 점검 항목을 맞추기 쉽다.
 
 | 공격 | ATT&CK 기법 | 탐지 단서 |
 |------|-------------|-----------|
@@ -347,6 +347,6 @@ Content-Type: application/scim+json
 | Microsoft Open Specifications (MS-KILE, MS-PAC, MS-NLMP) | Microsoft 공개 규격 | AD Kerberos 확장, PAC, NTLM |
 | Microsoft 보안 문서 (AD DS 계층 모델, Enterprise Access Model, Protected Users, gMSA, Windows LAPS, AD 포리스트 복구, NTLM·RC4 폐기 로드맵) | 제조사 기술 문서 | 운영 권고, 폐기 일정 |
 | SpecterOps, "Certified Pre-Owned: Abusing Active Directory Certificate Services" (2021) | 보안 연구 | AD CS 설정 오류(ESC1) |
-| MITRE ATT&CK Enterprise | v20.1 (2026-11-05) | 공격 기법 분류 |
+| MITRE ATT&CK Enterprise | — | 공격 기법 분류 |
 
 - 계층 모델, 서비스 계정 관리, 프로토콜 보호 설정은 위 규격과 AD 보안 운영의 일반 원칙을 재구성한 해설이다.

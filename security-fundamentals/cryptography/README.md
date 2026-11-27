@@ -72,16 +72,16 @@ flowchart LR
 | *FIPS 180-4* (SHS, Secure Hash Standard) | SHA-2 계열 | 현행 | 03 |
 | *FIPS 202* (SHA-3) | SHA-3 계열 | 현행 | 03 |
 | *RFC 5869* (HKDF, HMAC-based Key Derivation Function) | 키 파생 | Informational | 03, 06 |
-| *FIPS 186-5* (DSS, Digital Signature Standard) | 디지털 서명 | 현행 (2023) | 05 |
-| *FIPS 203* (ML-KEM) / *204* (ML-DSA) / *205* (SLH-DSA) | PQC 확정 표준 | 확정 (2024-08-13 발행) | 04, 05, 06 |
-| *FIPS 206* (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 2025-03 선정 (둘 다 최종 표준 아님) | 04, 05 |
-| *NIST SP 800-57 Part 1 Rev. 5* (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 (2020-05-04 Final) | 04, 07 |
-| *FIPS 140-3* | 암호 모듈 보안 요구사항·검증 | 현행 (2019-03-22 승인) | 07 |
-| TLS 1.3 (*RFC 9846*, *RFC 8446*·*RFC 5246* 대체) | 전송 구간 보안 | 현행 (Standards Track, 2026-07) | 06, 08 |
+| *FIPS 186-5* (DSS, Digital Signature Standard) | 디지털 서명 | 현행 | 05 |
+| *FIPS 203* (ML-KEM) / *204* (ML-DSA) / *205* (SLH-DSA) | PQC 확정 표준 | 확정 | 04, 05, 06 |
+| *FIPS 206* (FN-DSA, FFT over NTRU-Lattice-Based Digital Signature Algorithm), HQC(Hamming Quasi-Cyclic) | PQC 후속 표준화 | FN-DSA 개발 중, HQC는 추가 표준화 대상 선정 (둘 다 최종 표준 아님) | 04, 05 |
+| *NIST SP 800-57 Part 1 Rev. 5* (키 관리 일반) | 키 생명주기·사용 기간·보안 강도 | 현행 | 04, 07 |
+| *FIPS 140-3* | 암호 모듈 보안 요구사항·검증 | 현행 | 07 |
+| TLS 1.3 (*RFC 9846*, *RFC 8446*·*RFC 5246* 대체) | 전송 구간 보안 | 현행 (Standards Track) | 06, 08 |
 | *RFC 8996* / *RFC 9325* / *RFC 9852* / *RFC 10015* | TLS 버전 폐기·안전한 사용 권고 | BCP(Best Current Practice) 195 등 (→ [TLS Overview](tls-overview.md)) | 08 |
-| *RFC 10024* (TLS 1.3 PQ/T 하이브리드 키 합의) / *RFC 9954* (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard (2026-08) / Informational | 06, 08 |
+| *RFC 10024* (TLS 1.3 PQ/T 하이브리드 키 합의) / *RFC 9954* (하이브리드 설계) | 양자내성 하이브리드 키 교환 | Proposed Standard / Informational | 06, 08 |
 | *3GPP TS 33.501 V19.7.0 (Release 19)* | 5G 암호화·무결성 알고리즘, 5G KDF 입력, 키 계층 | Release 19 최종판, 이 지식베이스의 기준판 (Release 20 판과 혼용하지 않음) | 02, 03, 06, 09 |
-| *3GPP TS 33.220 V19.1.0 (Release 19)* | 범용 KDF(HMAC-SHA-256) | Release 19 발행본 | 03 |
+| *3GPP TS 33.220* | 범용 KDF(HMAC-SHA-256) | 현행 | 03 |
 
 - 공통 표준의 정의는 [Security Fundamentals References](../references/README.md)에도 정리되어 있다.
 

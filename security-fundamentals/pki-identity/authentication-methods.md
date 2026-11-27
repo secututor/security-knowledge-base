@@ -313,9 +313,9 @@ flowchart LR
 
 | 문서 | 지위 / 버전 | 이 문서에서의 사용 |
 |------|-------------|-------------------|
-| *NIST SP 800-63B-4* "Authentication and Authenticator Management" | 2025-07 Final | 비밀번호 요구사항, 제한적 인증 수단, AAL 요구, 피싱 저항성 정의 |
+| *NIST SP 800-63B-4* "Authentication and Authenticator Management" | Final | 비밀번호 요구사항, 제한적 인증 수단, AAL 요구, 피싱 저항성 정의 |
 | *RFC 4226* "HOTP: An HMAC-Based One-Time Password Algorithm" | Informational | HOTP 계산 구조 |
 | *RFC 6238* "TOTP: Time-Based One-Time Password Algorithm" | Informational | TOTP 계산 구조, 기본 시간 간격 |
-| *FIPS 201-3* "Personal Identity Verification (PIV) of Federal Employees and Contractors" | 2022-01 Final (*FIPS 201-2* 대체) | 스마트카드 기반 인증의 예 |
+| *FIPS 201-3* "Personal Identity Verification (PIV) of Federal Employees and Contractors" | Final (*FIPS 201-2* 대체) | 스마트카드 기반 인증의 예 |
 
 - 비교표와 대응 방안은 위 규격과 인증 공격의 일반 원리를 재구성한 해설이다.
