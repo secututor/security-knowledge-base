@@ -18,7 +18,7 @@
 
 | 영역 | 구조 | 내용 완성도 |
 |------|------|-------------|
-| `security-fundamentals/` 일반 보안 (공통 지식) | ✅ 8하위영역 + references | 🟡 Cryptography **9/9** 완성, 나머지 하위영역 준비중 |
+| `security-fundamentals/` 일반 보안 (공통 지식) | ✅ 8하위영역 + references | 🟡 Cryptography **9/9**, PKI & Identity **12/12**, Access Control **10/10** 완성, 나머지 하위영역 준비중 |
 | `5g-security/` 5G 보안 | ✅ 완성 | 🟡 **3개 완성 / 97개 스텁** |
 | `cloud-security/` 클라우드 | ✅ 8하위영역 + references | ⬜ 준비중 |
 | `ai-security/` AI 보안 | ✅ 7하위영역 + references | ⬜ 준비중 |
@@ -33,12 +33,23 @@
 | 05 | `digital-signature.md` (ML-DSA·SLH-DSA 상세 포함) | ✅ |
 | 06 | `key-exchange.md` (ML-KEM·하이브리드) | ✅ |
 | 07 | `key-management.md` | ✅ |
-| 08 | `tls-overview.md` | ✅ (RFC 9852·10015 제목, RFC 9150 지위, TS 33.210·33.310 판 확인 예정) |
+| 08 | `tls-overview.md` | ✅ |
 | 09 | `cryptography-in-practice.md` | ✅ 01~08 연결 지도 (새 표준 사실 없음) |
 
 - 04 범위 결정: 서명 상세는 05, 키 교환·ML-KEM 상세는 06, PKI·CA는 `pki-identity`로 링크(중복 금지).
 - 작성된 문서 중 **공식 확인 필요**: 5G SUCI ECIES Profile A/B = TS 33.501 Annex C,
   보안 강도 대응(128bit ≈ RSA 3072 ≈ ECC 256), TLS 1.3 RSA 키 전송 제거.
+
+### Access Control 진행 (`security-fundamentals/access-control/`)
+- README 큰그림 작성: 1. 접근 통제 지도(PEP·PDP·PIP·PAP, 모델 비교, 설계 원칙) / 2. 문서 목록 01~10 / 3. 기준 표준 / 4. 범위 경계 / 5. 연결.
+- 문서 진행: 01 `access-control-fundamentals.md` ✅(검증 반영) / 02 `dac-mac.md` ✅(검증 반영, Biba Invocation은 표준 정의 유지) / 03 `rbac.md` ✅(검증 반영. Limited 계층 방향은 원문 확인 전까지 서술 안 함 — ANSI 정의는 "직접 하위 역할 하나"(역트리)로 기억, 검증 의견은 "직접 상위 하나") / 04 `abac-pbac.md` ✅(검증 반영) / 05 rebac.md ✅(검증 반영) / 06 policy-engines.md ✅(검증 반영) / 07 least-privilege.md ✅(검증 반영. 공개 문서엔 통제 번호 미기재 — 근거 위치: SP 800-53 AC-6(1)(2)(7)(9), ISO/IEC 27002:2022 5.15·5.18·8.2·8.3) / 08 pam.md ✅(검증 반영. ISO 근거 위치: 27002:2022 8.2·5.17·8.18 — 공개 문서 미기재) / 09 authorization-attacks.md ✅(검증 반영) / 10 access-control-in-practice.md ✅ (Access Control 01~10 완료) (README·본문에 링크 없이 `이름 (작성 예정)` 텍스트로 표시 — 없는 파일 링크는 404. 작성 시 링크로 바꾸고 SUMMARY에 추가).
+- 기준 표준 표는 **번호·명칭만** (메타데이터 최소화 원칙, rules-authoring 3.3). 외부 검증은 기술적 사실에만 요청.
+
+### 메타데이터 최소화 전수 적용 (Cryptography·PKI & Identity·references·Cloud README)
+- 제거: 발행·승인·게시·정정일, Errata 날짜, CNCF 졸업일, ATT&CK v20.1, CA/B BR v2.3.1, TS 33.220/33.310 판, "확인 예정" 셀(→ `—`).
+- 유지(내용에 영향): Final/Draft/Internet-Draft/BCP 지위, 명칭에 포함된 판(Rev. 5, Level 3, :2025, 1.0 등), TS 33.501 V19.7.0,
+  내용상 날짜(FIPS 140-2 Historical 전환, CA/B 인증서 수명 단축 일정, eIDAS 지갑 기한, RC4 폐기 일정, GitHub OIDC 주체 형식 변경, K8s v1.24/v1.27), 사고·논문 연도, CVE 번호.
+- 이전 보류 항목(RFC 9852·10015 제목, RFC 9150·9525 지위, TS 33.210·33.310 판)은 메타데이터라 더 이상 검증 대상 아님.
 
 - 5G 완성 문서(참고 샘플): `5g-security/security-risks/01-ue-privacy/01-01-SUPI_Exposure.md`,
   `.../01-05-False_Base_Station.md`, `.../02-auth-nas/02-01-5G-AKA_Attack_Surface.md`
