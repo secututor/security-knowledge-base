@@ -217,7 +217,7 @@ flowchart LR
 
 - 이전: [Authorization Attacks](authorization-attacks.md)
 - 인증 쪽 연결 지도: [PKI & Identity](../pki-identity/README.md)
-- 아키텍처 연결: [Security Architecture](../security-architecture/README.md) (작성 예정)
+- 아키텍처 연결: [Security Architecture](../security-architecture/README.md)
 - 로드맵: [Access Control](README.md)
 
 ## 출처

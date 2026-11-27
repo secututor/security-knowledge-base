@@ -7,7 +7,7 @@
 
 > **구분 주의**: 인증(Authentication, 누구인가)은 [PKI & Identity](../pki-identity/README.md)에서 다룬다.
 > 인증이 성공해도 인가가 없으면 접근할 수 없고, 인가가 잘못 설계되면 정상 로그인한 사용자가 남의 데이터를 읽는다.
-> Zero Trust처럼 매 요청마다 인가를 다시 판단하는 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
+> Zero Trust처럼 매 요청마다 인가를 다시 판단하는 설계는 [Security Architecture](../security-architecture/README.md)에서 다룬다.
 
 ---
 
@@ -128,7 +128,7 @@ RBAC의 한계를 이해하면 속성(04)과 관계(05) 모델로 넓힐 수 있
 3. **인가 공격** — OWASP 웹·API 위험 1순위인 인가 결함의 실제 형태 (09)
 4. **정책 엔진 + ReBAC** — 정책을 코드로 다루는 현대적 구현 (05, 06)
 5. **최소 권한 + PAM** — 계정 탈취 이후 피해를 줄이는 운영 통제 (07, 08)
-6. **실무 적용 + Zero Trust** — 각 영역 적용과 아키텍처 연결 (10, [Security Architecture](../security-architecture/README.md) (작성 예정))
+6. **실무 적용 + Zero Trust** — 각 영역 적용과 아키텍처 연결 (10, [Security Architecture](../security-architecture/README.md))
 
 ---
 
@@ -161,7 +161,7 @@ RBAC의 한계를 이해하면 속성(04)과 관계(05) 모델로 넓힐 수 있
 ## 4. 범위 경계
 
 - **인증 방식, 토큰 형식과 검증(OAuth 2.0·OIDC(OpenID Connect)·JWT(JSON Web Token))** → [PKI & Identity](../pki-identity/README.md). 여기서는 토큰에 담긴 scope·claim을 **인가 판단에 쓰는 방법**만 다룬다.
-- **Zero Trust, 지속적 접근 평가 아키텍처** → [Security Architecture](../security-architecture/README.md) (작성 예정)
+- **Zero Trust, 지속적 접근 평가 아키텍처** → [Security Architecture](../security-architecture/README.md)
 - **클라우드별 IAM 정책 문법과 설정** → [Cloud IAM](../../cloud-security/iam/README.md) (작성 예정)
 - **IDOR·BOLA 외 웹 취약점** → [Web & Application Security](../web-app-security/README.md)
 - **5G SBA 위협 상세** → [5G Security](../../5g-security/README.md)

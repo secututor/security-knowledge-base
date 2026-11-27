@@ -188,7 +188,7 @@ flowchart LR
 
 - Risk-based 인증은 **MFA를 대체하지 않는다.** 위험이 "낮음"으로 잘못 판정되면 그대로 통과되므로, 기본 인증 수단 자체도 충분히 강해야 한다.
 - 민감한 작업 직전에 다시 인증을 요구하는 Step-up은 세션이 탈취된 경우의 피해를 줄인다.
-- 지속적 인증과 Zero Trust 접근 결정 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
+- 지속적 인증과 Zero Trust 접근 결정 설계는 [Security Architecture](../security-architecture/README.md)에서 다룬다.
 
 ### 3.8 계정 복구 — 가장 약한 고리
 

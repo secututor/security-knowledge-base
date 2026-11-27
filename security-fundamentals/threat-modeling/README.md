@@ -169,7 +169,7 @@ flowchart LR
 - **AI 시스템 위협 모델링·레드팀** → [AI Security Assessment](../../ai-security/ai-security-assessment/README.md) (작성 예정)
 - **AI 위험 관리 체계(*NIST AI RMF*·*ISO/IEC 42001*)** → [AI Governance](../../ai-security/ai-governance/README.md) (작성 예정)
 - **클라우드 위험평가·인증 제도(ISMS-P 등)** → [Cloud Assessment](../../cloud-security/assessment/README.md) (작성 예정), [Cloud Posture & Compliance](../../cloud-security/posture-compliance/README.md) (작성 예정)
-- **위협 대응을 위한 아키텍처 설계(Zero Trust·심층 방어)** → [Security Architecture](../security-architecture/README.md) (작성 예정)
+- **위협 대응을 위한 아키텍처 설계(Zero Trust·심층 방어)** → [Security Architecture](../security-architecture/README.md)
 - **개발 주기 안의 보안 활동 전체(SSDLC(Secure Software Development Life Cycle))** → [Secure Development](../secure-development/README.md) (작성 예정)
 - **위협 탐지·침해 대응** → [Security Operations](../security-operations/README.md) (작성 예정)
 

@@ -168,7 +168,7 @@ sequenceDiagram
 
 - 서비스가 여러 개면 "누가 누구에게 알리는가"가 문제다. IdP와 서비스가 보안 이벤트(계정 정지, 세션 취소, 자격 증명 변경)를 실시간으로 주고받는 OpenID Foundation의 SSF(Shared Signals Framework)와 그 위의 프로파일 CAEP(Continuous Access Evaluation Profile)·RISC(Risk Incident Sharing and Coordination)가 이 문제를 다룬다. CAEP는 세션 종료·권한 변경 같은 접근 상태 변화를, RISC는 계정 침해 같은 위험 사건을 전한다.
 - 이 규격들은 이벤트를 **전달**할 뿐, 모든 시스템의 세션을 자동으로 끊어 주지 않는다. 세션을 끊을지, 접근을 제한할지는 이벤트를 받은 서비스가 자기 정책으로 결정하고 실행해야 한다.
-- 지속적 접근 평가를 Zero Trust 설계에 넣는 방법은 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
+- 지속적 접근 평가를 Zero Trust 설계에 넣는 방법은 [Security Architecture](../security-architecture/README.md)에서 다룬다.
 
 ### 3.7 다른 영역에서의 사용
 

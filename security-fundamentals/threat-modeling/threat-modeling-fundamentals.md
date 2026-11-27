@@ -166,7 +166,7 @@ flowchart LR
 - 이 흐름이 기록되는가 (감사)
 
 "내부망이니까 믿는다"는 가정은 가장 흔한 실수다. 내부의 한 서버가 뚫리면 그 가정이 공격자에게 그대로 넘어간다.
-매 요청을 경계로 보고 검증하는 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)의 Zero Trust에서 다룬다.
+매 요청을 경계로 보고 검증하는 설계는 [Security Architecture](../security-architecture/README.md)의 Zero Trust에서 다룬다.
 
 ### 3.5 공격 표면
 

@@ -6,7 +6,7 @@
 사용자 인증, 토큰, 연합 인증, 서비스 간 인증, 인증 공격, 디지털 자격 증명까지 현대 인증 체계를 하나의 흐름으로 정리한다.
 
 > **구분 주의**: Authentication(인증, 누구인가) ≠ Authorization(인가, 무엇을 할 수 있나).
-> 인가 모델은 [Access Control](../access-control/README.md), Zero Trust 설계는 [Security Architecture](../security-architecture/README.md) (작성 예정)에서 다룬다.
+> 인가 모델은 [Access Control](../access-control/README.md), Zero Trust 설계는 [Security Architecture](../security-architecture/README.md)에서 다룬다.
 > 암호 원리(공개키·서명·해시)는 [Cryptography](../cryptography/README.md)를 바탕으로 한다.
 
 ---
@@ -96,7 +96,7 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 3. **SAML + LDAP + Kerberos + mTLS** — 기업·통신 인프라 인증 (07, 08, 09)
 4. **세션 + 공격** — 인증 이후의 방어와 공격자 관점 (10, 11)
 5. **SPIFFE + SD-JWT VC + DID** — 차세대 서비스 신원과 디지털 자격 증명 (09, 12)
-6. **인가 모델 + Zero Trust** — 인증 이후의 접근 통제 ([Access Control](../access-control/README.md), [Security Architecture](../security-architecture/README.md) (작성 예정))
+6. **인가 모델 + Zero Trust** — 인증 이후의 접근 통제 ([Access Control](../access-control/README.md), [Security Architecture](../security-architecture/README.md))
 
 ---
 
@@ -176,7 +176,7 @@ FIDO2는 인증 방식과 공개키 인증서를 함께 알아야 이해하기 �
 ## 4. 범위 경계
 
 - **인가 모델(RBAC(Role-Based Access Control)·ABAC(Attribute-Based Access Control)·ReBAC(Relationship-Based Access Control)·PBAC(Policy-Based Access Control)·OPA(Open Policy Agent)·Cedar 등), PAM(Privileged Access Management)** → [Access Control](../access-control/README.md)
-- **Zero Trust, Continuous Authentication, Risk-based Access 설계** → [Security Architecture](../security-architecture/README.md) (작성 예정). 여기서는 인증 요소로서의 Risk-based 인증만 다룬다.
+- **Zero Trust, Continuous Authentication, Risk-based Access 설계** → [Security Architecture](../security-architecture/README.md). 여기서는 인증 요소로서의 Risk-based 인증만 다룬다.
 - **공개키·서명·해시의 원리** → [Cryptography](../cryptography/README.md)
 - **쿠키·세션 이외의 웹 취약점** → [Web & Application Security](../web-app-security/README.md)
 - **클라우드 IAM(Identity and Access Management) Role, 클라우드별 Workload Identity 설정** → [Cloud IAM](../../cloud-security/iam/README.md) (작성 예정)

@@ -100,7 +100,7 @@ flowchart TD
 - **탐지와 교정이 함께 있는가**: 예방만 있으면 예방이 뚫렸을 때 알 수 없다.
 - **검증할 수 있는가**: "보안 강화"가 아니라 "주문 취소 API는 요청자와 소유자가 같은지 확인한다"처럼 테스트 가능한 문장으로 쓴다.
 - **새 위험을 만들지 않는가**: 계정 잠금은 무차별 대입을 막지만 서비스 거부 수단이 될 수 있다.
-- 여러 계층에 통제를 겹치는 설계 원칙은 [Security Architecture](../security-architecture/README.md) (작성 예정)의 심층 방어에서 다룬다.
+- 여러 계층에 통제를 겹치는 설계 원칙은 [Security Architecture](../security-architecture/README.md)의 심층 방어에서 다룬다.
 
 ### 3.3 비용과 효과 비교
 
