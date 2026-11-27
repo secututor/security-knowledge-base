@@ -52,6 +52,11 @@
 - 예정 파일명: 01 threat-modeling-fundamentals.md / 02 stride.md / 03 attack-trees.md / 04 threat-modeling-methodologies.md / 05 risk-assessment.md / 06 risk-scoring.md / 07 risk-treatment.md / 08 threat-modeling-in-practice.md.
 - 검증 메모: DREAD 첫 D = Damage Potential. OCTAVE 개발 주체는 CMU SEI(CERT 표기 X). Schneier는 Attack Tree "대중화"(최초 발명 단정 X). SP 800-154는 Initial Public Draft(최종 발행 계획 공지만 있음). SP 800-30은 Rev. 1이 현행 Final. EPSS는 FIRST SIG 관리, 점수 생성은 외부 운영 주체. FAIR 모델과 Open FAIR 표준(O-RT·O-RA) 구분. PASTA 단계 명칭은 자료마다 차이. LINDDUN = Linkability·Identifiability·Non-repudiation·Detectability·Disclosure of information·Unawareness·Non-compliance.
 
+### Security Architecture 진행 (`security-fundamentals/security-architecture/`)
+- README 큰그림 작성 ✅(검증 반영: 경계 vs ZT 표를 경향 비교로 완화·상호 배타 아님, ZT=위치 기반 암묵 신뢰 제거, 설계 원칙 표에 출처 열(Saltzer·Schroeder 5 / 일반 원칙 / 복원력) + 권한 분리 추가, Fail-safe≠Secure by Default, SABSA 역사적 풀이 표기. 표준 지위: SP 800-160 V1R1·V2R1·207·207A(정식 제목 Multi-Cloud)·1800-35·800-63-4·CSF 2.0 Final, CISA ZTMM 2.0, 800-41R1·800-34R1은 오래된 Final): 1. 지도(원칙→패턴→통제, 경계 중심 vs Zero Trust, 설계 원칙) / 2. 문서 목록 01~08 / 3. 기준 표준 / 4. 범위 경계 / 5. 연결.
+- 예정 파일명: 01 security-architecture-fundamentals.md / 02 defense-in-depth.md / 03 zero-trust.md / 04 network-segmentation.md / 05 secure-by-design.md / 06 identity-centric-architecture.md / 07 resilience-recovery.md / 08 security-architecture-in-practice.md.
+- 다른 영역에서 Security Architecture README를 가리키던 "(작성 예정)" 12곳 제거(README에 내용 생김).
+
 ### 메타데이터 최소화 전수 적용 (Cryptography·PKI & Identity·references·Cloud README)
 - 제거: 발행·승인·게시·정정일, Errata 날짜, CNCF 졸업일, ATT&CK v20.1, CA/B BR v2.3.1, TS 33.220/33.310 판, "확인 예정" 셀(→ `—`).
 - 유지(내용에 영향): Final/Draft/Internet-Draft/BCP 지위, 명칭에 포함된 판(Rev. 5, Level 3, :2025, 1.0 등), TS 33.501 V19.7.0,
